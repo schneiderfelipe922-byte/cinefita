@@ -1,0 +1,194 @@
+{
+  "mist": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/a1/The_Mist_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Mist_%28film%29",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      261,
+      382
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/mist-small.jpg",
+        "width": 261,
+        "height": 382,
+        "bytes": 18896
+      },
+      "large": {
+        "src": "assets/posters/mist-large.jpg",
+        "width": 261,
+        "height": 382,
+        "bytes": 18896
+      }
+    }
+  },
+  "blair": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/2/26/Blair_Witch_Project.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Blair_Witch_Project",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      220,
+      327
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/blair-small.jpg",
+        "width": 220,
+        "height": 327,
+        "bytes": 20845
+      },
+      "large": {
+        "src": "assets/posters/blair-large.jpg",
+        "width": 220,
+        "height": 327,
+        "bytes": 20845
+      }
+    }
+  },
+  "deadzone": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/78/The_Dead_Zone.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Dead_Zone_%28film%29",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      220,
+      330
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/deadzone-small.jpg",
+        "width": 220,
+        "height": 330,
+        "bytes": 19515
+      },
+      "large": {
+        "src": "assets/posters/deadzone-large.jpg",
+        "width": 220,
+        "height": 330,
+        "bytes": 19515
+      }
+    }
+  },
+  "streetfighter": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/0/0f/Street_Fighter_II_The_Animated_Movie_%28Japanese_pamphlet%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Street_Fighter_II%3A_The_Animated_Movie",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      220,
+      313
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/streetfighter-small.jpg",
+        "width": 220,
+        "height": 313,
+        "bytes": 28254
+      },
+      "large": {
+        "src": "assets/posters/streetfighter-large.jpg",
+        "width": 220,
+        "height": 313,
+        "bytes": 28254
+      }
+    }
+  },
+  "perfectblue": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/2/2a/Perfectblueposter.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Perfect_Blue",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      265,
+      375
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/perfectblue-small.jpg",
+        "width": 265,
+        "height": 375,
+        "bytes": 31394
+      },
+      "large": {
+        "src": "assets/posters/perfectblue-large.jpg",
+        "width": 265,
+        "height": 375,
+        "bytes": 31394
+      }
+    }
+  },
+  "goonies": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Goonies.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Goonies",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      253,
+      394
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/goonies-small.jpg",
+        "width": 253,
+        "height": 394,
+        "bytes": 33305
+      },
+      "large": {
+        "src": "assets/posters/goonies-large.jpg",
+        "width": 253,
+        "height": 394,
+        "bytes": 33305
+      }
+    }
+  },
+  "willow": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/7b/Willow_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Willow_%281988_film%29",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      259,
+      384
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/willow-small.jpg",
+        "width": 259,
+        "height": 384,
+        "bytes": 39383
+      },
+      "large": {
+        "src": "assets/posters/willow-large.jpg",
+        "width": 259,
+        "height": 384,
+        "bytes": 39383
+      }
+    }
+  },
+  "species": {
+    "provider": "Wikipedia",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/e/ed/Species_1995_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Species_%28film%29",
+    "status": "new-catalog-title",
+    "sourceSize": [
+      256,
+      378
+    ],
+    "versions": {
+      "small": {
+        "src": "assets/posters/species-small.jpg",
+        "width": 256,
+        "height": 378,
+        "bytes": 28996
+      },
+      "large": {
+        "src": "assets/posters/species-large.jpg",
+        "width": 256,
+        "height": 378,
+        "bytes": 28996
+      }
+    }
+  }
+}

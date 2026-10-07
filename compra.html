@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compra — Cinefita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261006-retro-v3">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/filmstrip.png" alt="Cinefita">
+      <span class="brand-copy"><strong>CINEFITA</strong><span>ACERVO DE CINEMA</span></span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="posters.html">Pôsteres</a>
+      <a href="revitalizar.html">Revitalizar</a>
+    </nav>
+    <div class="nav-right">
+      <form class="search" action="catalogo.html" novalidate><label for="searchInput" class="sr-only">Buscar filmes</label><input id="searchInput" name="q" placeholder="Buscar no acervo" type="search"><button class="search-clear" id="clearSearch" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><button class="search-submit" type="submit" aria-label="Pesquisar no catálogo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
+      <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
+    </div>
+  </div>
+</header><main id="mainContent" tabindex="-1"><div class="container page"><p class="eyebrow">ÚLTIMO PASSO</p><h1>Finalize sua coleção.</h1><p class="lead">Confira seus itens e escolha a entrega.</p><div class="notice">Compra demonstrativa. Nenhum pagamento ou pedido real será processado.</div><div id="checkoutEmpty" hidden class="service-panel"><h2>Seu carrinho está vazio.</h2><a class="cta" href="catalogo.html">Explorar catálogo</a></div><div class="checkout-layout" id="checkoutContent"><form id="purchaseForm" class="purchase-form" novalidate>
+    <div class="service-panel purchase-fields"><p id="validationSummary" class="validation-summary" role="alert" hidden></p><h2>01 · Seus dados</h2><div class="form-grid"><label>Nome completo<input name="name" required autocomplete="name" minlength="3"></label><label>E-mail<input name="email" type="email" required autocomplete="email"></label></div><h2>02 · Entrega</h2><div class="delivery-options"><label class="delivery-option"><input type="radio" name="delivery" value="pickup" checked> Retirada na loja <strong>Grátis</strong></label><label class="delivery-option"><input type="radio" name="delivery" value="shipping"> Entrega em domicílio <strong>R$ 19,90</strong></label></div><p class="micro">Frete fixo ilustrativo. Serviços de revitalização precisam de avaliação presencial.</p><fieldset id="addressFields" hidden disabled><legend>Endereço de entrega</legend><div class="form-grid"><label>CEP<input name="zip" autocomplete="postal-code" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000"></label><label>Rua<input name="street" autocomplete="address-line1"></label><label>Número<input name="number"></label><label>Complemento <span>(opcional)</span><input name="extra" autocomplete="address-line2"></label><label>Bairro<input name="district"></label><label>Cidade<input name="city" autocomplete="address-level2"></label><label>UF<input name="state" maxlength="2" pattern="[A-Za-z]{2}" placeholder="SP" autocomplete="address-level1"></label></div></fieldset><h2>03 · Pagamento</h2><label class="delivery-option"><input type="radio" checked name="payment"> Pagamento simulado</label><p class="micro">Não é necessário informar dados bancários.</p></div>
+    <aside class="service-summary purchase-summary"><h2>Seu pedido</h2><div id="orderItems"></div><div class="summary-line"><span>Subtotal</span><strong id="orderSubtotal"></strong></div><div class="summary-line"><span>Entrega</span><strong id="orderShipping"></strong></div><div class="summary-line order-total"><span>Total</span><strong id="orderTotal"></strong></div><a class="cart-link" href="carrinho.html">Editar carrinho</a></aside>
+    <div class="purchase-action"><button class="cta full" type="submit" id="completePurchase">Concluir compra demonstrativa</button><p>Confira o total acima. Nenhuma cobrança será realizada.</p></div>
+  </form></div><section id="orderSuccess" hidden class="service-panel success" tabindex="-1"><span class="success-icon">✓</span><h2>Simulação concluída!</h2><p id="successMessage"></p><p>Nenhuma cobrança foi realizada e nenhum pedido foi enviado.</p><a class="cta" href="catalogo.html">Voltar ao catálogo</a></section></div></main><footer>
+  <div class="container footer-grid">
+    <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p></div>
+    <div><h4>NAVEGAÇÃO</h4><p><a href="index.html">Início</a><br><a href="catalogo.html">Catálogo</a><br><a href="posters.html">Pôsteres</a><br><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
+    <div><h4>ATENDIMENTO</h4><p>Uma coleção para guardar.<br>Projeto demonstrativo • sem vendas reais.</p></div>
+  </div>
+</footer><div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="cart-head"><div><p class="eyebrow">SUA COLEÇÃO</p><h3 id="drawerTitle">Carrinho</h3></div><button class="cart-close" id="closeCart" aria-label="Fechar carrinho"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">Seu carrinho ainda está vazio.</div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+    <button class="cta full" id="checkoutButton">Ir para compra</button>
+    <a class="cart-link" href="carrinho.html">Ver carrinho completo →</a><p class="micro">Demonstração visual — sem pagamento real.</p>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="poster-artwork.js?v=20261007"></script><script src="app.js?v=20261007"></script></body></html>

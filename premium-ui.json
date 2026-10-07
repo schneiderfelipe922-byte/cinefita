@@ -1,0 +1,19 @@
+{
+  "profile": "hybrid-commerce-demo",
+  "sourceRoots": [
+    "."
+  ],
+  "locale": "pt-BR",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": [
+    "Select/Listbox",
+    "Form",
+    "Scrollbar",
+    "Toast"
+  ],
+  "ownership": {
+    "Select/Listbox": "native"
+  },
+  "requiredCommands": [],
+  "commands": {}
+}

@@ -1,0 +1,57 @@
+CINEFITA — SITE COM PÁGINAS SEPARADAS
+
+Extraia todo o ZIP e abra index.html. Mantenha os arquivos juntos.
+
+Páginas: index.html, catalogo.html, posters.html, revitalizar.html,
+carrinho.html, compra.html e filme.html?id=psycho (ficha individual).
+
+O carrinho usa localStorage. Para garantir persistência entre páginas em
+qualquer navegador, sirva a pasta por HTTP (por exemplo, com Live Server
+no VS Code ou python -m http.server 8000) e acesse localhost:8000.
+
+A compra é demonstrativa: não processa pagamentos nem envia pedidos.
+O frete é ilustrativo. A foto da fita é apenas uma prévia local.
+CSS e JavaScript compartilhados: styles.css, data.js, film-details.js, catalog-expansion.js, poster-artwork.js e app.js.
+Imagens originais: pasta assets. Cormorant Garamond local em assets/fonts/;
+Manrope e Roboto Mono on-line com fallback local.
+
+NOTAS IMDb
+Consultadas em 20/09/2026 na base oficial title.ratings.tsv.gz.
+Fonte: https://datasets.imdbws.com/title.ratings.tsv.gz
+São valores estáticos, sem atualização automática. Cada nota abre a
+página do título no IMDb. O recorte consultado está em imdb-ratings.json.
+
+CATÁLOGO
+41 títulos. Filtros por gênero, formato VHS/Blu-ray/FILME e texto.
+FILME indica suporte físico não informado. 36 pôsteres na galeria.
+Ordenação geral por título, nota IMDb, ano ou preço. A opção padrão
+agrupa os títulos por gênero. As seleções são preservadas na URL.
+Preços e formatos do catálogo são demonstrativos.
+
+FICHAS E IMAGENS — 05/10/2026
+As 41 obras têm ficha com direção, ano, título original, duração de referência,
+sinopse e fontes. O catálogo aceita busca pelo título em português e original.
+“Voltar aos resultados” preserva busca, filtros e ordenação.
+Cartazes locais otimizados em assets/posters, com procedência em sources.json.
+23 referências foram substituídas por imagens de maior resolução. As demais
+mantêm a arte anterior otimizada, sem ampliação artificial. Originais preservados.
+Cartazes não são fotos dos exemplares. Edição e conservação não cadastradas.
+Moldura de passe-partout e aro em latão compartilhada entre as obras.
+O destaque conserva a moldura dupla e o disco, com controle de pausa.
+Backup anterior à implementação em relatorios/implementacao-premium-2026-10-05/originais.
+
+ATUALIZAÇÃO 05/10/2026: hovers e prévias ilustrativas de embalagens, oito novas obras em Blu-ray, pesquisa de preços e fontes em relatorios/interacoes-catalogo-2026-10-05/relatorio.html. Originais e prompts das imagens geradas em assets/products/. Não há vendas, estoque ou cobrança reais.
+
+REDESIGN 06/10/2026
+Direção Sala de acervo: vinho tinta, marfim e latão fosco. Títulos editoriais
+em Cormorant Garamond; controles e leitura em Manrope. Catálogo com
+3/2/1 colunas e seleções do início com 4/2/1. Molduras, disco, abertura
+de embalagens, fichas e jornada demonstrativa preservados. Documentação
+em DESIGN.md. Backup reversível em relatorios/redesign-retro-2026-10-06/antes-do-redesign.zip.
+
+PÔSTERES E FIGMA — 07/10/2026
+25 obras da galeria receberam cartazes alternativos, independentes das capas
+do catálogo. As 11 restantes mantêm as referências anteriores. A ampliação
+mostra a mesma arte da miniatura, com link da fonte quando disponível.
+Procedência: assets/posters/alternatives/sources.json. Arquivo Figma:
+https://www.figma.com/design/HFyHSw8FTmsVoewbVR5ry1

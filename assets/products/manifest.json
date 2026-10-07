@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-05",
+  "mode": "built-in image_gen",
+  "promptFile": "assets/products/prompts.json",
+  "assets": {
+    "vhs": {
+      "src": "assets/products/vhs-open.webp",
+      "width": 1000,
+      "height": 667,
+      "bytes": 75348,
+      "original": "assets/products/vhs-open-original.png",
+      "generatedOriginal": "/Users/Admin/.codex/generated_images/01a0ded3-56d0-7c03-8d1d-c1f1d3ff6135/exec-e01843b7-2096-44c1-bbd6-bfcfd746e67b.png",
+      "illustrative": true
+    },
+    "bluray": {
+      "src": "assets/products/bluray-open.webp",
+      "width": 1000,
+      "height": 667,
+      "bytes": 78398,
+      "original": "assets/products/bluray-open-original.png",
+      "generatedOriginal": "/Users/Admin/.codex/generated_images/01a0ded3-56d0-7c03-8d1d-c1f1d3ff6135/exec-bd0b5505-a24c-4ae3-a471-e7d5525359f2.png",
+      "illustrative": true
+    },
+    "dvd": {
+      "src": "assets/products/dvd-open.webp",
+      "width": 1000,
+      "height": 667,
+      "bytes": 55578,
+      "original": "assets/products/dvd-open-original.png",
+      "generatedOriginal": "/Users/Admin/.codex/generated_images/01a0ded3-56d0-7c03-8d1d-c1f1d3ff6135/exec-c31c5981-5410-4024-84bd-8d8e52c23a2d.png",
+      "illustrative": true
+    }
+  }
+}

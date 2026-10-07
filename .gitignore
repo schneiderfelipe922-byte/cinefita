@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+node_modules/
+relatorios/
+premium-audit.json
+*.log
+*.zip
+__pycache__/

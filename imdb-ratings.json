@@ -1,0 +1,171 @@
+{
+  "source": "https://datasets.imdbws.com/title.ratings.tsv.gz",
+  "checkedOn": "2026-09-20",
+  "ratings": {
+    "psycho": {
+      "id": "tt0054215",
+      "rating": 8.5,
+      "votes": 794446
+    },
+    "nightmare": {
+      "id": "tt0087800",
+      "rating": 7.4,
+      "votes": 294884
+    },
+    "friday": {
+      "id": "tt0080761",
+      "rating": 6.4,
+      "votes": 177217
+    },
+    "texas": {
+      "id": "tt0072271",
+      "rating": 7.4,
+      "votes": 216072
+    },
+    "elephant": {
+      "id": "tt0080678",
+      "rating": 8.2,
+      "votes": 284530
+    },
+    "dracula": {
+      "id": "tt0051554",
+      "rating": 7.2,
+      "votes": 30272
+    },
+    "frankenstein": {
+      "id": "tt0021884",
+      "rating": 7.7,
+      "votes": 88730
+    },
+    "clockwork": {
+      "id": "tt0066921",
+      "rating": 8.2,
+      "votes": 945076
+    },
+    "nightdead": {
+      "id": "tt0063350",
+      "rating": 7.8,
+      "votes": 152521
+    },
+    "thing": {
+      "id": "tt0084787",
+      "rating": 8.2,
+      "votes": 535626
+    },
+    "indiana": {
+      "id": "tt0087469",
+      "rating": 7.5,
+      "votes": 573933
+    },
+    "terminator": {
+      "id": "tt0088247",
+      "rating": 8.1,
+      "votes": 1018531
+    },
+    "deadpoets": {
+      "id": "tt0097165",
+      "rating": 8.1,
+      "votes": 669435
+    },
+    "gonewind": {
+      "id": "tt0031381",
+      "rating": 8.2,
+      "votes": 358815
+    },
+    "jaws": {
+      "id": "tt0073195",
+      "rating": 8.1,
+      "votes": 750167
+    },
+    "django": {
+      "id": "tt0060315",
+      "rating": 7.2,
+      "votes": 34614
+    },
+    "hellraiser": {
+      "id": "tt0093177",
+      "rating": 6.9,
+      "votes": 155936
+    },
+    "dragon": {
+      "id": "tt0070034",
+      "rating": 7.6,
+      "votes": 121539
+    },
+    "it": {
+      "id": "tt0099864",
+      "rating": 6.8,
+      "votes": 155276
+    },
+    "omen": {
+      "id": "tt0075005",
+      "rating": 7.5,
+      "votes": 147823
+    },
+    "wickerman": {
+      "id": "tt0070917",
+      "rating": 7.5,
+      "votes": 106741
+    },
+    "untouchables": {
+      "id": "tt0094226",
+      "rating": 7.8,
+      "votes": 357162
+    },
+    "oz": {
+      "id": "tt0032138",
+      "rating": 8.1,
+      "votes": 472796
+    },
+    "dollars": {
+      "id": "tt0058461",
+      "rating": 7.9,
+      "votes": 256923
+    },
+    "kingkong": {
+      "id": "tt0024216",
+      "rating": 7.9,
+      "votes": 96666
+    },
+    "casablanca": {
+      "id": "tt0034583",
+      "rating": 8.5,
+      "votes": 661185
+    },
+    "wonderful": {
+      "id": "tt0038650",
+      "rating": 8.6,
+      "votes": 559566
+    },
+    "indemnity": {
+      "id": "tt0036775",
+      "rating": 8.3,
+      "votes": 183330
+    },
+    "kane": {
+      "id": "tt0033467",
+      "rating": 8.2,
+      "votes": 496841
+    },
+    "angrymen": {
+      "id": "tt0050083",
+      "rating": 9.0,
+      "votes": 1003288
+    },
+    "samurai": {
+      "id": "tt0047478",
+      "rating": 8.6,
+      "votes": 405879
+    },
+    "tokyo": {
+      "id": "tt0046438",
+      "rating": 8.1,
+      "votes": 78866
+    },
+    "platoon": {
+      "id": "tt0091763",
+      "rating": 8.0,
+      "votes": 477210
+    }
+  }
+}

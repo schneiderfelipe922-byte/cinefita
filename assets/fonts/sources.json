@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-06",
+  "family": "Cormorant Garamond",
+  "styles": [
+    "600 normal",
+    "600 italic"
+  ],
+  "cssSource": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&display=swap",
+  "license": "Cormorant-Garamond-OFL.txt",
+  "files": [
+    "cormorant-garamond-600.woff2",
+    "cormorant-garamond-600-italic.woff2"
+  ],
+  "subset": "Latin; inclui acentos do português",
+  "originals": [
+    "cormorant-garamond-600.ttf",
+    "cormorant-garamond-600-italic.ttf"
+  ]
+}
