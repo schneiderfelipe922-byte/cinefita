@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Cinefita
-description: 'Sala de acervo: cinema físico, composição editorial retrô e materiais contidos.'
+description: 'Cinemateca editorial: cartazes completos, curadoria e memória afetiva pelo cinema.'
 colors:
   background: '#21171A'
   surface: '#302126'
@@ -43,12 +43,12 @@ components:
     rounded: '{rounded.DEFAULT}'
     padding: '12px 20px'
   catalog-button:
-    backgroundColor: '{colors.surface}'
-    textColor: '{colors.primary}'
+    backgroundColor: '{colors.background}'
+    textColor: '{colors.text}'
     rounded: '{rounded.DEFAULT}'
     padding: '10px 14px'
   card:
-    backgroundColor: '{colors.surface}'
+    backgroundColor: '{colors.background}'
     textColor: '{colors.text}'
     rounded: '{rounded.panel}'
   field:
@@ -78,13 +78,13 @@ components:
 
 ## Overview
 
-**Direção de 06/10/2026: Sala de acervo.** Redesign autorizado pelo usuário para combinar Designly e Frontend Design Premium com uma identidade retrô sofisticada. A referência é um programa de cinemateca e um livro de cinema: tinta vinho, títulos editoriais, dados de arquivo e objetos apresentados com moldura. A memória vem dos filmes; a sofisticação vem da proporção, do espaço e da clareza. Não simular papel envelhecido, ruído de VHS, ingressos ou autenticidade comercial.
+**Refinamento de 09/10/2026 — Designly.** Destaque de Frankenstein mais compacto (aproximadamente 578px em 1440px), mantendo moldura dupla, disco e pausa. Chamada desktop até 76px; metadados e IMDb dividem uma linha quando há espaço. Na abertura, quatro curadorias em duas colunas, cada uma com três cartazes completos, índice discreto e quantidade de filmes. Em telas até 900px, as curadorias voltam a uma coluna. A página Coleções mantém as apresentações em linhas. Introdução das seleções e rodapé móvel mais compactos; links do rodapé em duas colunas com alvos de 44px. Filtros avançados em quatro colunas acima de 1150px. Os cards e sua grade responsiva permanecem no padrão do acervo. AI Graphic Design foi usado como canvas de referências visuais antes/depois, sem geração de artes ou alteração dos cartazes originais.
 
-Público presumido pelo conteúdo: pessoas interessadas em clássicos e objetos de cinema; não houve pesquisa de público. Locale pt-BR. O site continua um protótipo estático, com preços, entrega, compra e orçamento demonstrativos, conforme LEIA-ME.txt. Registro híbrido: início e galeria expressam a marca; catálogo, ficha, serviço, carrinho e compra priorizam consulta e conferência.
+**Direção de 08/10/2026: Cinemateca editorial.** Composição aprovada pelo usuário: preservar marca, vinho, marfim, latão e destaque de Frankenstein; dar escala aos cartazes e reduzir o conteúdo ao redor. A memória afetiva vem das artes de época, dos títulos reconhecíveis e de apresentações específicas das seleções, sem atribuir lembranças pessoais ao visitante.
 
-A assinatura preserva a preferência explícita do usuário de 04/10/2026: Frankenstein em moldura dupla e disco decorativo girando atrás da capa. O disco não identifica o suporte vendido. As 41 obras, fichas, fontes, valores, chaves do carrinho e imagens geradas de embalagens são preservados. Histórico: [relatório aprovado de setembro](relatorios/relatorio-design-cinefita-2026-09-27.html); pesquisa e imagens de 05/10/2026 em relatorios/interacoes-catalogo-2026-10-05/. A data do redesign não atualiza preços nem avaliações.
+Público presumido: pessoas interessadas em clássicos e objetos de cinema. Locale pt-BR. O site é estático e demonstrativo: compra, entrega e revitalização não geram pedidos nem cobrança. Decisão posterior do usuário: adiar login, Supabase e Resend. Minha coleção guarda marcações apenas no navegador, sem conta ou sincronização entre dispositivos.
 
-**Modelo B:** `styles.css :root` é o proprietário dos tokens em execução; este documento espelha os valores aceitos. Ambos mudam juntos. Sem framework, geração de tema ou segundo proprietário. Comportamento: [UX-CONTRACT.md](UX-CONTRACT.md). Direção e evidências deste redesign: relatorios/redesign-retro-2026-10-06/.
+**Modelo B:** `styles.css :root` possui os tokens em execução; este documento espelha os valores aceitos. Paleta, famílias tipográficas e marca foram preservadas. Os componentes compartilhados usam esses tokens diretamente, sem tema paralelo. Comportamento em [UX-CONTRACT.md](UX-CONTRACT.md). Histórico: relatórios locais de setembro e redesign de 06/10/2026; datas de preços e IMDb não foram atualizadas implicitamente.
 
 ## Colors
 
@@ -106,42 +106,42 @@ Os nomes CSS `yellow`, `cream` e `espresso` são aliases históricos; seus valor
 
 ## Typography
 
-Cormorant Garamond 600, normal e itálica, cria a voz editorial. Fonte local WOFF2 de 23–24 KB por estilo, com acentos do português; licença e origem em assets/fonts/. Fallback Georgia. Manrope permanece para textos, títulos dos cards, preços e controles; Roboto Mono apenas para ano, suporte e etiquetas. Essas duas fontes mantêm o carregamento anterior com fallback local.
+Cormorant Garamond 600, normal e itálica, para títulos editoriais, páginas, seleções e filmes. Fonte local WOFF2, com licença em assets/fonts/; fallback Georgia. Manrope para leitura, controles e preços; Roboto Mono para dados curtos. As duas últimas famílias conservam o carregamento existente com fallbacks.
 
-Hero 52–88px/1.02 no desktop, 58px no tablet e 48–64px no celular. O itálico marca uma palavra da chamada. Títulos de página 40–64px/1.08, 44px no celular; ficha 40–64px/1.08 e 42px no celular. Seções 32–44px/1.1. Cards 21px/1.3, peso 600, 20px no celular e 18px até 360px. Corpo 16px/1.55, introdução 16px/1.8; apoio 14px, dados 11–12px/1.5. Preço 24px, orçamento 28px e ficha 32px, com algarismos tabulares. Não truncar títulos. Títulos de formulários e dados técnicos usam Manrope para manter leitura funcional.
+Hero 48–88px/1.02. Títulos de página 40–64px/1.08; seções 32–48px/1.1. Títulos de cards 23px/1.16, 22px no celular, sem truncamento. Corpo 16px/1.55; apoio 14px; metadados 12px/1.7. Preço do card: **Manrope 14px, peso 400, cor secundária**, sem caixa ou etiqueta. Valor da edição física na ficha 32px; orçamento e totais usam a hierarquia anterior. Dados técnicos e formulários usam Manrope.
 
 ## Layout
 
-Contêiner máximo 1320px. Margens mínimas 32px desktop e 16px mobile. Ritmo existente de 4, 8, 12, 16, 24, 32, 48 e 64px. Hero em duas colunas acima de 680px, uma abaixo. Moldura com objeto maior e ficha editorial alinhada à esquerda; capa e disco compõem um foco primário, chamada e ação são secundárias, metadados terciários.
+Contêiner máximo 1320px; margens 32px desktop e 16px até 900px. Cabeçalho desktop: marca, busca e carrinho na primeira linha; navegação na segunda. Até 900px: marca, carrinho e Menu; busca visível abaixo. O menu acessível reúne os seis destinos. Conta foi retirada por decisão do usuário.
 
-Catálogo: três colunas acima de 1000px, duas entre 681 e 1000px, uma abaixo. As duas seleções do início têm quatro colunas acima de 1150px, duas entre 681 e 1150px, uma abaixo. Relacionados têm duas colunas desktop e uma mobile. As variantes alteram apenas a grade externa; o proprietário `card` continua compartilhado. Cada card segue arte → conteúdo → compra → ficha. Área de produto 4:3 em todos os cards, com imagem integral e geometria estável. Cards da mesma linha alinham ações sem truncar conteúdo. Obras FILME usam a mesma área reservada com cartaz, sem presumir embalagem.
+Início: chamada e Frankenstein em duas colunas, chamada antes da arte no celular. Depois, quatro apresentações de coleções com três cartazes; seleção brasileira; novidades Halloween, Alien, Limite e Cléo; convite para galeria. Não repetir cards completos das coleções na abertura.
 
-Galeria conserva quatro colunas desktop, três até 1000px, duas até 680px e cartazes 2:3. Ficha em duas colunas acima de 680px, uma abaixo; o palco do produto permanece quadrado e limitado a 360px no celular. Cabeçalho mobile de três linhas mantém busca, carrinho e navegação acessíveis. Rolagem reserva 124px para foco no cabeçalho de duas linhas do tablet e 160px no mobile. Gêneros usam h2; títulos dos cards usam h3. Filtros inicialmente recolhidos; chips ativos ficam fora do painel. Documento usa rolagem natural. Resumo antecede conclusão no DOM mobile; desktop o posiciona ao lado.
+Uma grade compartilhada serve catálogo, seleção temática, Minha coleção e relacionados: quatro colunas acima de 1150px, três entre 901–1150px, duas entre 360–900px e uma abaixo de 360px. Hierarquia **cartaz → título → dados → ações**, com preço secundário quando há oferta. Área de cartaz 2:3, `object-fit: contain`; títulos completos, nenhuma informação necessária depende de hover.
+
+Catálogo mantém agrupamento inicial por gênero; filtros combináveis em disclosure, chips e ordenação. Ficha: cartaz e identificação, organização pessoal próxima do título; sinopse, dados e fontes; edição física em seção própria com compra e embalagem. Ficha em duas colunas acima de 900px e uma abaixo. Coleções tem quatro apresentações ou introdução completa e filmes por `id`. Minha coleção tem contadores, quatro opções e mesma grade. Galeria: artes maiores, legendas e ampliação com fonte. Revitalização, carrinho e compra herdam superfícies, espaçamento e controles. Documento usa rolagem natural; resumo antecede conclusão no celular.
 
 ## Elevation & Depth
 
-Hierarquia por tom, tipografia, espaço e divisória. Cards planos, sem sombra ou elevação de hover no card inteiro. A arte recebe passe-partout e aro com contorno interno; galeria e ficha podem conservar sombra discreta. No início, a moldura dupla é a exceção expressiva: superfície tonal, sem degradê e sem ano gigante decorativo. Sombra da capa evidencia o objeto. Não aplicar textura sobre leitura. Carrinho escurece a página com overlay; galeria usa modal nativo.
+Hierarquia por espaço, tipografia e divisórias. Cards não têm painel ou sombra; moldura fina com margem interna de 4–6px. A moldura dupla e o disco de Frankenstein são a exceção expressiva preservada. Nenhuma textura artificial ou envelhecimento sobre cartazes ou leitura. Carrinho usa overlay; galeria e organização usam dialog nativo.
 
 ## Shapes
 
-Imagem e controle 4px; painel 6px. Pílulas apenas em filtros e contadores. `.poster-frame` é o proprietário do aro e passe-partout compartilhados. Galeria e cartaz ampliado usam 2:3; cards usam 4:3 para capa e abertura horizontal; ficha usa 1:1 no produto. Arte com `contain`, nunca cortar lettering. Mesma geometria entre gêneros. A moldura dupla do destaque é uma variante editorial documentada.
+Imagem e controle 4px; painel 6px. Pílulas apenas em filtros. Cartazes de cards, galeria e ficha em área 2:3; imagens completas com contain. Embalagem na seção física em palco 4:3. `.poster-frame` fornece geometria comum; variantes editoriais usam borda simples, enquanto o destaque conserva a dupla.
 
 ## Components
 
-CTA principal sólido em latão; ação Adicionar dos cards usa contorno e texto em latão, preenchendo no hover ou foco. Assim as capas lideram o catálogo sem 41 ações preenchidas concorrentes. CTA da ficha, carrinho e conclusão mantém preenchimento. Link editorial sublinhado para pôsteres, ficha e fontes. Foco visível 2px com afastamento 3px; controles de tarefa com alvo mínimo 44px. Hover e estado pressionado não escondem texto nem preço. Ícones SVG de traço 1.8px, 20–24px; estrela de avaliação é exceção.
+Os nove HTML compartilham cabeçalho, footer, carrinho, toast, styles.css e app.js. `card` e `posterImage` são os proprietários das grades. Capa e título abrem a ficha; Organizar abre dialog com Tenho, Quero ter e Já assisti. Preço aparece apenas quando `CinefitaCatalog.hasOffer` é verdadeiro. Suporte desconhecido é omitido no card, explicado na seção física. Sinopse, original, IMDb, compra e Ver aberto ficam na ficha.
 
-As sete páginas reutilizam styles.css e app.js. `productPreview` é o proprietário de capa/embalagem em início, catálogo e ficha; botão nativo Ver aberto / Ver capa, separado da moldura por 8px para manter o contorno de foco claro, `aria-pressed`, Enter e Space. Hover abre temporariamente com pointer fine/hover hover. Capa gira até -72° e a embalagem entra em 380ms, usando opacity/transform e easing `cubic-bezier(.2,.7,.2,1)`. Texto e preço permanecem visíveis. Movimento reduzido faz troca instantânea. Não animar geometria de layout. Feedback de controles 160ms, ease. Disco completa uma volta em 16s, linear; botão Pausar / Retomar interrompe na posição atual. É decorativo e aria-hidden. Movimento reduzido mantém disco estático e oculta a pausa. Scrollbars globais usam tokens de trilho, thumb, hover e ativo, com forced-colors nativo.
+`CinefitaCatalog` concentra busca e seleção; `curatedCollections` guarda textos e identificadores das quatro seleções. `CinefitaCollection` concentra armazenamento e marcações; collection-ui.js monta os controles pessoais e a navegação. Filtros e selects permanecem nativos: popup e teclado pertencem ao navegador/OS. Controles têm alvo de 44px, foco de 2px e afastamento de 3px; latão fica em ações e detalhes. Mensagens críticas permanecem inline.
 
-Busca, filtros, ordenação, URLs, retorno da ficha, cartaz ampliado e carrinho mantêm seus proprietários existentes. Validação tem mensagens associadas, aria-invalid, valores preservados e foco no primeiro erro. Select e details permanecem nativos. Não criar componentes paralelos para mudar aparência.
+`productPreview` vive apenas na edição física da ficha. Hover temporário e botão Ver aberto / Ver capa usam o mesmo estado, aria-pressed, Enter e Space. Transição de opacity/transform em 380ms; feedback 160ms. Disco decorativo completa uma volta em 16s, com Pausar / Retomar. Movimento reduzido mantém a arte estática, oculta pausa e faz trocas instantâneas. Scrollbars usam os tokens existentes e cores do sistema em forced-colors.
 
-As 41 fichas trazem direção, ano, título original, sinopse, duração de referência e fontes. Não inventar edição, estado, estoque ou suporte de itens FILME. Os 33 preços anteriores são preservados; oito novos preços de referência continuam datados de 05/10/2026. IMDb continua estático, consultado em 20/09/2026.
-
-**Ativos preservados:** 23 capas melhoradas por referências de Wikimedia Commons, Wikipedia, IMP Awards e Posteritati; as outras dez mantêm a referência anterior otimizada. Versões locais até 360px/900px sem ampliar origem, documentadas em assets/posters/sources.json. Oito novos cartazes em expansion-sources.json. Nenhum cartaz é foto do exemplar físico. Três embalagens abertas foram geradas com image_gen, WebP 1000px, 55–79 KB, com originais/prompts em assets/products/. O site usa VHS e Blu-ray; DVD fica preparado para futura edição cadastrada. A capa real é aplicada por HTML ao mockup genérico. Mostrar EMBALAGEM ILUSTRATIVA; não alegar que representa digipak, extras ou estoque de uma edição.
+52 filmes: 41 registros anteriores com preços preservados e 11 acréscimos editoriais sem oferta. Todos têm direção, país, ano, título original, duração, sinopse e fontes. Os novos cartazes e procedência estão em assets/posters/editorial-sources.json; fontes de ficha em editorial-data.js. Os oito preços de referência anteriores mantêm 05/10/2026, IMDb mantém 20/09/2026. Não inventar edição, estado ou estoque. Embalagens geradas existentes são ilustrações genéricas, com prompts e originais em assets/products/.
 
 ## Do's and Don'ts
 
 - Preserve marca, acervo, fontes de pesquisa e preferências explícitas de interação.
-- Dê prioridade a título, arte, suporte, preço e conferência.
+- Dê prioridade a cartaz, título, dados e ações; preço tem papel secundário.
 - Mantenha dados e ações visíveis fora dos hovers.
 - Use a serifa para expressão editorial e Manrope para tarefa.
 - Não invente escassez, autenticidade, selos, edição ou fotografia de produto.

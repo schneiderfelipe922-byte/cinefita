@@ -3,7 +3,7 @@ CINEFITA — SITE COM PÁGINAS SEPARADAS
 Extraia todo o ZIP e abra index.html. Mantenha os arquivos juntos.
 
 Páginas: index.html, catalogo.html, posters.html, revitalizar.html,
-carrinho.html, compra.html e filme.html?id=psycho (ficha individual).
+carrinho.html, compra.html, colecoes.html, colecao.html e filme.html?id=psycho (ficha individual).
 
 O carrinho usa localStorage. Para garantir persistência entre páginas em
 qualquer navegador, sirva a pasta por HTTP (por exemplo, com Live Server
@@ -22,8 +22,8 @@ São valores estáticos, sem atualização automática. Cada nota abre a
 página do título no IMDb. O recorte consultado está em imdb-ratings.json.
 
 CATÁLOGO
-41 títulos. Filtros por gênero, formato VHS/Blu-ray/FILME e texto.
-FILME indica suporte físico não informado. 36 pôsteres na galeria.
+52 títulos. Filtros combináveis por gênero, formato, década, diretor, país e texto.
+FILME indica suporte físico não informado. 47 pôsteres na galeria.
 Ordenação geral por título, nota IMDb, ano ou preço. A opção padrão
 agrupa os títulos por gênero. As seleções são preservadas na URL.
 Preços e formatos do catálogo são demonstrativos.
@@ -55,3 +55,18 @@ do catálogo. As 11 restantes mantêm as referências anteriores. A ampliação
 mostra a mesma arte da miniatura, com link da fonte quando disponível.
 Procedência: assets/posters/alternatives/sources.json. Arquivo Figma:
 https://www.figma.com/design/HFyHSw8FTmsVoewbVR5ry1
+
+REDESIGN EDITORIAL — 08/10/2026
+Cartazes completos, títulos inteiros, preço secundário e Organizar nos cards.
+Compra e embalagem aberta ficam apenas na seção física da ficha.
+Quatro coleções temáticas em colecoes.html; seleção pelo parâmetro id.
+11 filmes novos sem preço, compra ou embalagem, com fontes e imagens locais.
+Grades 4/3/2/1 colunas; menu acessível até 900px.
+
+MINHA COLEÇÃO SEM LOGIN
+Login foi adiado. Tenho, Quero ter e Já assisti ficam apenas neste navegador.
+Não há conta ou sincronização entre dispositivos. Use colecao.html.
+Se o armazenamento estiver bloqueado, a página informa que as marcações
+ficam só em memória até você sair. Nenhuma chave ou serviço externo é necessário.
+Regras compartilhadas em catalog-core.js e personal-collection.js;
+curadorias em collections-data.js; controles em collection-ui.js.
