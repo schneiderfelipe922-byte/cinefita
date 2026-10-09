@@ -1,0 +1,314 @@
+{
+  "checked": "2026-10-08",
+  "note": "Cartazes de referência; direitos pertencem aos titulares. Imagens locais não ampliadas além da origem.",
+  "films": [
+    {
+      "image": "halloween",
+      "title": "Halloween",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Halloween_(1978_film)",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Halloween_(1978_film)",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/af/Halloween_%281978%29_theatrical_poster.jpg",
+        "sourceSize": [
+          259,
+          384
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/halloween-small.jpg",
+            "width": 259,
+            "height": 384,
+            "bytes": 20680
+          },
+          "large": {
+            "src": "assets/posters/halloween-large.jpg",
+            "width": 259,
+            "height": 384,
+            "bytes": 20680
+          }
+        }
+      }
+    },
+    {
+      "image": "exorcist",
+      "title": "O Exorcista",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/The_Exorcist",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/The_Exorcist",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/7b/Exorcist_ver2.jpg",
+        "sourceSize": [
+          252,
+          378
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/exorcist-small.jpg",
+            "width": 252,
+            "height": 378,
+            "bytes": 25742
+          },
+          "large": {
+            "src": "assets/posters/exorcist-large.jpg",
+            "width": 252,
+            "height": 378,
+            "bytes": 25742
+          }
+        }
+      }
+    },
+    {
+      "image": "suspiria",
+      "title": "Suspiria",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Suspiria",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Suspiria",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/cd/SuspiriaItaly.jpg",
+        "sourceSize": [
+          250,
+          348
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/suspiria-small.jpg",
+            "width": 250,
+            "height": 348,
+            "bytes": 23945
+          },
+          "large": {
+            "src": "assets/posters/suspiria-large.jpg",
+            "width": 250,
+            "height": 348,
+            "bytes": 23945
+          }
+        }
+      }
+    },
+    {
+      "image": "alien",
+      "title": "Alien",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Alien_(film)",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Alien_(film)",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg",
+        "sourceSize": [
+          250,
+          382
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/alien-small.jpg",
+            "width": 250,
+            "height": 382,
+            "bytes": 16222
+          },
+          "large": {
+            "src": "assets/posters/alien-large.jpg",
+            "width": 250,
+            "height": 382,
+            "bytes": 16222
+          }
+        }
+      }
+    },
+    {
+      "image": "odyssey",
+      "title": "2001: Uma Odisseia no Espaço",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/11/2001_A_Space_Odyssey_%281968%29.png",
+        "sourceSize": [
+          261,
+          390
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/odyssey-small.jpg",
+            "width": 261,
+            "height": 390,
+            "bytes": 40138
+          },
+          "large": {
+            "src": "assets/posters/odyssey-large.jpg",
+            "width": 261,
+            "height": 390,
+            "bytes": 40138
+          }
+        }
+      }
+    },
+    {
+      "image": "bladerunner",
+      "title": "Blade Runner",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Blade_Runner",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Blade_Runner",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/9f/Blade_Runner_%281982_poster%29.png",
+        "sourceSize": [
+          251,
+          380
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/bladerunner-small.jpg",
+            "width": 251,
+            "height": 380,
+            "bytes": 40048
+          },
+          "large": {
+            "src": "assets/posters/bladerunner-large.jpg",
+            "width": 251,
+            "height": 380,
+            "bytes": 40048
+          }
+        }
+      }
+    },
+    {
+      "image": "midnight",
+      "title": "À Meia-Noite Levarei Sua Alma",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/At_Midnight_I%27ll_Take_Your_Soul",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/At_Midnight_I%27ll_Take_Your_Soul",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Marins_poster5.jpg",
+        "sourceSize": [
+          262,
+          379
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/midnight-small.jpg",
+            "width": 262,
+            "height": 379,
+            "bytes": 37706
+          },
+          "large": {
+            "src": "assets/posters/midnight-large.jpg",
+            "width": 262,
+            "height": 379,
+            "bytes": 37706
+          }
+        }
+      }
+    },
+    {
+      "image": "blackgod",
+      "title": "Deus e o Diabo na Terra do Sol",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Black_God,_White_Devil",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Black_God,_White_Devil",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/2/26/Deus_e_o_Diabo_na_Terra_do_Sol.jpg",
+        "sourceSize": [
+          260,
+          385
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/blackgod-small.jpg",
+            "width": 260,
+            "height": 385,
+            "bytes": 36097
+          },
+          "large": {
+            "src": "assets/posters/blackgod-large.jpg",
+            "width": 260,
+            "height": 385,
+            "bytes": 36097
+          }
+        }
+      }
+    },
+    {
+      "image": "limite",
+      "title": "Limite",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Limite",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Limite",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/66/Limite_Poster.jpg",
+        "sourceSize": [
+          265,
+          376
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/limite-small.jpg",
+            "width": 265,
+            "height": 376,
+            "bytes": 26901
+          },
+          "large": {
+            "src": "assets/posters/limite-large.jpg",
+            "width": 265,
+            "height": 376,
+            "bytes": 26901
+          }
+        }
+      }
+    },
+    {
+      "image": "house",
+      "title": "House",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/House_(1977_film)",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/House_(1977_film)",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/f4/House_obayashi.jpg",
+        "sourceSize": [
+          220,
+          315
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/house-small.jpg",
+            "width": 220,
+            "height": 315,
+            "bytes": 28693
+          },
+          "large": {
+            "src": "assets/posters/house-large.jpg",
+            "width": 220,
+            "height": 315,
+            "bytes": 28693
+          }
+        }
+      }
+    },
+    {
+      "image": "cleo",
+      "title": "Cléo das 5 às 7",
+      "metadataSourceUrl": "https://en.wikipedia.org/wiki/Cl%C3%A9o_from_5_to_7",
+      "artwork": {
+        "provider": "Wikipedia",
+        "referenceUrl": "https://en.wikipedia.org/wiki/Cl%C3%A9o_from_5_to_7",
+        "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/7c/Original_Poster_to_the_1962_Left_Bank_film_Cl%C3%A9o_from_5_to_7.jpg",
+        "sourceSize": [
+          275,
+          362
+        ],
+        "versions": {
+          "small": {
+            "src": "assets/posters/cleo-small.jpg",
+            "width": 275,
+            "height": 362,
+            "bytes": 35496
+          },
+          "large": {
+            "src": "assets/posters/cleo-large.jpg",
+            "width": 275,
+            "height": 362,
+            "bytes": 35496
+          }
+        }
+      }
+    }
+  ]
+}
