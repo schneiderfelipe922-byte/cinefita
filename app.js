@@ -1,7 +1,7 @@
 const $=id=>document.getElementById(id);
 const money=v=>Number(v).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let cart=[];try{const saved=JSON.parse(localStorage.getItem('cinefitaCart')||'[]');if(Array.isArray(saved))saved.forEach(it=>{const film=films.find(f=>f.title===it.title);const service=it.service&&[39.9,89.9,149.9].includes(it.price);if(!film&&!service)return;const item=film?{...film}:it;const key=item.title+'|'+(item.service||'');const existing=cart.find(i=>i.key===key);const qty=Math.min(99,Math.max(1,Math.floor(Number(it.qty)||1)));if(existing)existing.qty=Math.min(99,existing.qty+qty);else cart.push({...item,key,qty});});}catch{}
+let cart=[];try{const saved=JSON.parse(localStorage.getItem('cinefitaCart')||'[]');if(Array.isArray(saved))saved.forEach(it=>{const film=films.find(f=>f.title===it.title);const service=it.service&&[39.9,89.9,149.9].includes(it.price);if((!film&&!service)||(film&&!CinefitaCatalog.hasOffer(film)))return;const item=film?{...film}:it;const key=item.title+'|'+(item.service||'');const existing=cart.find(i=>i.key===key);const qty=Math.min(99,Math.max(1,Math.floor(Number(it.qty)||1)));if(existing)existing.qty=Math.min(99,existing.qty+qty);else cart.push({...item,key,qty});});}catch{}
 let chosenFormat='VHS',chosenService={name:'Limpeza e diagnóstico',price:39.9};let category='',lastFocus=null,photoURL;
 const subtotal=()=>cart.reduce((sum,it)=>sum+Math.round(it.price*100)*it.qty,0)/100;
 function save(){try{localStorage.setItem('cinefitaCart',JSON.stringify(cart));}catch{toast('Não foi possível salvar o carrinho neste navegador.');}updateCart();}
@@ -29,7 +29,7 @@ function productPreview(f, {detail=false}={}) {
 }
 
 function catalogReturn() {
-  const allowed = new Set(['index.html','catalogo.html','posters.html']);
+  const allowed = new Set(['index.html','catalogo.html','posters.html','colecoes.html','colecao.html']);
   const file = location.pathname.split('/').pop() || 'index.html';
   if (allowed.has(file)) return file + location.search;
   const from = new URLSearchParams(location.search).get('from');
@@ -47,7 +47,7 @@ function filmUrl(f) {
   return 'filme.html?' + params.toString();
 }
 
-function posterImage(f, {className='', sizes='(max-width: 680px) 110px, 164px', eager=false, decorative=false, gallery=false}={}) {
+function posterImage(f, {className='', sizes='(max-width: 359px) 280px, (max-width: 900px) 44vw, (max-width: 1150px) 28vw, 300px', eager=false, decorative=false, gallery=false}={}) {
   const versions = (gallery ? f.posterArtwork || f.artwork : f.artwork)?.versions;
   const large = versions?.large;
   const srcset = versions && versions.small.width < large.width
@@ -58,12 +58,10 @@ function posterImage(f, {className='', sizes='(max-width: 680px) 110px, 164px', 
 function card(f) {
   const title = displayTitle(f);
   return `<article class="card" data-genre="${esc(f.category)}">
-    ${productPreview(f)}
-    <div class="card-body"><span class="badge">${esc(f.category)}</span><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3>
-    ${f.originalTitle && f.originalTitle!==title?`<span class="original-title">${esc(f.originalTitle)}</span>`:''}
-    <div class="meta">${f.year} · ${esc(formatLabel(f))}${f.added?' · NOVO':''}</div><p>${esc(f.desc)}</p></div>
-    <div class="card-bottom"><div class="card-price">${f.priceReference?'<small>Preço de referência</small>':''}<strong class="price">${money(f.price)}</strong></div><button class="buy" type="button" data-buy="${f.image}" aria-label="Adicionar ${esc(title)} ao carrinho">Adicionar</button></div>
-    <div class="card-footer">${ratingMarkup(f)}<a class="film-link" href="${esc(filmUrl(f))}">Ver ficha <span aria-hidden="true">↗</span></a></div>
+    <a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a>
+    <div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}${f.format==='FILME'?'':' · '+esc(formatLabel(f))}</div>
+    ${CinefitaCatalog.hasOffer(f)?`<p class="card-price">${f.priceReference?'Preço de referência · ':''}${money(f.price)}</p>`:''}
+    <button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div>
   </article>`;
 }
 
@@ -71,7 +69,7 @@ function renderFilmDetail() {
   if (!$('filmDetail')) return;
   const f = films.find(film=>film.image===new URLSearchParams(location.search).get('id'));
   const back = catalogReturn();
-  const label = back.startsWith('posters.html')?'Voltar à galeria':back.startsWith('index.html')?'Voltar ao início':'Voltar aos resultados';
+  const label = back.startsWith('posters.html')?'Voltar à galeria':back.startsWith('index.html')?'Voltar ao início':back.startsWith('colecoes.html')?'Voltar à seleção':back.startsWith('colecao.html')?'Voltar à minha coleção':'Voltar aos resultados';
   if (!f) {
     document.title = 'Filme não encontrado — Cinefita';
     $('filmDetail').innerHTML = `<div class="empty-state"><p class="eyebrow">ACERVO CINEFITA</p><h1>Filme não encontrado.</h1><p>Este endereço não corresponde a uma obra do acervo.</p><a class="cta" href="catalogo.html">Explorar catálogo</a></div>`;
@@ -90,35 +88,39 @@ function renderFilmDetail() {
         <p class="eyebrow">ACERVO CINEFITA · ${String(films.indexOf(f)+1).padStart(2,'0')} / ${films.length}</p>
         <h1>${esc(title)}</h1>
         ${f.originalTitle!==title?`<p class="film-original">${esc(f.originalTitle)}</p>`:''}
-        <div class="film-meta"><span>${f.year}</span><span>${esc(f.category)}</span>${ratingMarkup(f)}</div>
+        <div class="film-meta"><span>${f.year}</span><span>${esc(f.category)}</span>${ratingMarkup(f)}</div><div class="film-personal"><p class="micro">Organize neste navegador</p><div class="personal-marks" data-film-marks="${f.image}"></div><p class="storage-notice" data-storage-notice role="status" hidden></p></div>
       </div>
-      <figure class="film-art">${productPreview(f,{detail:true})}<figcaption>${['VHS','BLU-RAY','DVD'].includes(f.format)?'Capa e embalagem ilustrativas. A edição e os itens reais podem variar.':'Cartaz de referência. Suporte físico ainda não informado.'}</figcaption></figure>
+      <figure class="film-art"><div class="poster-frame">${posterImage(f,{eager:true,sizes:'(max-width: 900px) 70vw, 420px'})}</div><figcaption>Cartaz de referência · arte completa.</figcaption></figure>
       <div class="film-content">
         <section class="film-synopsis" aria-labelledby="synopsisTitle"><h2 id="synopsisTitle">A história</h2><p>${esc(f.synopsis)}</p></section>
         <section class="film-facts" aria-labelledby="factsTitle"><h2 id="factsTitle">Ficha do filme</h2><dl>
           <div><dt>Direção</dt><dd>${esc(f.director)}</dd></div>
-          <div><dt>Lançamento</dt><dd>${f.year}</dd></div>
+          <div><dt>País</dt><dd>${esc(f.countries.join(' · '))}</dd></div><div><dt>Lançamento</dt><dd>${f.year}</dd></div>
           <div><dt>Duração de referência</dt><dd>${esc(f.runtime)}</dd></div>
           <div><dt>Título original</dt><dd>${esc(f.originalTitle)}</dd></div>
         </dl>${f.runtimeNote?`<p class="fact-note">${esc(f.runtimeNote)}</p>`:''}</section>
-        <div class="film-purchase"><div><span class="purchase-label">${esc(formatLabel(f))} · catálogo demonstrativo</span><strong class="price">${money(f.price)}</strong></div><button class="buy" type="button" data-buy="${f.image}" aria-label="Adicionar ${esc(title)} ao carrinho">Adicionar ao carrinho</button><p>${f.priceReference?'Valor de referência para a demonstração, consultado em 05/10/2026.':'Preço de demonstração. Edição, conservação e detalhes do exemplar físico ainda não informados.'}</p></div>
-        ${f.priceReference?`<section class="market-reference" aria-labelledby="marketTitle"><h2 id="marketTitle">Referência de mercado</h2><p>${esc(f.priceReference.edition)} · ${esc(f.priceReference.retailer)}</p><p>${esc(f.priceReference.status)}</p>${f.priceReference.note?`<p class="reference-note">${esc(f.priceReference.note)}</p>`:''}<a href="${esc(f.priceReference.url)}" target="_blank" rel="noopener noreferrer">Consultar a oferta na fonte <span class="sr-only">(nova aba)</span>↗</a><small>Preço anunciado, sem frete. Não representa estoque ou oferta da Cinefita.</small></section>`:''}
-        <div class="film-sources"><span>Fontes da ficha:</span> <a href="${esc(f.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(f.sourceLabel||'Wikipedia')} <span class="sr-only">(nova aba)</span>↗</a>${f.durationSourceUrl?` · <a href="${esc(f.durationSourceUrl)}" target="_blank" rel="noopener noreferrer">AFI <span class="sr-only">(nova aba)</span>↗</a>`:''}${artSource?`<br><span>Imagem:</span> <a href="${esc(artSource)}" target="_blank" rel="noopener noreferrer">${esc(f.artwork.provider)} <span class="sr-only">(nova aba)</span>↗</a>`:''}</div>
+        <div class="film-sources"><span>Fontes da ficha:</span> <a href="${esc(f.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(f.sourceLabel||'Wikipedia')} <span class="sr-only">(nova aba)</span>↗</a>
+        ${f.originSourceUrl!==f.sourceUrl?` · <a href="${esc(f.originSourceUrl)}" target="_blank" rel="noopener noreferrer">Metadados <span class="sr-only">(nova aba)</span>↗</a>`:''}
+        ${f.durationSourceUrl?` · <a href="${esc(f.durationSourceUrl)}" target="_blank" rel="noopener noreferrer">AFI <span class="sr-only">(nova aba)</span>↗</a>`:''}
+        ${artSource?`<br><span>Imagem:</span> <a href="${esc(artSource)}" target="_blank" rel="noopener noreferrer">${esc(f.artwork.provider)} <span class="sr-only">(nova aba)</span>↗</a>`:''}</div>
       </div>
     </article>
+    <section class="physical-edition" aria-labelledby="editionTitle"><div class="section-head"><div><p class="eyebrow">PARA GUARDAR NA ESTANTE</p><h2 id="editionTitle">Edição física</h2></div></div>
+    ${CinefitaCatalog.hasOffer(f)?`<div class="edition-layout"><div>${productPreview(f,{detail:true})}<p class="micro">${f.format==='FILME'?'Suporte físico e edição ainda não informados. Cartaz de referência.':'Embalagem ilustrativa. A edição e os itens reais podem variar.'}</p></div><div>        <div class="film-purchase"><div><span class="purchase-label">${esc(formatLabel(f))} · catálogo demonstrativo</span><strong class="price">${money(f.price)}</strong></div><button class="buy" type="button" data-buy="${f.image}" aria-label="Adicionar ${esc(title)} ao carrinho">Adicionar ao carrinho</button><p>${f.priceReference?'Valor de referência para a demonstração, consultado em 05/10/2026.':'Preço de demonstração. Edição, conservação e detalhes do exemplar físico ainda não informados.'}</p></div>
+        ${f.priceReference?`<section class="market-reference" aria-labelledby="marketTitle"><h2 id="marketTitle">Referência de mercado</h2><p>${esc(f.priceReference.edition)} · ${esc(f.priceReference.retailer)}</p><p>${esc(f.priceReference.status)}</p>${f.priceReference.note?`<p class="reference-note">${esc(f.priceReference.note)}</p>`:''}<a href="${esc(f.priceReference.url)}" target="_blank" rel="noopener noreferrer">Consultar a oferta na fonte <span class="sr-only">(nova aba)</span>↗</a><small>Preço anunciado, sem frete. Não representa estoque ou oferta da Cinefita.</small></section>`:''}
+</div></div>`:`<p class="edition-unavailable">Ainda não pesquisamos uma edição física deste filme. Por isso, ele não tem preço, embalagem ou compra no catálogo. Você pode organizá-lo na sua coleção.</p>`}</section>
     <section class="film-related" aria-labelledby="relatedTitle"><div class="section-head"><div><p class="eyebrow">OUTRAS DESCOBERTAS</p><h2 id="relatedTitle">Continue pelo acervo</h2></div><a class="film-link" href="catalogo.html">Ver catálogo <span aria-hidden="true">↗</span></a></div><div class="grid">${related.map(card).join('')}</div></section>`;
 }
-if ($('homeGrid')) $('homeGrid').innerHTML = films.filter(f => homeTitles.includes(f.title)).map(card).join('');
-if ($('discoveriesGrid')) $('discoveriesGrid').innerHTML = films.filter(f=>['mist','perfectblue','goonies','willow'].includes(f.image)).map(card).join('');
-if ($('posterGrid')) $('posterGrid').innerHTML = films.filter(f => f.poster).map(f => `<article class="poster-card" data-genre="${esc(f.category)}"><button class="poster-art poster-frame" type="button" data-poster="${f.image}" aria-label="Ver cartaz de ${esc(displayTitle(f))}">${posterImage(f,{sizes:'(max-width: 680px) 150px, (max-width: 1000px) 240px, 270px',decorative:true,gallery:true})}</button><div class="poster-caption"><h3><a href="${esc(filmUrl(f))}">${esc(displayTitle(f))}</a></h3><p>${f.year} · ${esc(f.category)}</p><div class="poster-footer">${ratingMarkup(f)}<a class="film-link" href="${esc(filmUrl(f))}" aria-label="Ficha de ${esc(displayTitle(f))}">Ficha <span aria-hidden="true">↗</span></a></div></div></article>`).join('');
+if ($('brazilGrid')) $('brazilGrid').innerHTML = ['midnight','blackgod','limite'].map(id=>card(films.find(f=>f.image===id))).join('');
+if ($('discoveriesGrid')) $('discoveriesGrid').innerHTML = films.filter(f=>['halloween','alien','limite','cleo'].includes(f.image)).map(card).join('');
+if ($('posterGrid')) $('posterGrid').innerHTML = films.filter(f => f.poster).map(f => `<article class="poster-card" data-genre="${esc(f.category)}"><button class="poster-art poster-frame" type="button" data-poster="${f.image}" aria-label="Ver cartaz de ${esc(displayTitle(f))}">${posterImage(f,{sizes:'(max-width: 680px) 150px, (max-width: 1000px) 240px, 270px',decorative:true,gallery:true})}</button><div class="poster-caption"><h3><a href="${esc(filmUrl(f))}">${esc(displayTitle(f))}</a></h3><p>${f.year} · ${esc(f.category)}</p><div class="poster-footer"><a class="film-link" href="${esc(filmUrl(f))}" aria-label="Ficha de ${esc(displayTitle(f))}">Ficha <span aria-hidden="true">↗</span></a></div></div></article>`).join('');
 renderFilmDetail();
 const catalogGenres=[...new Set(films.map(f=>f.category))];
-const normalizeSearch=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
 function syncSearchClear() { $('clearSearch').hidden = !$('searchInput').value; }
 function updateFilterChips() {
   if (!$('activeFilters')) return;
   const query = $('searchInput').value.trim(), format = $('formatFilter').value;
-  const chips = [['query', query], ['genre', category], ['format', format]].filter(([, value]) => value);
+  const chips = [['query', query], ['genre', category], ['format', format],...['decade','director','country'].map(key=>[key,$(key+'Filter').value])].filter(([, value]) => value);
   $('activeFilters').hidden = !chips.length;
   $('activeFilters').innerHTML = chips.map(([key, value]) => {const label=key==='format'?formatLabel({format:value}):value;return `<button type="button" class="active-chip" data-clear-filter="${key}" aria-label="Remover filtro ${esc(label)}">${esc(label)} <span aria-hidden="true">×</span></button>`;}).join('');
   $('filterCount').textContent = chips.length ? `(${chips.length})` : '';
@@ -127,22 +129,12 @@ function updateFilterChips() {
 $('clearSearch').onclick = () => { $('searchInput').value = ''; syncSearchClear(); renderCatalog(); $('searchInput').focus(); };
 $('searchInput').addEventListener('input', syncSearchClear);
 syncSearchClear();
-const titleCompare=(a,b)=>displayTitle(a).localeCompare(displayTitle(b),'pt-BR',{sensitivity:'base',numeric:true});
-function selectCatalog({query='',genre='',format='',sort='category'}={}){
-  const terms=normalizeSearch(query).trim().split(/\s+/).filter(Boolean);
-  const result=films.filter(f=>{
-    const haystack=normalizeSearch(`${f.title} ${f.displayTitle||''} ${f.aliases||''} ${f.year} ${f.category} ${f.format}`);
-    return (!genre||f.category===genre)&&(!format||f.format===format)&&terms.every(t=>haystack.includes(t));
-  });
-  const comparators={az:titleCompare,za:(a,b)=>titleCompare(b,a),rating:(a,b)=>(b.imdb?.rating??-1)-(a.imdb?.rating??-1)||titleCompare(a,b),newest:(a,b)=>b.year-a.year||titleCompare(a,b),oldest:(a,b)=>a.year-b.year||titleCompare(a,b),'price-low':(a,b)=>a.price-b.price||titleCompare(a,b),'price-high':(a,b)=>b.price-a.price||titleCompare(a,b)};
-  if(sort==='added')return result.sort((a,b)=>Number(!!b.added)-Number(!!a.added)||titleCompare(a,b));
-  return comparators[sort]?result.sort(comparators[sort]):result;
-}
+function selectCatalog(options={}){return CinefitaCatalog.select(films,options);}
 function renderCatalog(syncUrl=true){
   if(!$('categorySections'))return;
-  const query=$('searchInput').value.trim(),format=$('formatFilter').value,sort=$('sortOrder').value;
-  if(syncUrl){const params=new URLSearchParams();if(query)params.set('q',query);if(category)params.set('genre',category);if(format)params.set('format',format);if(sort!=='category')params.set('sort',sort);try{history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''));}catch{}}
-  const result=selectCatalog({query,genre:category,format,sort});
+  const query=$('searchInput').value.trim(),format=$('formatFilter').value,sort=$('sortOrder').value;const extra=Object.fromEntries(['decade','director','country'].map(key=>[key,$(key+'Filter').value]));
+  if(syncUrl){const params=new URLSearchParams();if(query)params.set('q',query);if(category)params.set('genre',category);if(format)params.set('format',format);if(sort!=='category')params.set('sort',sort);for(const [key,value] of Object.entries(extra))if(value)params.set(key,value);try{history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''));}catch{}}
+  const result=selectCatalog({query,genre:category,format,sort,...extra});
   $('searchResults').textContent=`${result.length} de ${films.length} títulos${format?' · '+formatLabel({format}):''}${category?' · '+category:''}`;
   $('sortHint').textContent=sort==='category'?'Explore o acervo separado por gênero.':'Ordenação aplicada a todos os resultados; o gênero aparece em cada título.';
   document.querySelectorAll('.filter').forEach(b=>{const active=(b.dataset.cat||'')===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
@@ -155,23 +147,25 @@ function restoreCatalog(){
   category=catalogGenres.includes(params.get('genre'))?params.get('genre'):'';
   $('formatFilter').value=[...$('formatFilter').options].some(o=>o.value===params.get('format'))?params.get('format'):'';
   const sort=params.get('sort');$('sortOrder').value=[...$('sortOrder').options].some(o=>o.value===sort)?sort:'category';
+  ['decade','director','country'].forEach(key=>{const control=$(key+'Filter');control.value=[...control.options].some(o=>o.value===params.get(key))?params.get(key):'';});
   renderCatalog(false);
 }
 if($('categorySections')){
+  ['decade','director','country'].forEach(key=>{const values=[...new Set(films.flatMap(f=>key==='decade'?[String(Math.floor(f.year/10)*10)]:key==='director'?f.directors:f.countries))].sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}));$(key+'Filter').insertAdjacentHTML('beforeend',values.map(value=>`<option value="${esc(value)}">${key==='decade'?'Anos '+value:esc(value)}</option>`).join(''));});
   restoreCatalog();
   $('searchInput').addEventListener('input',e=>{if(!e.isComposing)renderCatalog();});
   $('searchInput').addEventListener('compositionend',()=>renderCatalog());
   $('catalogFilters').open=false;
   document.querySelector('.search').addEventListener('submit',e=>{e.preventDefault();renderCatalog();});
-  ['formatFilter','sortOrder'].forEach(id=>$(id).addEventListener('change',()=>renderCatalog()));
-  $('clearFilters').addEventListener('click',()=>{category='';$('searchInput').value='';$('formatFilter').value='';$('sortOrder').value='category';renderCatalog();$('searchInput').focus();});
+  ['formatFilter','sortOrder','decadeFilter','directorFilter','countryFilter'].forEach(id=>$(id).addEventListener('change',()=>renderCatalog()));
+  $('clearFilters').addEventListener('click',()=>{category='';$('searchInput').value='';$('formatFilter').value='';['decade','director','country'].forEach(key=>$(key+'Filter').value='');$('sortOrder').value='category';renderCatalog();$('searchInput').focus();});
   window.addEventListener('popstate',restoreCatalog);
 }
 if($('posterCount'))$('posterCount').textContent=`${films.filter(f=>f.poster).length} / ${films.length}`;
 document.querySelectorAll('.nav nav a').forEach(a=>{if(a.getAttribute('href')===((location.pathname.split('/').pop()==='filme.html'?'catalogo.html':location.pathname.split('/').pop())||'index.html')){a.classList.add('active');a.setAttribute('aria-current','page');}});
 function itemMarkup(it,i){return `<div class="cart-item"><img src="${IMAGES[it.image]||IMAGES.filmstrip}" alt=""><div><strong>${esc(it.displayTitle||it.title)}</strong><small>${esc(it.service||it.category||'Coleção Cinefita')} · ${money(it.price)} / un.</small><div class="quantity"><button data-delta="-1" data-index="${i}" aria-label="Diminuir quantidade de ${esc(it.displayTitle||it.title)}" ${it.qty<=1?'disabled':''}>−</button><span aria-label="Quantidade">${it.qty}</span><button data-delta="1" data-index="${i}" aria-label="Aumentar quantidade de ${esc(it.displayTitle||it.title)}" ${it.qty>=99?'disabled':''}>+</button></div></div><div><div class="cart-item-price">${money(it.price*it.qty)}</div><button class="cart-remove" data-remove="${i}" aria-label="Remover ${esc(it.displayTitle||it.title)}">Remover</button></div></div>`;}
 function updateCart(){const html=cart.map(itemMarkup).join('');$('cartBadge').textContent=cart.reduce((s,i)=>s+i.qty,0);$('cartItems').innerHTML=html;$('cartEmpty').hidden=cart.length>0;$('cartEmpty').innerHTML='Seu carrinho ainda está vazio.<a href="catalogo.html">Explorar coleção →</a>';$('cartTotal').textContent=money(subtotal());$('checkoutButton').disabled=!cart.length;if($('cartPageItems')){$('cartPageItems').innerHTML=html||'<h2>Sua coleção começa aqui.</h2><p class="summary-desc">Escolha um clássico para adicionar ao carrinho.</p><a class="cta" href="catalogo.html">Explorar catálogo</a>';$('pageSubtotal').textContent=money(subtotal());$('pageCheckout').hidden=!cart.length; if(cart.length){$('pageCheckout').href='compra.html';$('pageCheckout').removeAttribute('aria-disabled');}else{$('pageCheckout').removeAttribute('href');$('pageCheckout').setAttribute('aria-disabled','true');}document.querySelector('.checkout-layout').classList.toggle('cart-is-empty',!cart.length);}renderOrder();}
-function addToCart(item){const key=item.title+'|'+(item.service||'');const existing=cart.find(i=>i.key===key);if(existing){if(existing.qty>=99){toast('Limite de 99 unidades por item.');return;}existing.qty++;}else cart.push({...item,key,qty:1});save();openCart();toast('Adicionado à sua coleção');}
+function addToCart(item){if(!item||!CinefitaCatalog.hasOffer(item))return;const key=item.title+'|'+(item.service||'');const existing=cart.find(i=>i.key===key);if(existing){if(existing.qty>=99){toast('Limite de 99 unidades por item.');return;}existing.qty++;}else cart.push({...item,key,qty:1});save();openCart();toast('Adicionado à sua coleção');}
 function openCart(){lastFocus=document.activeElement;$('cartDrawer').classList.add('open');$('cartOverlay').classList.add('open');$('cartDrawer').setAttribute('aria-hidden','false');$('cartDrawer').inert=false;document.querySelector('main').inert=true;document.querySelector('header').inert=true;document.querySelector('footer').inert=true;document.querySelector('.skip-link').inert=true;document.body.style.overflow='hidden';$('closeCart').focus();}
 function closeCart(){$('cartDrawer').classList.remove('open');$('cartOverlay').classList.remove('open');$('cartDrawer').setAttribute('aria-hidden','true');$('cartDrawer').inert=true;document.querySelectorAll('main,header,footer,.skip-link').forEach(e=>e.inert=false);document.body.style.overflow='';lastFocus?.focus();}
 $('cartDrawer').inert=true;$('cartButton').onclick=openCart;$('closeCart').onclick=closeCart;$('cartOverlay').onclick=closeCart;$('checkoutButton').onclick=()=>{if(cart.length)location.href='compra.html';};
@@ -180,7 +174,7 @@ document.addEventListener('click',e=>{
   const product=e.target.closest('[data-product-toggle]');
   if(product){const preview=product.closest('[data-product-preview]');const open=product.getAttribute('aria-pressed')!=='true';preview.classList.toggle('is-open',open);preview.classList.toggle('is-closed',!open);product.setAttribute('aria-pressed',String(open));product.querySelector('span').textContent=open?'Ver capa':'Ver aberto';const f=films.find(f=>f.image===preview.dataset.film);product.setAttribute('aria-label',`${open?'Ver capa':'Ver embalagem aberta'} de ${displayTitle(f)}`);preview.querySelector('.product-open').setAttribute('aria-hidden',String(!open));preview.querySelector('.product-closed').setAttribute('aria-hidden',String(open));return;}
   const chip=e.target.closest('[data-clear-filter]');
-  if(chip){const key=chip.dataset.clearFilter;if(key==='query')$('searchInput').value='';if(key==='genre')category='';if(key==='format')$('formatFilter').value='';renderCatalog();$('catalogFilters').querySelector('summary').focus();return;}
+  if(chip){const key=chip.dataset.clearFilter;if(key==='query')$('searchInput').value='';if(key==='genre')category='';if(key==='format')$('formatFilter').value='';if(['decade','director','country'].includes(key))$(key+'Filter').value='';renderCatalog();$('catalogFilters').querySelector('summary').focus();return;}
   const poster=e.target.closest('[data-poster]');
   if(poster){openPoster(poster);return;}
   const buy=e.target.closest('[data-buy]');if(buy){addToCart(films.find(f=>f.image===buy.dataset.buy));return;}const remove=e.target.closest('[data-remove]');if(remove){const scope=remove.closest('#cartPageItems')||$('cartItems');cart.splice(Number(remove.dataset.remove),1);save();(scope.querySelector('button:not(:disabled),a[href]')||(scope.id==='cartPageItems'?$('mainContent'):$('closeCart'))).focus();toast('Item removido');return;}const qty=e.target.closest('[data-delta]');if(qty){const i=Number(qty.dataset.index);cart[i].qty=Math.min(99,Math.max(1,cart[i].qty+Number(qty.dataset.delta)));const scope=qty.closest('#cartPageItems')||$('cartItems');const delta=qty.dataset.delta;save();const target=scope.querySelector(`[data-index="${i}"][data-delta="${delta}"]:not(:disabled)`)||scope.querySelector(`[data-index="${i}"]:not(:disabled)`);target?.focus();return;}const filter=e.target.closest('.filter');if(filter){category=filter.dataset.cat||'';document.querySelectorAll('.filter').forEach(b=>{const active=b===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});renderCatalog();}});
