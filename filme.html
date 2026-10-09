@@ -7,31 +7,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261006-retro-v3">
+<link rel="stylesheet" href="styles.css?v=20261009-designly">
 </head>
 <body>
 <a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
-<header>
-  <div class="container nav">
-    <a class="brand" href="index.html">
+<header><div class="container nav"><div class="header-top"><a class="brand" href="index.html">
       <img class="brand-mark" src="assets/filmstrip.png" alt="Cinefita">
       <span class="brand-copy"><strong>CINEFITA</strong><span>ACERVO DE CINEMA</span></span>
-    </a>
-    <nav aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="posters.html">Pôsteres</a>
-      <a href="revitalizar.html">Revitalizar</a>
-    </nav>
-    <div class="nav-right">
+    </a><div class="nav-right">
       <form class="search" action="catalogo.html" novalidate><label for="searchInput" class="sr-only">Buscar filmes</label><input id="searchInput" name="q" placeholder="Buscar no acervo" type="search"><button class="search-clear" id="clearSearch" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><button class="search-submit" type="submit" aria-label="Pesquisar no catálogo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
       <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
     </div>
-  </div>
-</header><main id="mainContent" tabindex="-1"><div class="container film-page" id="filmDetail"><noscript><h1>Ficha do filme</h1><p>Ative o JavaScript para consultar a ficha desta obra.</p><a class="cta" href="catalogo.html">Explorar catálogo</a></noscript></div></main><footer>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><div class="container film-page" id="filmDetail"><noscript><h1>Ficha do filme</h1><p>Ative o JavaScript para consultar a ficha desta obra.</p><a class="cta" href="catalogo.html">Explorar catálogo</a></noscript></div></main><footer>
   <div class="container footer-grid">
     <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p><p class="ratings-note">Notas do IMDb consultadas em 20/09/2026. Podem mudar com novos votos.</p></div>
-    <div><h4>NAVEGAÇÃO</h4><p><a href="index.html">Início</a><br><a href="catalogo.html">Catálogo</a><br><a href="posters.html">Pôsteres</a><br><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
+    <div><h4>NAVEGAÇÃO</h4><p class="footer-navigation"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="colecao.html">Minha coleção</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
     <div><h4>ATENDIMENTO</h4><p>Uma coleção para guardar.<br>Projeto demonstrativo • sem vendas reais.</p></div>
   </div>
 </footer><div class="cart-overlay" id="cartOverlay"></div>
@@ -47,4 +37,4 @@
 </aside>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="poster-artwork.js?v=20261007"></script><script src="app.js?v=20261007"></script></body></html>
+<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js"></script><script src="collection-ui.js?v=20261009-designly"></script></body></html>

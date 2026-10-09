@@ -7,35 +7,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261006-retro-v3">
+<link rel="stylesheet" href="styles.css?v=20261009-designly">
 </head>
 <body>
 <a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
-<header>
-  <div class="container nav">
-    <a class="brand" href="index.html">
+<header><div class="container nav"><div class="header-top"><a class="brand" href="index.html">
       <img class="brand-mark" src="assets/filmstrip.png" alt="Cinefita">
       <span class="brand-copy"><strong>CINEFITA</strong><span>ACERVO DE CINEMA</span></span>
-    </a>
-    <nav aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="posters.html">Pôsteres</a>
-      <a href="revitalizar.html">Revitalizar</a>
-    </nav>
-    <div class="nav-right">
+    </a><div class="nav-right">
       <form class="search" action="catalogo.html" novalidate><label for="searchInput" class="sr-only">Buscar filmes</label><input id="searchInput" name="q" placeholder="Buscar no acervo" type="search"><button class="search-clear" id="clearSearch" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><button class="search-submit" type="submit" aria-label="Pesquisar no catálogo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
       <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
     </div>
-  </div>
-</header><main id="mainContent" tabindex="-1"><section id="home" class="view active">
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><section id="home" class="view active">
   <div class="container">
     <div class="hero">
       <div class="hero-copy">
         <p class="eyebrow">CINEMA FÍSICO, MEMÓRIA VIVA</p>
         <h1>Filmes que<br>merecem <em>ficar.</em></h1>
-        <p class="lead">Explore filmes em VHS e Blu-ray, além da galeria de pôsteres. Histórias para rever; objetos para guardar.</p>
-        <div class="hero-actions"><a class="cta" href="catalogo.html">Explorar coleção <span aria-hidden="true">&nbsp;↗</span></a>
+        <p class="lead">Cartazes que reconhecemos. Histórias que seguimos descobrindo. Uma cinemateca para encontrar clássicos, atravessar épocas e montar sua coleção.</p>
+        <div class="hero-actions"><a class="cta" href="catalogo.html">Explorar o acervo <span aria-hidden="true">&nbsp;↗</span></a>
         <a class="editorial-link" href="posters.html">Ver pôsteres <span aria-hidden="true">↗</span></a></div>
         <p class="hero-inventory">VHS <span aria-hidden="true">/</span> BLU-RAY <span aria-hidden="true">/</span> PÔSTERES</p>
         <p class="micro">Coleção demonstrativa · imagens de referência</p>
@@ -49,25 +39,22 @@
         <figcaption class="hero-caption">
           <p class="eyebrow">TERROR · JAMES WHALE</p>
           <strong>Frankenstein</strong>
-          <span class="archive-label">1931 · VHS no acervo</span>
-          <div id="heroRating"></div>
+          <div class="hero-facts"><span class="archive-label">1931 · VHS no acervo</span><div id="heroRating"></div></div>
           <div class="hero-caption-actions"><a class="film-link hero-detail-link" href="filme.html?id=frankenstein&amp;from=index.html">Conhecer este clássico <span aria-hidden="true">↗</span></a>
           <button class="disc-toggle" type="button" aria-pressed="false">Pausar disco</button></div>
         </figcaption>
       </figure>
     </div>
 
-    <section class="curated-selection" aria-labelledby="horrorTitle"><div class="section-head">
-      <div><p class="eyebrow">A PRIMEIRA SESSÃO</p><h2 id="horrorTitle">O fascínio pelo medo.</h2><p>Quatro clássicos do horror para começar a coleção.</p></div>
-      <span class="counter">4 TÍTULOS</span>
-    </div>
-    <div class="grid" id="homeGrid"></div></section>
-    <section class="new-discoveries" aria-labelledby="discoveriesTitle"><div class="section-head"><div><p class="eyebrow">NOVAS DESCOBERTAS</p><h2 id="discoveriesTitle">Além dos clássicos.</h2><p>Oito obras em Blu-ray entram na curadoria. Explore também a embalagem aberta.</p></div><a class="film-link" href="catalogo.html?format=BLU-RAY&amp;sort=added">Ver os 8 títulos ↗</a></div><div class="grid" id="discoveriesGrid"></div><p class="micro">Visualizações ilustrativas · preços de referência de mercado.</p></section><div class="more-row"><a class="cta" href="catalogo.html">Ver mais no catálogo</a></div>
+    <section class="editorial-section" aria-labelledby="collectionsTitle"><div class="section-head"><div><p class="eyebrow">QUATRO CAMINHOS PELO CINEMA</p><h2 id="collectionsTitle">Uma sessão começa aqui.</h2></div><a class="film-link" href="colecoes.html">Todas as coleções ↗</a></div><div id="homeCollections" class="collection-previews"></div></section>
+    <section class="editorial-section" aria-labelledby="brazilTitle"><div class="section-head"><div><p class="eyebrow">IMAGENS DA NOSSA TERRA</p><h2 id="brazilTitle">Cinema brasileiro</h2><p>Do sertão ao mar, passando pela noite de Zé do Caixão.</p></div><a class="film-link" href="colecoes.html?id=brasil">Conhecer a seleção ↗</a></div><div class="grid" id="brazilGrid"></div></section>
+    <section class="editorial-section" aria-labelledby="discoveriesTitle"><div class="section-head"><div><p class="eyebrow">NOVOS NO ACERVO</p><h2 id="discoveriesTitle">Outras histórias, novas sessões.</h2><p>O medo nas ruas, o silêncio no espaço e dois olhares sobre o tempo.</p></div><a class="film-link" href="catalogo.html?sort=added">Explorar novidades ↗</a></div><div class="grid" id="discoveriesGrid"></div></section>
+    <section class="gallery-invite"><div><p class="eyebrow">ANTES DA PRIMEIRA CENA</p><h2>O filme também vive no cartaz.</h2><p>Cores, letras e imagens que anunciam uma história. Veja as artes e suas versões alternativas em tamanho maior.</p><a class="cta" href="posters.html">Entrar na galeria ↗</a></div><a class="gallery-teaser" href="posters.html" aria-label="Explorar galeria de pôsteres"><img src="assets/posters/alien-large.jpg" width="250" height="382" alt="Cartaz de Alien" loading="lazy"><img src="assets/posters/cleo-large.jpg" width="275" height="362" alt="Cartaz de Cléo das 5 às 7" loading="lazy"></a></section>
   </div>
 </section></main><footer>
   <div class="container footer-grid">
     <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p><p class="ratings-note">Notas do IMDb consultadas em 20/09/2026. Podem mudar com novos votos.</p></div>
-    <div><h4>NAVEGAÇÃO</h4><p><a href="index.html">Início</a><br><a href="catalogo.html">Catálogo</a><br><a href="posters.html">Pôsteres</a><br><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
+    <div><h4>NAVEGAÇÃO</h4><p class="footer-navigation"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="colecao.html">Minha coleção</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
     <div><h4>ATENDIMENTO</h4><p>Uma coleção para guardar.<br>Projeto demonstrativo • sem vendas reais.</p></div>
   </div>
 </footer><div class="cart-overlay" id="cartOverlay"></div>
@@ -83,4 +70,4 @@
 </aside>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="poster-artwork.js?v=20261007"></script><script src="app.js?v=20261007"></script></body></html>
+<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js"></script><script src="collection-ui.js?v=20261009-designly"></script></body></html>

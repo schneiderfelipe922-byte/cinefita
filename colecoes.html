@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revitalizar — Cinefita</title>
+<title>Coleções — Cinefita</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -18,45 +18,9 @@
       <form class="search" action="catalogo.html" novalidate><label for="searchInput" class="sr-only">Buscar filmes</label><input id="searchInput" name="q" placeholder="Buscar no acervo" type="search"><button class="search-clear" id="clearSearch" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><button class="search-submit" type="submit" aria-label="Pesquisar no catálogo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
       <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
     </div>
-  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><section id="revitalizar" class="view active">
-  <div class="container">
-    <div class="catalog-top">
-      <p class="eyebrow">SERVIÇO CINEFITA</p>
-      <h1>Revitalize sua fita.</h1>
-      <p>Traga uma fita que está parada em casa. A Cinefita faz a triagem, limpeza e restauração para devolver vida ao seu acervo.</p>
-    </div>
-    <div class="revitalizar-grid">
-      <div class="service-panel">
-        <div class="service-step"><span>01</span><div><strong>Qual é a sua fita?</strong><p>Escolha o formato que você quer revitalizar.</p></div></div>
-        <div class="format-grid">
-          <button class="format-option active" data-format="VHS"><b>VHS</b><span>Fita de vídeo</span></button>
-          <button class="format-option" data-format="Cassete"><b>CASSETE</b><span>Áudio analógico</span></button>
-          <button class="format-option" data-format="Rolo de filme"><b>ROLO</b><span>Filme clássico</span></button>
-        </div>
-        <div class="service-step"><span>02</span><div><strong>Escolha o cuidado</strong><p>Monte o serviço de acordo com o estado da sua fita.</p></div></div>
-        <div class="service-options">
-          <button class="service-option active" data-service="Limpeza e diagnóstico" data-price="39.90"><span><b>Limpeza e diagnóstico</b><small>Triagem + limpeza externa</small></span><strong>R$ 39,90</strong></button>
-          <button class="service-option" data-service="Restauração" data-price="89.90"><span><b>Restauração</b><small>Limpeza + tratamento da fita</small></span><strong>R$ 89,90</strong></button>
-          <button class="service-option" data-service="Restauração completa" data-price="149.90"><span><b>Restauração completa</b><small>Tratamento + digitalização</small></span><strong>R$ 149,90</strong></button>
-        </div>
-        <div class="service-step"><span>03</span><div><strong>Prévia da sua fita</strong><p>Pré-visualize uma foto da fita. Nesta demonstração, ela não será enviada.</p></div></div>
-        <img id="photoPreview" alt="Prévia da fita selecionada" hidden><label class="upload-box"><input type="file" id="tapePhoto" accept="image/jpeg,image/png,image/webp" aria-describedby="uploadHint uploadError"><span class="upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span><b id="uploadTitle">Adicionar foto da fita</b><small id="uploadHint">JPG, PNG ou WEBP · até 5 MB</small></span></label><p id="uploadError" class="upload-error" role="status" hidden></p>
-      </div>
-      <aside class="service-summary">
-        <div class="summary-kicker">ORÇAMENTO INICIAL</div>
-        <div class="summary-format" id="summaryFormat">VHS</div>
-        <h3 id="summaryService">Limpeza e diagnóstico</h3>
-        <p class="summary-desc">Uma primeira avaliação para entender o estado da sua fita e indicar o tratamento necessário.</p>
-        <div class="summary-line"><span>Serviço</span><strong id="summaryPrice">R$ 39,90</strong></div>
-        <div class="summary-line"><span>Triagem</span><strong>Inclusa</strong></div>
-        <p class="micro">Orçamento demonstrativo. O valor final depende da análise física da fita.</p>
-        <button class="cta full" id="addRevitalizacao">Adicionar ao carrinho</button>
-      </aside>
-    </div>
-  </div>
-</section></main><footer>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><div class="container editorial-page"><div id="curatedPage"></div></div></main><footer>
   <div class="container footer-grid">
-    <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p></div>
+    <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p><p class="ratings-note">Notas do IMDb consultadas em 20/09/2026. Podem mudar com novos votos.</p></div>
     <div><h4>NAVEGAÇÃO</h4><p class="footer-navigation"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="colecao.html">Minha coleção</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
     <div><h4>ATENDIMENTO</h4><p>Uma coleção para guardar.<br>Projeto demonstrativo • sem vendas reais.</p></div>
   </div>
