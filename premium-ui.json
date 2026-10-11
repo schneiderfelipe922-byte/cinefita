@@ -16,7 +16,7 @@
   },
   "requiredCommands": ["unit"],
   "commands": {
-    "unit": "node --test tests/catalog.test.cjs"
+    "unit": "node --test tests/*.test.cjs"
   },
   "evidence": {
     "crudFullFlow": "VALIDACAO.md",

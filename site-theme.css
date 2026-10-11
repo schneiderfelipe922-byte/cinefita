@@ -1,0 +1,378 @@
+/* Shared cinematic theme. Canonical values and scope: DESIGN.md. */
+body.site-contemporary {
+  --home-ease: cubic-bezier(.25,.46,.45,.94);
+  --home-reveal: 900ms;
+  --home-stagger: 120ms;
+  --home-slide: 100px;
+  --image-reveal: 1400ms;
+}
+/* Decorative planes are clipped locally; document scrolling stays native. */
+.site-contemporary main { position: relative; isolation: isolate; }
+.site-contemporary .cinema-atmosphere {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden;
+  pointer-events: none; background: #13161B;
+}
+.site-contemporary .cinema-glow { position: absolute; width: 90vw; height: 100vh; border-radius: 50%; }
+.site-contemporary .cinema-glow-red {
+  top: -28%; right: -32%;
+  background: radial-gradient(ellipse, #E85B5366 0%, #932F5942 32%, transparent 67%);
+}
+.site-contemporary .cinema-glow-blue {
+  left: -38%; bottom: -50%;
+  background: radial-gradient(ellipse, #4B889C4D 0%, #38476538 35%, transparent 68%);
+}
+.site-contemporary .cinema-beam {
+  position: absolute; width: 95vw; height: 160vh; top: -40%; right: -40%;
+  background: linear-gradient(90deg, transparent 25%, #E85B531A 42%, #F4F1EA18 50%, #E85B530D 54%, transparent 65%);
+  transform: rotate(32deg); transform-origin: 50% 0;
+}
+.site-contemporary .cinema-orbit {
+  position: absolute; width: 100vmax; height: 100vmax; left: 25%; top: -20%;
+  border: 1px solid #E85B5333; border-radius: 50%;
+  box-shadow: 0 0 0 80px #E85B5305, 0 0 0 160px #F4F1EA05;
+}
+.site-contemporary .cinema-grain {
+  position: absolute; inset: 0; opacity: .16;
+  background-image: radial-gradient(#F4F1EA55 .6px, transparent .8px);
+  background-size: 5px 5px;
+}
+.site-contemporary.site-interactive .cinema-glow-red { animation: cinema-red-drift 28s ease-in-out infinite alternate; }
+.site-contemporary.site-interactive .cinema-glow-blue { animation: cinema-blue-drift 34s ease-in-out infinite alternate; }
+.site-contemporary.site-interactive .cinema-beam { animation: cinema-projector 30s ease-in-out infinite alternate; }
+.site-contemporary.site-interactive .cinema-orbit { animation: cinema-orbit 36s ease-in-out infinite alternate; }
+@keyframes cinema-red-drift { to { transform: translate(-22vw,18vh) scale(1.15); } }
+@keyframes cinema-blue-drift { to { transform: translate(24vw,-24vh) scale(1.2); } }
+@keyframes cinema-projector { to { transform: rotate(-12deg) translateX(-12vw); } }
+@keyframes cinema-orbit { to { transform: translate(-8vw,12vh) scale(.85); } }
+/* The document scrollbar sits outside body; inherit this variant only here. */
+html:has(.site-contemporary) {
+  scroll-padding-top: 130px;
+  scrollbar-color: #78818F #13161B;
+  scrollbar-width: auto;
+}
+html:has(.site-contemporary)::-webkit-scrollbar-track { background: #13161B; }
+html:has(.site-contemporary)::-webkit-scrollbar-thumb { background: #78818F; border-color: #13161B; }
+html:has(.site-contemporary)::-webkit-scrollbar-thumb:hover { background: #B8BEC8; }
+html:has(.site-contemporary)::-webkit-scrollbar-thumb:active { background: #E85B53; }
+.site-contemporary .container { width: min(1440px, calc(100% - 96px)); }
+.site-contemporary header { background: var(--bg); }
+.site-contemporary .header-top { min-height: 72px; }
+.site-contemporary .brand-copy strong { font-size: 22px; font-weight: 800; letter-spacing: -.035em; }
+.site-contemporary .brand-copy span { letter-spacing: .12em; }
+.site-contemporary .nav nav { justify-content: flex-start; gap: 32px; font-size: 13px; }
+.site-contemporary .nav nav a { padding-block: 10px; }
+.site-contemporary .search { width: min(360px, 40vw); }
+.site-contemporary input::placeholder { color: var(--muted); opacity: 1; }
+.site-contemporary :focus-visible, .site-contemporary .upload-box:focus-within { outline-color: var(--cream); }
+.site-contemporary :is(.product-control[aria-pressed="true"],.product-control:hover,.imdb-rating:hover) { color: var(--cream); }
+.site-contemporary .eyebrow { color: var(--muted); letter-spacing: .1em; }
+.site-contemporary h1 { font: 800 clamp(44px,5.5vw,80px)/1.08 var(--font-display); letter-spacing: -.055em; }
+.site-contemporary h2 { font-weight: 800; }
+.site-contemporary h3 { font-weight: 700; }
+.site-contemporary .page-intro h1 { font: 800 clamp(44px,5.5vw,80px)/1.08 var(--font-display); letter-spacing: -.055em; }
+.site-contemporary .motion-controls { display: flex; justify-content: flex-end; padding-top: 20px; }
+.site-contemporary .catalog-top { padding-block: 28px 36px; }
+.site-contemporary .editorial-page, .site-contemporary .film-page { padding-top: 28px; }
+.site-contemporary .page { padding-top: 28px; }
+.site-contemporary .category-head h2 { font-size: clamp(30px,3vw,42px); letter-spacing: -.04em; }
+.site-contemporary .collection-preview h3 { font: 800 clamp(28px,3vw,42px)/1.15 var(--font-display); letter-spacing: -.04em; }
+.site-contemporary :is(.poster-art,.film-art > .poster-frame) { padding: 0; border: 0; background: transparent; box-shadow: none; }
+.site-contemporary .poster-card .poster-art { padding: 0; }
+.site-contemporary .poster-dialog .poster-frame { padding: 0; border: 0; box-shadow: none; background: transparent; }
+.site-contemporary .poster-card h3 { font: 700 22px/1.22 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .poster-caption { padding-top: 20px; }
+.site-contemporary .film-intro h1 { font-size: clamp(40px,4.8vw,72px); }
+.site-contemporary .film-art > .poster-frame { max-width: 520px; }
+.site-contemporary .film-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 40px 64px; }
+.site-contemporary .service-panel, .site-contemporary .service-summary { border-color: var(--line); background: var(--ink); }
+.site-contemporary .service-summary { top: 136px; }
+.site-contemporary :is(.filter.active,.summary-kicker,.service-step > span,.market-reference a) { color: var(--cream); }
+.site-contemporary :is(dialog,.service-panel,.service-summary) a:not(.cta):hover { color: var(--cream); text-decoration: underline; text-decoration-color: var(--yellow); }
+.site-contemporary :is(.service-panel,.service-summary,.poster-dialog) h2 { font-weight: 800; letter-spacing: -.04em; }
+.site-contemporary :is(.film-link,.back-link,.organize-button):hover { color: var(--cream); text-decoration-color: var(--yellow); }
+.site-contemporary .product-stage { background: var(--ink); }
+.site-contemporary .product-preview { --motion-product: 600ms; }
+.site-contemporary .product-surface { position: absolute; inset: 0; }
+.site-contemporary .film-art .product-preview { width: min(520px,100%); }
+.site-contemporary .film-art .product-stage { aspect-ratio: 2 / 3; border: 0; box-shadow: none; background: transparent; }
+.site-contemporary .film-art .product-closed { inset: 0; }
+.site-contemporary .film-art .product-closed img { filter: none; }
+.site-contemporary .film-art .product-open { background: var(--ink); }
+.site-contemporary .film-art .product-control { scroll-margin-top: 160px; }
+.site-contemporary.motion-paused :is(.product-open,.product-closed,.product-state-label) { transition: none; }
+.site-contemporary .hero-showcase { min-width: 0; width: 100%; align-self: center; }
+.site-contemporary .hero-slides { display: grid; gap: 56px; padding: 20px; }
+.site-contemporary .hero-slide { margin: 0; --hero-tone: #E85B53; }
+.site-contemporary .hero-slide[data-hero-film="alien"] { --hero-tone: #4B889C; }
+.site-contemporary .hero-slide[data-hero-film="hellraiser"] { --hero-tone: var(--yellow); }
+.site-contemporary .hero-slide .hero-artwork { width: 100%; aspect-ratio: auto; height: clamp(300px,28vw,420px); }
+.site-contemporary .hero-slide .hero-cover { top: 3%; height: 94%; left: 10%; }
+.site-contemporary .hero-slide .hero-light { background: linear-gradient(120deg,transparent 8%,color-mix(in srgb,var(--hero-tone) 38%,transparent) 48%,#F4F1EA26 65%,transparent 92%); }
+.site-contemporary .hero-slide .hero-halo span { border-color: color-mix(in srgb,var(--hero-tone) 50%,transparent); background: radial-gradient(ellipse,color-mix(in srgb,var(--hero-tone) 15%,transparent),transparent 64%); }
+.site-contemporary .hero-slide:not([data-hero-film="frankenstein"]) .hero-cover { left: 18%; width: 64%; transform: none; filter: drop-shadow(0 20px 24px #0008); }
+.site-contemporary .hero-slide:not([data-hero-film="frankenstein"]) .hero-halo span { box-shadow: none; }
+.site-contemporary .hero-slide .hero-caption { display: grid; gap: 10px; padding-top: 16px; }
+.site-contemporary .hero-slide .hero-caption .eyebrow { margin: 0; }
+.site-contemporary .hero-slide .hero-caption > strong { display: block; min-height: 1.12em; }
+.site-contemporary .hero-slide .hero-facts { margin: 0; min-height: 60px; flex-wrap: wrap; }
+.site-contemporary .hero-slide .hero-caption-actions { margin: 0; }
+.site-contemporary .hero-ready .hero-slides { gap: 0; isolation: isolate; overflow: clip; }
+.site-contemporary .hero-ready .hero-slide { grid-area: 1 / 1; }
+.site-contemporary .hero-slide.is-active { z-index: 2; }
+.site-contemporary .hero-slide.is-leaving { z-index: 1; pointer-events: none; animation: hero-fade-out 1400ms var(--home-ease) both; }
+.site-contemporary .hero-slide.is-entering { animation: hero-fade-in 1400ms var(--home-ease) both; }
+@keyframes hero-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-fade-out { from { opacity: 1; } to { opacity: 0; } }
+/* Manual navigation sits beside the reserved slide, never over its artwork. */
+.site-contemporary .hero-controls { display: none; }
+.site-contemporary .hero-ready { display: grid; grid-template-columns: 44px minmax(0,1fr) 44px; gap: 12px 8px; }
+.site-contemporary .hero-ready .hero-slides { grid-column: 2; grid-row: 1; padding-inline: 0; }
+.site-contemporary .hero-ready .hero-controls, .site-contemporary .hero-ready .hero-pagination { display: contents; }
+.site-contemporary .hero-pagination button { width: 44px; height: 44px; padding: 0; font-size: 32px; line-height: 1; display: grid; place-items: center; appearance: none; background: transparent; border: 0; border-radius: 0; box-shadow: none; color: var(--cream); align-self: start; grid-row: 1; margin-top: calc(37px + clamp(300px,28vw,420px) / 2); }
+.site-contemporary .hero-pagination button:hover { background: transparent; color: var(--yellow); }
+.site-contemporary [data-hero-prev] { grid-column: 1; }
+.site-contemporary [data-hero-next] { grid-column: 3; }
+.site-contemporary .hero-status { grid-column: 1 / -1; grid-row: 2; min-height: 2.8em; font-size: 12px; line-height: 1.4; color: var(--muted); margin: 0; }
+.site-contemporary .hero-controls .disc-toggle { grid-column: 1 / -1; grid-row: 3; justify-self: end; }
+@media (max-width:900px) {
+  .site-contemporary .hero-showcase { width: min(640px,100%); justify-self: center; }
+  .site-contemporary .hero-pagination button { margin-top: calc(25px + (min(640px,calc(100vw - 40px)) - 104px) / 2.3); }
+  .site-contemporary .hero-slides { padding: 12px; }
+  .site-contemporary .hero-slide .hero-artwork { height: auto; aspect-ratio: 1.15; }
+  .site-contemporary .hero-slide .hero-caption > strong { min-height: 2.24em; }
+  .site-contemporary .hero-status { min-height: 4.2em; }
+}
+/* Generated cutouts keep their original alpha; poster and controls remain separate. */
+.site-contemporary .hero-slide:is([data-hero-film="frankenstein"],[data-hero-film="alien"],[data-hero-film="hellraiser"]) .hero-cover {
+  left: 6%; width: 50%; height: 84%; top: 8%; transform: rotate(-3deg);
+}
+.site-contemporary .hero-slide[data-hero-film="hellraiser"] .hero-cover { left: 3%; width: 46%; height: 80%; top: 10%; transform: none; }
+.site-contemporary :is(.frankenstein-props,.alien-props,.hellraiser-props) {
+  position: absolute; inset: 0; overflow: clip; pointer-events: none;
+}
+.site-contemporary .frankenstein-props { transform: translate3d(0,var(--prop-shift,0px),0); }
+.site-contemporary .frankenstein-skull-drift {
+  position: absolute; right: 6%; top: -1%; width: 70%; height: 108%;
+  animation: hero-prop-float 20s ease-in-out infinite; animation-play-state: paused;
+}
+.site-contemporary .frankenstein-skull { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 16px 18px #0008); }
+.site-contemporary .alien-egg-drift {
+  position: absolute; right: 8%; top: 0; width: 68%; height: 112%;
+  animation: hero-prop-float 20s ease-in-out infinite; animation-play-state: paused;
+}
+.site-contemporary .alien-egg { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 18px #0009); }
+.site-contemporary .alien-glow {
+  position: absolute; inset: 8% 12% 10%; opacity: .65; mix-blend-mode: screen;
+  background: radial-gradient(ellipse at 50% 70%,#A8F45A35,transparent 66%);
+  animation: alien-light-breathe 16s ease-in-out infinite; animation-play-state: paused;
+}
+.site-contemporary .alien-mist {
+  position: absolute; left: 20%; right: -10%; bottom: 0; height: 40%; opacity: .6;
+  background: radial-gradient(ellipse at 65% 70%,#7199914D,transparent 60%),radial-gradient(ellipse at 45% 85%,#ACD28338,transparent 52%);
+  animation: alien-mist-drift 28s ease-in-out infinite alternate; animation-play-state: paused;
+}
+.site-contemporary .puzzle-radiance { position: absolute; inset: 4% 0 2% 35%; background: radial-gradient(ellipse,#E85B5342,transparent 64%); }
+/* Cube and emerging chains are one static image: no spin or floating transform. */
+.site-contemporary .hellraiser-object { position: absolute; right: -1%; top: -6%; width: 86%; height: 112%; object-fit: contain; animation: none; transform: none; }
+/* Tilt belongs only to the poster, never to the slide or decorative cutouts. */
+.site-contemporary .hero-slide .hero-artwork { perspective: 900px; }
+.site-contemporary .hero-slide .hero-cover { rotate: none; transition: rotate 700ms var(--home-ease); transform-origin: center; }
+@media (hover:hover) and (pointer:fine) {
+  .site-contemporary:not(.motion-paused):not(.document-hidden) .hero-slide.is-active .hero-cover:hover { rotate: 1 1 0 10deg; }
+}
+.site-contemporary:is(.motion-paused,.document-hidden) .hero-slide .hero-cover { rotate: none; transition: none; }
+@media (prefers-reduced-motion:reduce) { .site-contemporary .hero-slide .hero-cover:hover { rotate: none !important; } }
+@keyframes hero-prop-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes alien-light-breathe { 0%,100% { opacity: .5; } 50% { opacity: .85; } }
+@keyframes alien-mist-drift { from { transform: translateX(-12px); } to { transform: translateX(12px); } }
+.site-contemporary.hero-motion-running .hero-slide.is-active .hero-cycle { animation-play-state: running; }
+.site-contemporary .hero-slide:not(.is-active) .hero-halo span { animation-play-state: paused; }
+.site-contemporary:not(.site-interactive) .hero-cycle { animation: none; }
+@media (prefers-reduced-motion: reduce) { .site-contemporary .hero-cycle { animation: none; } }
+.site-contemporary .hero {
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  gap: 40px;
+  padding: 52px 0 72px;
+  align-items: center;
+}
+.site-contemporary .hero h1 {
+  max-width: 10ch;
+  font: 800 clamp(48px,6.7vw,104px)/1.05 var(--font-display);
+  letter-spacing: -.065em;
+}
+.site-contemporary .hero h1 em { font-weight: 800; font-style: normal; color: var(--yellow); }
+.site-contemporary .hero-copy .lead { max-width: 40ch; margin-top: 28px; font-size: 16px; line-height: 1.65; }
+.site-contemporary .hero-actions { gap: 24px; margin-top: 32px; }
+.site-contemporary .cta { font-weight: 700; padding: 14px 22px; }
+.site-contemporary .hero-inventory { margin-top: 32px; padding-top: 20px; border-color: var(--line); }
+.site-contemporary .hero-card { padding: 0; gap: 24px; background: transparent; border: 0; border-radius: 0; }
+.site-contemporary .hero-card::before { display: none; }
+.site-contemporary .hero-tag { position: static; align-self: flex-start; color: var(--muted); font-size: 10px; }
+.site-contemporary .hero-artwork { width: min(640px,100%); aspect-ratio: 1.4; }
+.site-contemporary .hero-light {
+  position: absolute; inset: 15% -2% 12%; z-index: -1;
+  background: linear-gradient(120deg,transparent 8%,#E85B5360 48%,#F4F1EA26 65%,transparent 92%);
+  transform: translate3d(0,var(--light-shift,0px),0) skewY(-12deg);
+  pointer-events: none;
+}
+.site-contemporary .hero-halo { position: absolute; inset: -12% -4%; z-index: -1; pointer-events: none; }
+.site-contemporary .hero-halo span {
+  position: absolute; inset: 0; border-radius: 50%; border: 1px solid #E85B5380;
+  background: radial-gradient(ellipse, #E85B5326 0%, transparent 64%);
+  box-shadow: 0 0 0 16px #E85B5308, 0 0 0 48px #E85B5306;
+  transform: rotate(-24deg) scaleY(.8);
+}
+.site-contemporary.site-interactive .hero-halo span { animation: cinema-halo 18s ease-in-out infinite alternate; }
+@keyframes cinema-halo { to { transform: rotate(24deg) scaleY(.95); } }
+.site-contemporary .hero-cover {
+  left: 8%; width: 60%; height: 100%; top: 0;
+  transform: rotate(-5deg);
+  filter: drop-shadow(12px 18px 16px #0006);
+}
+.site-contemporary .hero-caption { padding-top: 20px; }
+.site-contemporary .hero-caption strong { font: 800 clamp(28px,2.8vw,40px)/1.12 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .hero-caption .eyebrow { color: var(--muted); }
+.site-contemporary .hero-facts { margin-top: 12px; }
+.site-contemporary .hero-caption .imdb-rating strong { font: 600 13px/1.4 var(--font-body); }
+.site-contemporary .disc-toggle { min-width: 160px; color: var(--cream); }
+.site-contemporary h2 { letter-spacing: -.045em; }
+.site-contemporary .editorial-section { padding-block: 72px; }
+.site-contemporary .editorial-section h2, .site-contemporary .gallery-invite h2 { font: 800 clamp(32px,3.5vw,52px)/1.1 var(--font-display); }
+.site-contemporary .section-head { margin-bottom: 36px; }
+.site-contemporary .section-head .eyebrow { color: var(--muted); }
+.site-contemporary #homeCollections { gap: 48px 40px; }
+.site-contemporary #homeCollections .collection-preview { padding: 0; border: 0; gap: 24px; }
+.site-contemporary #homeCollections .collection-preview h3 { font: 800 clamp(24px,2.6vw,36px)/1.15 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .collection-index { display: none; }
+.site-contemporary .collection-triptych { gap: 12px; }
+.site-contemporary .collection-triptych img { padding: 0; border: 0; background: transparent; }
+.site-contemporary .collection-preview-footer { border-top: 1px solid var(--line); padding-top: 8px; }
+.site-contemporary .card .poster-frame { padding: 0; border: 0; box-shadow: none; background: transparent; border-radius: 0; }
+.site-contemporary .card h3 { font: 700 22px/1.22 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .card-body { padding-top: 20px; }
+.site-contemporary #brazilGrid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.site-contemporary #discoveriesGrid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 32px; }
+.site-contemporary .gallery-invite { padding-block: 80px; gap: 72px; }
+.site-contemporary .gallery-invite h2 { max-width: 12ch; margin-bottom: 24px; }
+.site-contemporary .gallery-teaser { align-items: center; gap: 24px; }
+.site-contemporary .gallery-teaser img { width: calc(50% - 12px); }
+.site-contemporary .gallery-teaser img:first-child { transform: rotate(-5deg); }
+.site-contemporary .gallery-teaser img:last-child { transform: translateY(24px) rotate(5deg); }
+.site-contemporary footer { margin-top: 0; }
+.site-contemporary footer .footer-grid>div:first-child h4 { font: 800 28px/1.2 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .cart-head h3, .site-contemporary .organize-dialog h2 { font: 800 32px/1.15 var(--font-display); letter-spacing: -.035em; }
+.site-contemporary .film-link, .site-contemporary .editorial-link { text-decoration-color: var(--control-border); }
+.site-contemporary .film-link:hover, .site-contemporary .editorial-link:hover { text-decoration-color: var(--yellow); }
+.site-contemporary .cart-empty a,
+.site-contemporary .cart-drawer a:hover,
+.site-contemporary .organize-dialog a:hover,
+.site-contemporary footer a:hover { color: var(--cream); text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 4px; }
+.site-contemporary footer h4 { color: var(--cream); }
+.site-contemporary .poster-wrap, .site-contemporary .collection-triptych, .site-contemporary .poster-art {
+  transition: transform 450ms var(--home-ease);
+}
+@media (hover:hover) and (pointer:fine) {
+  .site-contemporary .poster-wrap:hover, .site-contemporary .collection-triptych:hover, .site-contemporary .poster-art:hover { transform: translateY(-4px); }
+}
+/* Content is visible by default. Only the initialized observer opts it in. */
+.site-contemporary :is(.reveal-pending,.reveal-visible) { overflow: clip; }
+.site-contemporary .reveal-pending > * { opacity: 0; translate: var(--reveal-x,0px) 20px; }
+.site-contemporary .reveal-visible > * {
+  animation: home-reveal var(--reveal-duration,var(--home-reveal)) var(--home-ease) both;
+  animation-delay: calc(var(--reveal-index,0) * var(--home-stagger));
+}
+.site-contemporary :is(.poster-wrap,.poster-art,.collection-triptych,.gallery-teaser,.film-art > .poster-frame,.product-stage) { --reveal-duration: var(--image-reveal); }
+.site-contemporary.site-enter main h1 { animation: cinema-text-enter 900ms var(--home-ease) both; }
+@keyframes cinema-text-enter { from { opacity: 0; translate: var(--reveal-x,0px) 20px; } to { opacity: 1; translate: 0 0; } }
+.site-contemporary.home-enter .hero-copy > * { animation: home-reveal 900ms var(--home-ease) both; }
+.site-contemporary.home-enter .hero-copy { overflow: clip; }
+.site-contemporary.home-enter .hero-copy > :nth-child(2) { animation-delay: 120ms; }
+.site-contemporary.home-enter .hero-copy > :nth-child(3) { animation-delay: 240ms; }
+.site-contemporary.home-enter .hero-copy > :nth-child(4) { animation-delay: 360ms; }
+.site-contemporary.home-enter .hero-copy > :nth-child(n+5) { animation-delay: 480ms; }
+.site-contemporary.home-enter .hero-card.is-active { animation: home-art-enter 1400ms 180ms var(--home-ease) both; }
+@keyframes home-reveal {
+  from { opacity: 0; translate: var(--reveal-x,0px) 20px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes home-art-enter {
+  from { opacity: 0; translate: var(--reveal-x,0px) 20px; }
+  to { opacity: 1; translate: 0 0; }
+}
+/* Clip only the visual entrance planes, including translated offscreen cards. */
+.site-contemporary main { overflow-x: clip; }
+.site-contemporary .reveal-pending:focus-within > *,
+.site-contemporary.motion-paused .reveal-pending > * { opacity: 1; translate: none; }
+.site-contemporary.motion-paused .reveal-visible > *,
+.site-contemporary.motion-paused.home-enter .hero-copy > *,
+.site-contemporary.motion-paused.home-enter .hero-card { animation: none; }
+.site-contemporary.motion-paused .cinema-atmosphere span,
+.site-contemporary.document-hidden .cinema-atmosphere span,
+.site-contemporary.motion-paused .hero-halo span,
+.site-contemporary.document-hidden .hero-halo span,
+.site-contemporary.hero-offscreen .hero-halo span { animation-play-state: paused; }
+.site-contemporary.motion-paused .spinning-disc,
+.site-contemporary.hero-offscreen .spinning-disc,
+.site-contemporary.document-hidden .spinning-disc { animation-play-state: paused; }
+.site-contemporary:not(.site-interactive) .disc-toggle,
+.site-contemporary:not(.site-interactive) .organize-button,
+.site-contemporary:not(.site-interactive) .cart,
+.site-contemporary:not(.site-interactive) .menu-toggle { display: none; }
+.site-contemporary:not(.site-interactive) .spinning-disc { animation: none; }
+.site-contemporary:not(.site-interactive) .motion-controls { display: none; }
+.site-contemporary.motion-paused.site-enter main h1 { animation: none; }
+@media (max-width:1150px) {
+  .site-contemporary .hero { gap: 28px; }
+  .site-contemporary #discoveriesGrid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+}
+@media (max-width:900px) {
+  body.site-contemporary { --home-slide: 48px; }
+  html:has(.site-contemporary) { scroll-padding-top: 136px; }
+  .site-contemporary .container { width: calc(100% - 40px); }
+  .site-contemporary .header-top { min-height: 68px; }
+  .site-contemporary .header-top .search { width: 100%; }
+  .site-contemporary .nav nav { gap: 0; }
+  .site-contemporary:not(.site-interactive) .nav nav { display: flex; flex-wrap: wrap; gap: 0 20px; }
+  .site-contemporary .hero { grid-template-columns: 1fr; gap: 44px; padding: 40px 0 56px; }
+  .site-contemporary .hero h1 { font-size: clamp(48px,10vw,80px); max-width: 12ch; }
+  .site-contemporary .hero-copy .lead { max-width: 46ch; }
+  .site-contemporary .hero-card { width: min(640px,100%); justify-self: center; gap: 20px; }
+  .site-contemporary #homeCollections { grid-template-columns: 1fr; gap: 48px; }
+  .site-contemporary #homeCollections .collection-preview h3 { font-size: 32px; }
+  .site-contemporary #homeCollections .collection-preview p:not(.eyebrow) { min-height: 0; }
+  .site-contemporary .editorial-section { padding-block: 48px; }
+  .site-contemporary #brazilGrid, .site-contemporary #discoveriesGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 20px; }
+  .site-contemporary .section-head { align-items: flex-start; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+  .site-contemporary .gallery-invite { grid-template-columns: 1fr; padding-block: 48px 64px; gap: 40px; }
+  .site-contemporary .gallery-invite h2 { max-width: 16ch; }
+  .site-contemporary .gallery-teaser { max-width: 640px; }
+  .site-contemporary .film-layout { grid-template-columns: 1fr; gap: 32px; }
+  .site-contemporary .film-art { grid-row: auto; }
+}
+@media (max-width:480px) {
+  .site-contemporary .hero-actions { gap: 16px; }
+  .site-contemporary .hero h1 { font-size: 48px; letter-spacing: -.06em; }
+  .site-contemporary .hero-cover { width: 61%; left: 6%; }
+  .site-contemporary .hero-caption strong { font-size: 30px; }
+  .site-contemporary .hero-caption-actions { align-items: flex-start; }
+  .site-contemporary .card h3 { font-size: 19px; }
+  .site-contemporary .collection-triptych { gap: 8px; }
+  .site-contemporary :is(.page-intro h1,.catalog-top h1,.page > h1) { font-size: 42px; }
+  .site-contemporary .poster-card h3 { font-size: 19px; }
+  .site-contemporary .format-grid { grid-template-columns: 1fr; }
+  .site-contemporary .format-option { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 16px; }
+  .site-contemporary .format-option span { margin-top: 0; }
+}
+@media (max-width:359px) {
+  .site-contemporary #brazilGrid, .site-contemporary #discoveriesGrid { grid-template-columns: 1fr; }
+  .site-contemporary .hero h1 { font-size: 42px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .site-contemporary .reveal-pending > * { opacity: 1; translate: none; }
+  .site-contemporary .hero-light, .site-contemporary .frankenstein-props { transform: none; }
+  .site-contemporary .motion-controls { display: none; }
+}
+@media (forced-colors:active) {
+  html:has(.site-contemporary) { scrollbar-color: auto; }
+  .site-contemporary .hero-light, .site-contemporary .hero-halo, .site-contemporary .cinema-atmosphere { display: none; }
+}

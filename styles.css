@@ -3,30 +3,30 @@
 /* Cinefita — canonical runtime tokens. See DESIGN.md. */
 :root {
   color-scheme: dark;
-  --bg: #21171A;
-  --ink: #302126;
-  --cream: #F2E9D8;
-  --yellow: #C8AB78;
-  --espresso: #21171A;
-  --muted: #C5B9AB;
-  --line: #594249;
-  --control-border: #887366;
-  --selected: #463038;
+  --bg: #13161B;
+  --ink: #20262F;
+  --cream: #F4F1EA;
+  --yellow: #E85B53;
+  --espresso: #13161B;
+  --muted: #B8BEC8;
+  --line: #39414D;
+  --control-border: #78818F;
+  --selected: #303843;
   --danger: #FFB4AB;
-  --frame-rim: #9E835B;
-  --frame-mat: #261B1F;
+  --frame-rim: #78818F;
+  --frame-mat: #13161B;
   --radius-image: 4px;
   --radius-control: 4px;
   --radius-panel: 6px;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-display: Manrope, Arial, sans-serif;
   --font-body: Manrope, Arial, sans-serif;
   --font-data: 'Roboto Mono', ui-monospace, monospace;
   --motion-feedback: 160ms;
   --motion-product: 380ms;
-  --scroll-track: #21171A;
-  --scroll-thumb: #887366;
-  --scroll-hover: #C5B9AB;
-  --scroll-active: #C8AB78;
+  --scroll-track: #13161B;
+  --scroll-thumb: #78818F;
+  --scroll-hover: #B8BEC8;
+  --scroll-active: #E85B53;
 }
 * { box-sizing: border-box; scrollbar-color: var(--scroll-thumb) var(--scroll-track); scrollbar-width: auto; }
 *::-webkit-scrollbar { width: 12px; height: 12px; }
@@ -299,11 +299,6 @@ footer { border-top: 1px solid var(--line); padding: 40px 0; }.footer-grid { dis
 .market-reference .reference-note { color: var(--cream); }
 .market-reference a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--yellow); text-decoration: underline; text-underline-offset: 4px; }
 .market-reference small { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
-@media (hover: hover) and (pointer: fine) {
-  .product-preview:not(.is-closed):has(.product-stage:hover) .product-open { opacity: 1; transform: none; }
-  .product-preview:not(.is-closed):has(.product-stage:hover) .product-closed { opacity: 0; transform: rotateY(-72deg) translateX(-8%); }
-  .product-preview:not(.is-closed):has(.product-stage:hover) .product-state-label { opacity: 1; }
-}
 @media (max-width: 680px) {
   .card:has(.product-preview) { grid-template-columns: 1fr; grid-template-areas: "art" "body" "actions" "footer"; gap: 16px; }
   .card .product-stage { aspect-ratio: 4 / 3; }

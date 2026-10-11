@@ -7,9 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261009-designly">
+<link rel="stylesheet" href="styles.css?v=20261010-poster-tilt">
+<link rel="stylesheet" href="site-theme.css?v=20261010-poster-tilt">
 </head>
-<body>
+<body class="site-contemporary home-contemporary">
 <a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
 <header><div class="container nav"><div class="header-top"><a class="brand" href="index.html">
       <img class="brand-mark" src="assets/filmstrip.png" alt="Cinefita">
@@ -19,6 +20,7 @@
       <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
     </div>
   <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><section id="home" class="view active">
+  <div class="cinema-atmosphere" aria-hidden="true"><span class="cinema-glow cinema-glow-red"></span><span class="cinema-glow cinema-glow-blue"></span><span class="cinema-beam"></span><span class="cinema-orbit"></span><span class="cinema-grain"></span></div>
   <div class="container">
     <div class="hero">
       <div class="hero-copy">
@@ -30,25 +32,84 @@
         <p class="hero-inventory">VHS <span aria-hidden="true">/</span> BLU-RAY <span aria-hidden="true">/</span> PÔSTERES</p>
         <p class="micro">Coleção demonstrativa · imagens de referência</p>
       </div>
-      <figure class="hero-card">
-        <span class="hero-tag">UM CLÁSSICO DO ACERVO</span>
-        <div class="hero-artwork">
-          <div class="spinning-disc" aria-hidden="true"></div>
-          <img class="hero-cover" src="assets/posters/frankenstein-large.jpg" srcset="assets/posters/frankenstein-small.jpg 360w, assets/posters/frankenstein-large.jpg 900w" sizes="(max-width: 680px) 180px, (max-width: 1000px) 190px, 250px" width="900" height="1346" fetchpriority="high" alt="Arte de referência de Frankenstein, de 1931">
-        </div>
-        <figcaption class="hero-caption">
-          <p class="eyebrow">TERROR · JAMES WHALE</p>
-          <strong>Frankenstein</strong>
-          <div class="hero-facts"><span class="archive-label">1931 · VHS no acervo</span><div id="heroRating"></div></div>
-          <div class="hero-caption-actions"><a class="film-link hero-detail-link" href="filme.html?id=frankenstein&amp;from=index.html">Conhecer este clássico <span aria-hidden="true">↗</span></a>
-          <button class="disc-toggle" type="button" aria-pressed="false">Pausar disco</button></div>
-        </figcaption>
-      </figure>
+      <section class="hero-showcase" data-hero-showcase aria-label="Destaques do acervo"><div class="hero-slides">
+        <figure class="hero-card hero-slide" data-hero-film="frankenstein" data-hero-title="Frankenstein" aria-label="Frankenstein">
+          <span class="hero-tag">UM CLÁSSICO DO ACERVO</span>
+          <div class="hero-artwork">
+            <div class="hero-halo" aria-hidden="true"><span></span></div><div class="hero-light" aria-hidden="true"></div>
+            <div class="frankenstein-props" aria-hidden="true"><div class="frankenstein-skull-drift hero-cycle"><img class="frankenstein-skull" src="assets/hero/frankenstein-skull-right-generated-v2.png" width="1024" height="1536" alt="" loading="eager" decoding="async"></div></div>
+            <img class="hero-cover" src="assets/posters/frankenstein-large.jpg" srcset="assets/posters/frankenstein-small.jpg 360w, assets/posters/frankenstein-large.jpg 900w" sizes="(max-width: 900px) 60vw, 29vw" width="900" height="1346" loading="eager" fetchpriority="high" decoding="async" alt="Cartaz de referência de Frankenstein, de 1931">
+          </div>
+          <figcaption class="hero-caption"><p class="eyebrow">CLÁSSICOS · JAMES WHALE</p><strong>Frankenstein</strong>
+            <div class="hero-facts"><span class="archive-label">1931 · VHS no acervo</span><div data-hero-rating></div></div>
+            <div class="hero-caption-actions"><a class="film-link hero-detail-link" href="filme.html?id=frankenstein&amp;from=index.html">Conhecer este filme <span aria-hidden="true">↗</span></a></div>
+          </figcaption>
+        </figure>
+        <figure class="hero-card hero-slide" data-hero-film="alien" data-hero-title="Alien" aria-label="Alien">
+          <span class="hero-tag">FUTUROS INQUIETANTES</span>
+          <div class="hero-artwork">
+            <div class="hero-halo" aria-hidden="true"><span></span></div><div class="hero-light" aria-hidden="true"></div>
+            <div class="alien-props" aria-hidden="true"><div class="alien-egg-drift hero-cycle"><img class="alien-egg" src="assets/hero/alien-egg-generated-v1.png" width="1024" height="1536" alt="" loading="lazy" decoding="async"><span class="alien-glow hero-cycle"></span></div><span class="alien-mist hero-cycle"></span></div>
+            <img class="hero-cover" src="assets/posters/alien-large.jpg" sizes="(max-width: 900px) 60vw, 29vw" width="250" height="382" loading="lazy" decoding="async" alt="Cartaz de referência de Alien, de 1979">
+          </div>
+          <figcaption class="hero-caption"><p class="eyebrow">FICÇÃO CIENTÍFICA · RIDLEY SCOTT</p><strong>Alien</strong>
+            <div class="hero-facts"><span class="archive-label">1979</span><div data-hero-rating></div></div>
+            <div class="hero-caption-actions"><a class="film-link hero-detail-link" href="filme.html?id=alien&amp;from=index.html">Conhecer este filme <span aria-hidden="true">↗</span></a></div>
+          </figcaption>
+        </figure>
+        <figure class="hero-card hero-slide" data-hero-film="hellraiser" data-hero-title="Hellraiser" aria-label="Hellraiser">
+          <span class="hero-tag">NOITES QUE FICARAM</span>
+          <div class="hero-artwork">
+            <div class="hero-halo" aria-hidden="true"><span></span></div><div class="hero-light" aria-hidden="true"></div>
+            <div class="hellraiser-props" aria-hidden="true"><span class="puzzle-radiance"></span><img class="hellraiser-object" src="assets/hero/hellraiser-open-chains-generated-v1.png" width="1254" height="1254" alt="" loading="lazy" decoding="async"></div>
+            <img class="hero-cover" src="assets/posters/hellraiser-large.jpg" sizes="(max-width: 900px) 48vw, 24vw" width="181" height="279" loading="lazy" decoding="async" alt="Cartaz de referência de Hellraiser, de 1987">
+          </div>
+          <figcaption class="hero-caption"><p class="eyebrow">TERROR · CLIVE BARKER</p><strong>Hellraiser</strong>
+            <div class="hero-facts"><span class="archive-label">1987 · VHS no acervo</span><div data-hero-rating></div></div>
+            <div class="hero-caption-actions"><a class="film-link hero-detail-link" href="filme.html?id=hellraiser&amp;from=index.html">Conhecer este filme <span aria-hidden="true">↗</span></a></div>
+          </figcaption>
+        </figure>
+      </div><div class="hero-controls"><div class="hero-pagination"><button type="button" data-hero-prev aria-label="Destaque anterior">←</button><button type="button" data-hero-next aria-label="Próximo destaque">→</button></div><p class="hero-status" data-hero-status role="status" aria-atomic="true"></p><button class="disc-toggle" type="button" aria-pressed="false">Pausar animações</button></div></section>
     </div>
 
-    <section class="editorial-section" aria-labelledby="collectionsTitle"><div class="section-head"><div><p class="eyebrow">QUATRO CAMINHOS PELO CINEMA</p><h2 id="collectionsTitle">Uma sessão começa aqui.</h2></div><a class="film-link" href="colecoes.html">Todas as coleções ↗</a></div><div id="homeCollections" class="collection-previews"></div></section>
-    <section class="editorial-section" aria-labelledby="brazilTitle"><div class="section-head"><div><p class="eyebrow">IMAGENS DA NOSSA TERRA</p><h2 id="brazilTitle">Cinema brasileiro</h2><p>Do sertão ao mar, passando pela noite de Zé do Caixão.</p></div><a class="film-link" href="colecoes.html?id=brasil">Conhecer a seleção ↗</a></div><div class="grid" id="brazilGrid"></div></section>
-    <section class="editorial-section" aria-labelledby="discoveriesTitle"><div class="section-head"><div><p class="eyebrow">NOVOS NO ACERVO</p><h2 id="discoveriesTitle">Outras histórias, novas sessões.</h2><p>O medo nas ruas, o silêncio no espaço e dois olhares sobre o tempo.</p></div><a class="film-link" href="catalogo.html?sort=added">Explorar novidades ↗</a></div><div class="grid" id="discoveriesGrid"></div></section>
+    <section class="editorial-section" aria-labelledby="collectionsTitle"><div class="section-head"><div><p class="eyebrow">QUATRO CAMINHOS PELO CINEMA</p><h2 id="collectionsTitle">Uma sessão começa aqui.</h2></div><a class="film-link" href="colecoes.html">Todas as coleções ↗</a></div><div id="homeCollections" class="collection-previews"><article class="collection-preview"><div class="collection-preview-copy"><p class="eyebrow"><span class="collection-index" aria-hidden="true">01</span>NOITES QUE FICARAM</p><h3><a href="colecoes.html?id=horror-80">Horror dos anos 80</a></h3><p>O medo atravessa sonhos, acampamentos e portas que seria melhor manter fechadas.</p><div class="collection-preview-footer"><a class="film-link" href="colecoes.html?id=horror-80">Abrir seleção ↗</a><span class="counter">4 filmes</span></div></div><a class="collection-triptych" href="colecoes.html?id=horror-80" aria-label="Explorar Horror dos anos 80"><img class="" src="assets/posters/nightmare-large.jpg" srcset="assets/posters/nightmare-small.jpg 360w, assets/posters/nightmare-large.jpg 498w" sizes="(max-width: 900px) 27vw, 200px" alt="" width="498" height="755" loading="lazy" decoding="async"><img class="" src="assets/posters/friday-large.jpg" srcset="assets/posters/friday-small.jpg 360w, assets/posters/friday-large.jpg 900w" sizes="(max-width: 900px) 27vw, 200px" alt="" width="900" height="1335" loading="lazy" decoding="async"><img class="" src="assets/posters/hellraiser-large.jpg" alt="" width="181" height="279" loading="lazy" decoding="async"></a></article><article class="collection-preview"><div class="collection-preview-copy"><p class="eyebrow"><span class="collection-index" aria-hidden="true">02</span>AMANHÃ, VISTO DE ONTEM</p><h3><a href="colecoes.html?id=futuros">Futuros inquietantes</a></h3><p>Máquinas, criaturas e perguntas sobre o que nos torna humanos.</p><div class="collection-preview-footer"><a class="film-link" href="colecoes.html?id=futuros">Abrir seleção ↗</a><span class="counter">5 filmes</span></div></div><a class="collection-triptych" href="colecoes.html?id=futuros" aria-label="Explorar Futuros inquietantes"><img class="" src="assets/posters/terminator-large.jpg" alt="" width="260" height="385" loading="lazy" decoding="async"><img class="" src="assets/posters/thing-large.jpg" alt="" width="250" height="379" loading="lazy" decoding="async"><img class="" src="assets/posters/alien-large.jpg" alt="" width="250" height="382" loading="lazy" decoding="async"></a></article><article class="collection-preview"><div class="collection-preview-copy"><p class="eyebrow"><span class="collection-index" aria-hidden="true">03</span>IMAGENS DA NOSSA TERRA</p><h3><a href="colecoes.html?id=brasil">Cinema brasileiro</a></h3><p>Do barco à deriva ao sertão e ao horror de Zé do Caixão.</p><div class="collection-preview-footer"><a class="film-link" href="colecoes.html?id=brasil">Abrir seleção ↗</a><span class="counter">3 filmes</span></div></div><a class="collection-triptych" href="colecoes.html?id=brasil" aria-label="Explorar Cinema brasileiro"><img class="" src="assets/posters/midnight-large.jpg" alt="" width="262" height="379" loading="lazy" decoding="async"><img class="" src="assets/posters/blackgod-large.jpg" alt="" width="260" height="385" loading="lazy" decoding="async"><img class="" src="assets/posters/limite-large.jpg" alt="" width="265" height="376" loading="lazy" decoding="async"></a></article><article class="collection-preview"><div class="collection-preview-copy"><p class="eyebrow"><span class="collection-index" aria-hidden="true">04</span>A PRIMEIRA SESSÃO</p><h3><a href="colecoes.html?id=classicos">Clássicos para começar</a></h3><p>Um monstro, um reencontro, uma investigação e uma sala de jurados.</p><div class="collection-preview-footer"><a class="film-link" href="colecoes.html?id=classicos">Abrir seleção ↗</a><span class="counter">4 filmes</span></div></div><a class="collection-triptych" href="colecoes.html?id=classicos" aria-label="Explorar Clássicos para começar"><img class="" src="assets/posters/frankenstein-large.jpg" srcset="assets/posters/frankenstein-small.jpg 360w, assets/posters/frankenstein-large.jpg 900w" sizes="(max-width: 900px) 27vw, 200px" alt="" width="900" height="1346" loading="lazy" decoding="async"><img class="" src="assets/posters/casablanca-large.jpg" srcset="assets/posters/casablanca-small.jpg 360w, assets/posters/casablanca-large.jpg 580w" sizes="(max-width: 900px) 27vw, 200px" alt="" width="580" height="859" loading="lazy" decoding="async"><img class="" src="assets/posters/kane-large.jpg" srcset="assets/posters/kane-small.jpg 360w, assets/posters/kane-large.jpg 900w" sizes="(max-width: 900px) 27vw, 200px" alt="" width="900" height="1352" loading="lazy" decoding="async"></a></article></div></section>
+    <section class="editorial-section" aria-labelledby="brazilTitle"><div class="section-head"><div><p class="eyebrow">IMAGENS DA NOSSA TERRA</p><h2 id="brazilTitle">Cinema brasileiro</h2><p>Do sertão ao mar, passando pela noite de Zé do Caixão.</p></div><a class="film-link" href="colecoes.html?id=brasil">Conhecer a seleção ↗</a></div><div class="grid" id="brazilGrid"><article class="card" data-genre="Terror">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=midnight&amp;from=index.html" aria-label="Ver ficha de À Meia-Noite Levarei Sua Alma"><img class="" src="assets/posters/midnight-large.jpg" alt="" width="262" height="379" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=midnight&amp;from=index.html">À Meia-Noite Levarei Sua Alma</a></h3><div class="meta">1964 · Terror</div>
+
+    <button class="organize-button" type="button" data-organize="midnight" aria-label="Organizar À Meia-Noite Levarei Sua Alma">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article><article class="card" data-genre="Drama">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=blackgod&amp;from=index.html" aria-label="Ver ficha de Deus e o Diabo na Terra do Sol"><img class="" src="assets/posters/blackgod-large.jpg" alt="" width="260" height="385" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=blackgod&amp;from=index.html">Deus e o Diabo na Terra do Sol</a></h3><div class="meta">1964 · Drama</div>
+
+    <button class="organize-button" type="button" data-organize="blackgod" aria-label="Organizar Deus e o Diabo na Terra do Sol">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article><article class="card" data-genre="Drama">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=limite&amp;from=index.html" aria-label="Ver ficha de Limite"><img class="" src="assets/posters/limite-large.jpg" alt="" width="265" height="376" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=limite&amp;from=index.html">Limite</a></h3><div class="meta">1931 · Drama</div>
+
+    <button class="organize-button" type="button" data-organize="limite" aria-label="Organizar Limite">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article></div></section>
+    <section class="editorial-section" aria-labelledby="discoveriesTitle"><div class="section-head"><div><p class="eyebrow">NOVOS NO ACERVO</p><h2 id="discoveriesTitle">Outras histórias, novas sessões.</h2><p>O medo nas ruas, o silêncio no espaço e dois olhares sobre o tempo.</p></div><a class="film-link" href="catalogo.html?sort=added">Explorar novidades ↗</a></div><div class="grid" id="discoveriesGrid"><article class="card" data-genre="Terror">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=halloween&amp;from=index.html" aria-label="Ver ficha de Halloween"><img class="" src="assets/posters/halloween-large.jpg" alt="" width="259" height="384" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=halloween&amp;from=index.html">Halloween</a></h3><div class="meta">1978 · Terror</div>
+
+    <button class="organize-button" type="button" data-organize="halloween" aria-label="Organizar Halloween">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article><article class="card" data-genre="Ficção científica">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=alien&amp;from=index.html" aria-label="Ver ficha de Alien"><img class="" src="assets/posters/alien-large.jpg" alt="" width="250" height="382" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=alien&amp;from=index.html">Alien</a></h3><div class="meta">1979 · Ficção científica</div>
+
+    <button class="organize-button" type="button" data-organize="alien" aria-label="Organizar Alien">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article><article class="card" data-genre="Drama">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=limite&amp;from=index.html" aria-label="Ver ficha de Limite"><img class="" src="assets/posters/limite-large.jpg" alt="" width="265" height="376" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=limite&amp;from=index.html">Limite</a></h3><div class="meta">1931 · Drama</div>
+
+    <button class="organize-button" type="button" data-organize="limite" aria-label="Organizar Limite">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article><article class="card" data-genre="Drama">
+    <a class="poster-wrap poster-frame art-only" href="filme.html?id=cleo&amp;from=index.html" aria-label="Ver ficha de Cléo das 5 às 7"><img class="" src="assets/posters/cleo-large.jpg" alt="" width="275" height="362" loading="lazy" decoding="async"></a>
+    <div class="card-body"><h3><a href="filme.html?id=cleo&amp;from=index.html">Cléo das 5 às 7</a></h3><div class="meta">1962 · Drama</div>
+
+    <button class="organize-button" type="button" data-organize="cleo" aria-label="Organizar Cléo das 5 às 7">Organizar <span aria-hidden="true">＋</span></button></div>
+  </article></div></section>
     <section class="gallery-invite"><div><p class="eyebrow">ANTES DA PRIMEIRA CENA</p><h2>O filme também vive no cartaz.</h2><p>Cores, letras e imagens que anunciam uma história. Veja as artes e suas versões alternativas em tamanho maior.</p><a class="cta" href="posters.html">Entrar na galeria ↗</a></div><a class="gallery-teaser" href="posters.html" aria-label="Explorar galeria de pôsteres"><img src="assets/posters/alien-large.jpg" width="250" height="382" alt="Cartaz de Alien" loading="lazy"><img src="assets/posters/cleo-large.jpg" width="275" height="362" alt="Cartaz de Cléo das 5 às 7" loading="lazy"></a></section>
   </div>
 </section></main><footer>
@@ -70,4 +131,4 @@
 </aside>
 <div class="toast" id="toast" role="status"></div>
 
-<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js"></script><script src="collection-ui.js?v=20261009-designly"></script></body></html>
+<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js?v=20261010-poster-tilt"></script><script src="collection-ui.js?v=20261009-designly"></script><script src="site-motion.js?v=20261010-poster-tilt"></script></body></html>

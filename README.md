@@ -1,6 +1,8 @@
 # Cinefita
 
-Acervo de cinema com estética retrô sofisticada: vinho tinta, marfim, latão fosco e tipografia editorial. Site estático em português, com 52 filmes, quatro seleções editoriais e uma galeria de 47 cartazes.
+O tema contemporâneo atende todo o site: carvão, branco quente, vermelho e Manrope, com fundos animados e entradas de imagens em 1,4s. Cada item entra pelo lado em que está na tela; itens centrais entram verticalmente, dentro da área reservada. “Pausar animações” interrompe o movimento em cada página; redução de movimento é respeitada durante a sessão. Tema e controlador compartilhados: site-theme.css e site-motion.js. Comparação e validação em VALIDACAO.md.
+
+Site estático em português, com 52 filmes, quatro seleções editoriais e uma galeria de 47 cartazes. Logo, cartazes, dados e contratos preservados.
 
 ## Executar
 
@@ -17,15 +19,15 @@ Abra `http://localhost:8000`. O carrinho usa `localStorage` e funciona entre as 
 - Catálogo com busca, filtros, ordenação e seleções preservadas na URL.
 - Fichas com direção, duração, sinopse e fontes.
 - Galeria com artes alternativas independentes das capas dos produtos, ampliação e link da fonte.
-- Prévia ilustrativa de embalagens abertas por hover, toque ou teclado.
-- Destaque de Frankenstein com moldura dupla, disco animado e controle de pausa.
+- Prévia ilustrativa da embalagem na arte principal da ficha, com hover temporário e botão “Ver aberto” / “Ver cartaz” para fixar o estado.
+- Três destaques manuais na inicial: Frankenstein, Alien e Hellraiser; iluminação própria, navegação circular somente por setas laterais sem caixa, hover de inclinação exclusivo do cartaz, transição de 1,4s e imagens geradas com fundo transparente. Frankenstein tem caveira com pregos voltada à direita; Alien, ovo luminoso e névoa; Hellraiser, cubo aberto com correntes diagonais em uma única imagem estática, sem rotação. Ciclos de caveira/ovo somente no destaque ativo, suspensos fora da abertura, em aba oculta, pausa ou redução de movimento. Objetos ampliados ficam parcialmente escondidos atrás dos cartazes completos. Cléo permanece no acervo e na galeria.
 - Layout responsivo, foco visível e respeito a `prefers-reduced-motion`.
 
 O checkout é uma demonstração. Não processa pagamentos, envia pedidos ou mantém estoque real. Preços, frete e embalagens são referências ilustrativas.
 
 ## Estrutura
 
-As sete páginas compartilham `styles.css` e `app.js`. `data.js`, `film-details.js` e `catalog-expansion.js` contêm o acervo; `poster-artwork.js` contém as artes alternativas da galeria. Imagens, fontes e manifestos de procedência ficam em `assets/`.
+As nove páginas compartilham `styles.css` e `app.js`. `data.js`, `film-details.js` e `catalog-expansion.js` contêm o acervo; `poster-artwork.js` contém as artes alternativas da galeria. Imagens, fontes e manifestos de procedência ficam em `assets/`.
 
 Veja [DESIGN.md](DESIGN.md), [UX-CONTRACT.md](UX-CONTRACT.md) e [LEIA-ME.txt](LEIA-ME.txt). Os relatórios históricos e backups são locais e não integram o repositório.
 
@@ -45,4 +47,4 @@ Login foi adiado por decisão do usuário. Marcações ficam em localStorage nes
 
 ## Validação
 
-`node --test tests/catalog.test.cjs` verifica acervo, imagens, curadorias, filtros, preços ausentes, persistência, falhas, alterações entre abas e retorno seguro. Não há etapa de build. Verificação de reflow e fluxos descrita em VALIDACAO.md.
+`node --test tests/*.test.cjs` verifica acervo, imagens, curadorias, filtros, preços ausentes, persistência, falhas, alterações entre abas, retorno seguro e os estados de pausa, parallax e redução de movimento do site. Inclui páginas internas e listas atualizadas pela busca. Não há etapa de build. Verificação de reflow e fluxos descrita em VALIDACAO.md.

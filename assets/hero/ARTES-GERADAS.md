@@ -1,0 +1,29 @@
+# Artes da abertura — 10/10/2026
+
+Geradas com a ferramenta integrada `image_gen`, a pedido do usuário, sem CLI/API. PNG RGBA com transparência preservada. Os originais da geração e as versões anteriores continuam guardados; os cartazes do acervo não foram alterados.
+
+Arquivos finais usados pela inicial:
+
+- [Ovo de Alien](alien-egg-generated-v1.png), 1024 × 1536.
+- [Cubo aberto com correntes](hellraiser-open-chains-generated-v1.png), 1254 × 1254.
+- [Caveira voltada à direita](frankenstein-skull-right-generated-v2.png), 1024 × 1536. Substitui o disco; a primeira orientação fica em frankenstein-skull-generated-v1.png.
+
+Ovo: a primeira referência enviada é o guia de forma, textura e abertura luminosa. Cubo: a segunda referência guia os painéis abertos e dourados; a terceira guia as correntes diagonais. As referências orientam a decoração, sem serem aplicadas aos cartazes. O cubo e suas correntes são uma única imagem estática, sem rotação.
+
+## Prompts usados
+
+### Ovo
+
+Use case: stylized-concept. Asset type: transparent decorative film object for Cinefita homepage. Reference image 1 provides the Alien egg silhouette, materials and luminous green opening. Generate a single highly detailed cinematic Alien egg matching this reference: upright elongated organic leathery dark olive egg, curved tapering top, rough mottled biological surface, partially opening near the lower front with a brilliant yellow-green fissure emitting soft green mist and gentle luminous spill. Dark shell must remain visible against a charcoal web background. Photorealistic practical creature-effects object, dramatic soft rim lighting, no flat vector appearance. Entire egg visible and centered, isolated with modest padding, tall portrait composition. Genuine transparent background with preserved soft alpha on the green glow and wisps; no black rectangular backdrop, no checkerboard, no text, no logos, no poster, no additional objects. Do not reproduce the low resolution of the reference. This is a separate decorative egg, never a modification of the existing film poster.
+
+### Cubo e correntes — composição única
+
+Use case: compositing. Asset type: single isolated transparent cinematic Hellraiser decorative object for a web hero. Combine both references into ONE coherent image. Reference 1: preserve the recognizable opened puzzle cube construction, offset stepped black-and-antique-gold panels, intricate engraved brass ornament, elevated three-quarter camera angle. Reference 2: use its dramatic large metal chains in four outward diagonals, strong perspective, irregular tension and crossing direction. Main request: an OPEN black-and-gold Hellraiser puzzle cube floating near the middle, with FOUR heavy linked steel chains physically EMERGING FROM THE OPEN central crevice of the cube and extending outwards toward upper-left, upper-right, lower-left and lower-right. All chains must visibly originate inside the cube, not a surrounding rectangular border. At least one near-camera chain has larger foreground links and the distant chains become smaller. The open cube dominates the center; stepped engraved golden panels and the black central gap are clearly visible. Soft dim red light inside its openings, cinematic rim light on aged metal, photorealistic practical effects/product render. Compact square composition, ENTIRE object and chain ends visible inside the image with ample transparent padding. Reserve cleaner negative space at far left for a separate film poster in layout, so chain tips stay within their own asset. Genuine TRANSPARENT background, preserved alpha around every chain link and object; no black or smoky rectangular background, no checkerboard. No people, skulls, torches, environment, film poster, writing, watermark, brand logo or copyright text. The output is one static combined cube-and-chains raster artwork; no exploded separate icons.
+
+### Caveira — geração inicial
+
+Use case: stylized-concept. Asset type: transparent decorative Frankenstein-inspired skull for Cinefita homepage, replacing its existing spinning disc. Generate ONE dramatic photorealistic horror prop: an aged ivory human skull with heavy pronounced brow, flattened angular cranial silhouette, dark hollow eye sockets and visible teeth, six weathered iron nails emerging from the top and forehead, metal surgical staples across a fine crack at the upper forehead, and a substantial iron bolt at each temple suggesting the classic Frankenstein monster. Three-quarter view slightly facing left, so front teeth and one side are readable. No living person, no flesh, no blood or gore; unmistakably a bone skull with nails and bolts. Practical cinema prop/product photography, detailed porous aged bone and tarnished steel, subtle warm red edge lighting and cool soft side fill. Entire skull and every nail visible, centered with transparent padding, portrait framing. Genuine transparent background, alpha cutout around the silhouette and gaps; no background rectangle, no black fill, no checkerboard, no pedestal, no chains, no disc, no typography, no logo, no watermark. Match the visual richness of a cinematic organic egg and a black-and-gold puzzle cube, suitable for placement behind a separate film poster on a charcoal website.
+
+### Caveira — edição final voltada para a direita
+
+Use case: precise-object-edit. Edit target: the supplied Frankenstein skull cutout. Change ONLY the facing direction: mirror the skull horizontally so that its face, nose and teeth point to the RIGHT, the opposite direction of the input. Preserve the same aged bone, iron nails, temple bolts, staples, skull proportions, photographic detail, red rim light, framing and transparent alpha. No new objects or redesign. The complete skull with all protruding nails and bolts must stay in frame with padding. Genuinely transparent background and soft alpha, no solid background, no checkerboard, no text.

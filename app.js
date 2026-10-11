@@ -19,13 +19,32 @@ function productPreview(f, {detail=false}={}) {
   const kind = {VHS:'vhs','BLU-RAY':'bluray',DVD:'dvd'}[f.format];
   if (!kind) return detail ? `<div class="poster-frame">${posterImage(f,{eager:true,sizes:'(max-width: 680px) 270px, 420px'})}</div>` : `<a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(displayTitle(f))}">${posterImage(f,{decorative:true})}</a>`;
   return `<div class="product-preview product-${kind}${detail?' product-detail':''}" data-product-preview data-film="${f.image}">
-    <div class="product-stage poster-frame">
-      <div class="product-closed">${posterImage(f,{eager:detail,sizes:detail?'(max-width: 680px) 240px, 360px':'(max-width: 680px) 240px, 180px'})}</div>
+    <div class="product-stage poster-frame" id="productStage-${esc(f.image)}"><div class="product-surface">
+      <div class="product-closed">${posterImage(f,{eager:detail,sizes:detail?'(max-width: 900px) calc(100vw - 40px), 520px':'(max-width: 680px) 240px, 180px'})}</div>
       <div class="product-open" aria-hidden="true"><div class="product-open-scene"><img class="product-package" src="assets/products/${kind}-open.webp" width="1000" height="667" alt="Embalagem ${esc(formatLabel(f))} aberta, ilustração gerada" loading="${detail?'eager':'lazy'}" decoding="async"><div class="product-insert">${posterImage(f,{decorative:true})}</div></div></div>
       <span class="product-state-label" aria-hidden="true">EMBALAGEM ILUSTRATIVA</span>
-    </div>
-    <button class="product-control" type="button" data-product-toggle aria-pressed="false" aria-label="Ver embalagem aberta de ${esc(displayTitle(f))}"><span>Ver aberto</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h7v14H4zM13 5h7v14h-7zM8 9v6m8-6v6"/></svg></button>
+    </div></div>
+    <button class="product-control" id="productToggle-${esc(f.image)}" type="button" data-product-toggle aria-controls="productStage-${esc(f.image)}" aria-pressed="false" aria-label="Ver embalagem aberta de ${esc(displayTitle(f))}"><span>Ver aberto</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h7v14H4zM13 5h7v14h-7zM8 9v6m8-6v6"/></svg></button>
   </div>`;
+}
+
+function syncProductView(preview) {
+  const pinned = preview.dataset.pinned === 'true';
+  const open = pinned || (preview.dataset.hovered === 'true' && preview.dataset.closedByButton !== 'true');
+  preview.classList.toggle('is-open', open);
+  const button = preview.querySelector('[data-product-toggle]');
+  button.setAttribute('aria-pressed', String(pinned));
+  button.querySelector('span').textContent = pinned ? 'Ver cartaz' : 'Ver aberto';
+  const f = films.find(f => f.image === preview.dataset.film);
+  button.setAttribute('aria-label', `${pinned ? 'Ver cartaz' : 'Ver embalagem aberta'} de ${displayTitle(f)}`);
+  preview.querySelector('.product-open').setAttribute('aria-hidden', String(!open));
+  preview.querySelector('.product-closed').setAttribute('aria-hidden', String(open));
+}
+function toggleProductView(preview) {
+  const open = preview.dataset.pinned !== 'true';
+  preview.dataset.pinned = String(open);
+  preview.dataset.closedByButton = String(!open);
+  syncProductView(preview);
 }
 
 function catalogReturn() {
@@ -90,7 +109,7 @@ function renderFilmDetail() {
         ${f.originalTitle!==title?`<p class="film-original">${esc(f.originalTitle)}</p>`:''}
         <div class="film-meta"><span>${f.year}</span><span>${esc(f.category)}</span>${ratingMarkup(f)}</div><div class="film-personal"><p class="micro">Organize neste navegador</p><div class="personal-marks" data-film-marks="${f.image}"></div><p class="storage-notice" data-storage-notice role="status" hidden></p></div>
       </div>
-      <figure class="film-art"><div class="poster-frame">${posterImage(f,{eager:true,sizes:'(max-width: 900px) 70vw, 420px'})}</div><figcaption>Cartaz de referência · arte completa.</figcaption></figure>
+      <figure class="film-art" id="filmArtwork">${productPreview(f,{detail:true})}<figcaption>${['VHS','DVD','BLU-RAY'].includes(f.format)?'Cartaz completo · embalagem ilustrativa. A edição e os itens reais podem variar.':'Cartaz de referência · arte completa.'}</figcaption></figure>
       <div class="film-content">
         <section class="film-synopsis" aria-labelledby="synopsisTitle"><h2 id="synopsisTitle">A história</h2><p>${esc(f.synopsis)}</p></section>
         <section class="film-facts" aria-labelledby="factsTitle"><h2 id="factsTitle">Ficha do filme</h2><dl>
@@ -106,7 +125,7 @@ function renderFilmDetail() {
       </div>
     </article>
     <section class="physical-edition" aria-labelledby="editionTitle"><div class="section-head"><div><p class="eyebrow">PARA GUARDAR NA ESTANTE</p><h2 id="editionTitle">Edição física</h2></div></div>
-    ${CinefitaCatalog.hasOffer(f)?`<div class="edition-layout"><div>${productPreview(f,{detail:true})}<p class="micro">${f.format==='FILME'?'Suporte físico e edição ainda não informados. Cartaz de referência.':'Embalagem ilustrativa. A edição e os itens reais podem variar.'}</p></div><div>        <div class="film-purchase"><div><span class="purchase-label">${esc(formatLabel(f))} · catálogo demonstrativo</span><strong class="price">${money(f.price)}</strong></div><button class="buy" type="button" data-buy="${f.image}" aria-label="Adicionar ${esc(title)} ao carrinho">Adicionar ao carrinho</button><p>${f.priceReference?'Valor de referência para a demonstração, consultado em 05/10/2026.':'Preço de demonstração. Edição, conservação e detalhes do exemplar físico ainda não informados.'}</p></div>
+    ${CinefitaCatalog.hasOffer(f)?`<div class="edition-layout"><div><a class="film-link" href="#${['VHS','DVD','BLU-RAY'].includes(f.format)?'productToggle-'+esc(f.image):'filmArtwork'}">${['VHS','DVD','BLU-RAY'].includes(f.format)?'Explorar embalagem no topo':'Ver cartaz completo'} ↗</a><p class="micro">${f.format==='FILME'?'Suporte físico e edição ainda não informados. Cartaz de referência.':'Embalagem ilustrativa. A edição e os itens reais podem variar.'}</p></div><div>        <div class="film-purchase"><div><span class="purchase-label">${esc(formatLabel(f))} · catálogo demonstrativo</span><strong class="price">${money(f.price)}</strong></div><button class="buy" type="button" data-buy="${f.image}" aria-label="Adicionar ${esc(title)} ao carrinho">Adicionar ao carrinho</button><p>${f.priceReference?'Valor de referência para a demonstração, consultado em 05/10/2026.':'Preço de demonstração. Edição, conservação e detalhes do exemplar físico ainda não informados.'}</p></div>
         ${f.priceReference?`<section class="market-reference" aria-labelledby="marketTitle"><h2 id="marketTitle">Referência de mercado</h2><p>${esc(f.priceReference.edition)} · ${esc(f.priceReference.retailer)}</p><p>${esc(f.priceReference.status)}</p>${f.priceReference.note?`<p class="reference-note">${esc(f.priceReference.note)}</p>`:''}<a href="${esc(f.priceReference.url)}" target="_blank" rel="noopener noreferrer">Consultar a oferta na fonte <span class="sr-only">(nova aba)</span>↗</a><small>Preço anunciado, sem frete. Não representa estoque ou oferta da Cinefita.</small></section>`:''}
 </div></div>`:`<p class="edition-unavailable">Ainda não pesquisamos uma edição física deste filme. Por isso, ele não tem preço, embalagem ou compra no catálogo. Você pode organizá-lo na sua coleção.</p>`}</section>
     <section class="film-related" aria-labelledby="relatedTitle"><div class="section-head"><div><p class="eyebrow">OUTRAS DESCOBERTAS</p><h2 id="relatedTitle">Continue pelo acervo</h2></div><a class="film-link" href="catalogo.html">Ver catálogo <span aria-hidden="true">↗</span></a></div><div class="grid">${related.map(card).join('')}</div></section>`;
@@ -172,7 +191,7 @@ $('cartDrawer').inert=true;$('cartButton').onclick=openCart;$('closeCart').oncli
 document.addEventListener('keydown',e=>{if(!$('cartDrawer').classList.contains('open'))return;if(e.key==='Escape')closeCart();if(e.key==='Tab'){const f=[...$('cartDrawer').querySelectorAll('button:not(:disabled),a[href]')];const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 document.addEventListener('click',e=>{
   const product=e.target.closest('[data-product-toggle]');
-  if(product){const preview=product.closest('[data-product-preview]');const open=product.getAttribute('aria-pressed')!=='true';preview.classList.toggle('is-open',open);preview.classList.toggle('is-closed',!open);product.setAttribute('aria-pressed',String(open));product.querySelector('span').textContent=open?'Ver capa':'Ver aberto';const f=films.find(f=>f.image===preview.dataset.film);product.setAttribute('aria-label',`${open?'Ver capa':'Ver embalagem aberta'} de ${displayTitle(f)}`);preview.querySelector('.product-open').setAttribute('aria-hidden',String(!open));preview.querySelector('.product-closed').setAttribute('aria-hidden',String(open));return;}
+  if(product){toggleProductView(product.closest('[data-product-preview]'));return;}
   const chip=e.target.closest('[data-clear-filter]');
   if(chip){const key=chip.dataset.clearFilter;if(key==='query')$('searchInput').value='';if(key==='genre')category='';if(key==='format')$('formatFilter').value='';if(['decade','director','country'].includes(key))$(key+'Filter').value='';renderCatalog();$('catalogFilters').querySelector('summary').focus();return;}
   const poster=e.target.closest('[data-poster]');
@@ -300,11 +319,29 @@ if($('posterDialog')){
 updateCart();
 
 if($('heroRating')) $('heroRating').innerHTML=ratingMarkup(films.find(f=>f.image==='frankenstein'));
+document.querySelectorAll('[data-hero-film]').forEach(slide => {
+  const f = films.find(f => f.image === slide.dataset.heroFilm);
+  if (!f) return;
+  slide.querySelector('[data-hero-rating]').innerHTML = ratingMarkup(f);
+});
 
 const discToggle = document.querySelector('.disc-toggle');
-if (discToggle) discToggle.addEventListener('click', () => {
+if (discToggle && !document.body.classList.contains('site-contemporary')) discToggle.addEventListener('click', () => {
   const paused = document.querySelector('.hero-card').classList.toggle('disc-paused');
   discToggle.setAttribute('aria-pressed', String(paused));
   discToggle.textContent = paused ? 'Retomar disco' : 'Pausar disco';
 });
-document.addEventListener('pointerout',e=>{const preview=e.target.closest?.('[data-product-preview]');if(preview&&!preview.contains(e.relatedTarget))preview.classList.remove('is-closed');});
+document.addEventListener('pointerover', e => {
+  const stage = e.target.closest?.('.product-stage');
+  if (!stage || stage.contains(e.relatedTarget) || e.pointerType === 'touch' || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const preview = stage.closest('[data-product-preview]');
+  preview.dataset.hovered = 'true'; syncProductView(preview);
+});
+document.addEventListener('pointerout', e => {
+  const preview = e.target.closest?.('[data-product-preview]');
+  if (!preview) return;
+  const stage = e.target.closest('.product-stage');
+  if (stage && !stage.contains(e.relatedTarget)) preview.dataset.hovered = 'false';
+  if (!preview.contains(e.relatedTarget)) preview.dataset.closedByButton = 'false';
+  syncProductView(preview);
+});
