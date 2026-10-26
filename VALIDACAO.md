@@ -205,3 +205,7 @@ Conferência nesta pasta, sem presumir resultados da cópia cinefita-5. Layout m
 Evidências locais: relatorios/atividade-alt-mod-2026-10-26/. Chromium com viewports emulados não equivale a aparelho físico ou certificação por leitor de tela. Publicação/entrega e apresentação ainda pendentes, conforme CRITERIOS-ATIVIDADE.md.
 
 Registro local da implementação: `01dcad4` — Integra UI moderna com aurora e completa pagamentos simulados. O commit inclui os cinco recursos de marca efetivamente referenciados (PNG, áudio WAV, CSS e dois scripts), os nove HTML, regras compartilhadas e testes. A documentação é registrada em commit separado; nenhuma escrita remota foi realizada.
+
+### Publicação autorizada — 26/10/2026
+
+Após autorização explícita do usuário, git push publicou 01dcad4 e 7d405fc em origin/versao-alt-mod. A API do GitHub confirmou o SHA remoto 7d405fc0f5d59dfe4982dba5ecc587d0e4dc1359 e a árvore 2ec5432e9620662a6a8ebfadfa7b331049d19416. Conferidos 268 arquivos versionados, incluindo 24 arquivos essenciais de páginas, código, documentos, testes, logo e áudio; não houve truncamento na árvore consultada. Repositório público confirmado por consulta HTTP sem autenticação (200). A atualização posterior é somente documental; os testes de execução registrados acima continuam referentes ao mesmo código. Permanecem a entrega do link ao professor e a apresentação pelo aluno.

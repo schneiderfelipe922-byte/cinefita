@@ -12,11 +12,11 @@ Fonte: “Atividade Avaliativa – Desenvolvimento de Loja Virtual (1) (1).pdf�
 | 6. Finalização | 1,0 | Nome/e-mail, validação inline, retirada ou endereço, resumo com frete, confirmação e limpeza do carrinho. |
 | 7. Pagamentos | 1,5 | PIX, débito à vista e crédito em 1–12 parcelas sem juros. Cálculo em centavos, resumo e sucesso específicos; os três métodos concluídos no navegador. |
 | 8. HTML, CSS e JavaScript | 1,0 | HTML semântico, CSS responsivo, eventos/cálculos em JS nativo; sem build/backend. Código explicado em APRESENTACAO.md. |
-| 9. Git e GitHub | 1,0 | Histórico Git existente; implementação registrada localmente no commit 01dcad4, acompanhada de commit de documentação. Remoto público conferido em bf8c2ff; publicação final aguarda autorização. Não concluído. |
+| 9. Git e GitHub | 1,0 | Histórico e commits 01dcad4/7d405fc publicados na branch versao-alt-mod; 24 arquivos essenciais conferidos na árvore remota, incluindo README. Repositório público respondeu HTTP 200 sem autenticação. Link pronto abaixo; entrega ao professor ainda depende do aluno. |
 | 10. Responsividade e qualidade | 1,0 | 54 verificações: nove páginas × cinco larguras (320–1440px), mais nove em reflow equivalente a 200%; 20 verificações adicionais da compra. Sem erros de JS. |
 | 11. Apresentação e explicação em aula | 1,5 | Roteiro preparado em APRESENTACAO.md. A demonstração, a explicação pelo aluno e a entrega do link ao professor ainda precisam ocorrer. Não concluído. |
 
-Os critérios 1–8 e 10 têm evidência técnica local. Isso não garante a pontuação do professor. Os critérios 9 e 11 permanecem pendentes até a publicação, a entrega e a apresentação efetivas.
+As partes técnicas dos critérios 1–10 têm evidência local e a publicação no GitHub foi confirmada. Isso não garante a pontuação do professor. Permanecem a entrega efetiva do link e o critério 11, que exige apresentação e explicação pelo aluno em aula.
 
 ## Requisitos obrigatórios verificados
 
@@ -27,7 +27,7 @@ Os critérios 1–8 e 10 têm evidência técnica local. Isso não garante a pon
 - Cliente/entrega: compra.html, nome/e-mail fictícios, endereço condicional, frete de referência e foco no primeiro erro.
 - PIX/débito/crédito/parcelas: compra.html + checkout-core.js + app.js, resumo e confirmação sem dados bancários reais.
 - Sucesso: valor, método/parcelas, foco na confirmação, carrinho limpo e aviso de simulação.
-- Tecnologias: HTML/CSS/JS nativos e repositório Git. GitHub final ainda pendente.
+- Tecnologias: HTML/CSS/JS nativos, repositório Git e código publicado no GitHub.
 
 ## Repetir a verificação
 
@@ -36,9 +36,9 @@ Os critérios 1–8 e 10 têm evidência técnica local. Isso não garante a pon
 3. Com Playwright/Chromium disponíveis, execute `node tests/browser-check.cjs` e `node tests/checkout-browser.cjs`.
 4. Confira os resultados e limitações em VALIDACAO.md. Capturas/JSON locais: relatorios/atividade-alt-mod-2026-10-26/ e .superdesign/previews/.
 
-## Entrega e apresentação pendentes
+## Publicação confirmada; entrega e apresentação pendentes
 
-Destino confirmado: [código da branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod) e [histórico](https://github.com/schneiderfelipe922-byte/cinefita/commits/versao-alt-mod). O remoto público ainda apresenta a versão anterior. Após autorização e publicação, verificar que o SHA remoto coincide com o commit final local e que o link pode ser aberto para correção.
+Destino confirmado: [código da branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod) e [histórico](https://github.com/schneiderfelipe922-byte/cinefita/commits/versao-alt-mod). Publicação autorizada e confirmada em 26/10/2026: o SHA remoto 7d405fc0f5d59dfe4982dba5ecc587d0e4dc1359 correspondeu à revisão validada. A árvore remota contém as nove páginas e seus recursos, incluindo logo e áudio; o repositório respondeu HTTP 200 sem login. O commit posterior de documentação registra essa confirmação sem modificar o código de execução.
 
 O aluno deve preencher nome/turma/data, entregar o link ao professor, ensaiar e realizar os treze passos de demonstração/explicação previstos nas páginas 4–5 do PDF. O roteiro preparado não substitui essa participação.
 

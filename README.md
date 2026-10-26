@@ -36,7 +36,7 @@ Execute `node --test tests/*.test.cjs`: 44 testes unitários. Com Playwright/Chr
 
 Veja [CRITERIOS-ATIVIDADE.md](CRITERIOS-ATIVIDADE.md), [VALIDACAO.md](VALIDACAO.md), [APRESENTACAO.md](APRESENTACAO.md), [DESIGN.md](DESIGN.md) e [UX-CONTRACT.md](UX-CONTRACT.md). Relatórios/capturas gerados são locais, em `relatorios/`, e não integram o código necessário para execução.
 
-Destino da entrega: [branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod). A publicação desta revisão ainda precisa ser autorizada; o remoto foi conferido em bf8c2ff, anterior às mudanças locais. A apresentação e o envio do link ao professor cabem ao aluno.
+Destino da entrega: [branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod). Os commits 01dcad4 e 7d405fc foram publicados em 26/10/2026 com autorização do usuário. Os arquivos de execução, logo e áudio foram conferidos na árvore remota; o repositório público respondeu HTTP 200 sem autenticação. Esta atualização de documentação registra a publicação. A apresentação e o envio do link ao professor cabem ao aluno.
 
 ## Design e créditos
 
