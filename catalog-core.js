@@ -4,11 +4,11 @@ const CinefitaCatalog = (() => {
   const title = film => film.displayTitle || film.title;
   const hasOffer = film => typeof film.price === 'number' && Number.isFinite(film.price) && film.price > 0;
   const compareTitle = (a, b) => title(a).localeCompare(title(b), 'pt-BR', { sensitivity: 'base', numeric: true });
-  function select(catalog, { query = '', genre = '', format = '', decade = '', director = '', country = '', sort = 'category' } = {}) {
+  function select(catalog, { query = '', genre = '', format = '', decade = '', director = '', country = '', offer = '', sort = 'category' } = {}) {
     const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
     const result = catalog.filter(film => {
       const text = normalize([film.title, film.displayTitle, film.originalTitle, film.aliases, film.year, film.category, film.format, ...(film.directors || []), ...(film.countries || [])].filter(Boolean).join(' '));
-      return (!genre || film.category === genre) && (!format || film.format === format)
+      return (offer !== 'available' || hasOffer(film)) && (!genre || film.category === genre) && (!format || film.format === format)
         && (!decade || Math.floor(film.year / 10) * 10 === Number(decade))
         && (!director || film.directors?.includes(director))
         && (!country || film.countries?.includes(country)) && terms.every(term => text.includes(term));

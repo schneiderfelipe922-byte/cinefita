@@ -10,3 +10,4 @@ premium-audit.json
 *.log
 *.zip
 __pycache__/
+.superdesign/tmp/

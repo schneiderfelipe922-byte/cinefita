@@ -79,7 +79,9 @@ function card(f) {
   return `<article class="card" data-genre="${esc(f.category)}">
     <a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a>
     <div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}${f.format==='FILME'?'':' · '+esc(formatLabel(f))}</div>
+    ${CinefitaCatalog.hasOffer(f)?`<p class="card-description">${esc(f.synopsis)}</p>`:''}
     ${CinefitaCatalog.hasOffer(f)?`<p class="card-price">${f.priceReference?'Preço de referência · ':''}${money(f.price)}</p>`:''}
+    ${CinefitaCatalog.hasOffer(f)?`<a class="film-link edition-link" href="${esc(filmUrl(f))}">Ver edição <span aria-hidden="true">↗</span></a>`:''}
     <button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div>
   </article>`;
 }
@@ -130,6 +132,7 @@ function renderFilmDetail() {
 </div></div>`:`<p class="edition-unavailable">Ainda não pesquisamos uma edição física deste filme. Por isso, ele não tem preço, embalagem ou compra no catálogo. Você pode organizá-lo na sua coleção.</p>`}</section>
     <section class="film-related" aria-labelledby="relatedTitle"><div class="section-head"><div><p class="eyebrow">OUTRAS DESCOBERTAS</p><h2 id="relatedTitle">Continue pelo acervo</h2></div><a class="film-link" href="catalogo.html">Ver catálogo <span aria-hidden="true">↗</span></a></div><div class="grid">${related.map(card).join('')}</div></section>`;
 }
+if ($('physicalGrid')) $('physicalGrid').innerHTML = ['frankenstein','casablanca','hellraiser','terminator'].map(id=>card(films.find(f=>f.image===id))).join('');
 if ($('brazilGrid')) $('brazilGrid').innerHTML = ['midnight','blackgod','limite'].map(id=>card(films.find(f=>f.image===id))).join('');
 if ($('discoveriesGrid')) $('discoveriesGrid').innerHTML = films.filter(f=>['halloween','alien','limite','cleo'].includes(f.image)).map(card).join('');
 if ($('posterGrid')) $('posterGrid').innerHTML = films.filter(f => f.poster).map(f => `<article class="poster-card" data-genre="${esc(f.category)}"><button class="poster-art poster-frame" type="button" data-poster="${f.image}" aria-label="Ver cartaz de ${esc(displayTitle(f))}">${posterImage(f,{sizes:'(max-width: 680px) 150px, (max-width: 1000px) 240px, 270px',decorative:true,gallery:true})}</button><div class="poster-caption"><h3><a href="${esc(filmUrl(f))}">${esc(displayTitle(f))}</a></h3><p>${f.year} · ${esc(f.category)}</p><div class="poster-footer"><a class="film-link" href="${esc(filmUrl(f))}" aria-label="Ficha de ${esc(displayTitle(f))}">Ficha <span aria-hidden="true">↗</span></a></div></div></article>`).join('');
@@ -139,9 +142,9 @@ function syncSearchClear() { $('clearSearch').hidden = !$('searchInput').value; 
 function updateFilterChips() {
   if (!$('activeFilters')) return;
   const query = $('searchInput').value.trim(), format = $('formatFilter').value;
-  const chips = [['query', query], ['genre', category], ['format', format],...['decade','director','country'].map(key=>[key,$(key+'Filter').value])].filter(([, value]) => value);
+  const chips = [['query', query], ['genre', category], ['format', format],...['decade','director','country','offer'].map(key=>[key,$(key+'Filter').value])].filter(([, value]) => value);
   $('activeFilters').hidden = !chips.length;
-  $('activeFilters').innerHTML = chips.map(([key, value]) => {const label=key==='format'?formatLabel({format:value}):value;return `<button type="button" class="active-chip" data-clear-filter="${key}" aria-label="Remover filtro ${esc(label)}">${esc(label)} <span aria-hidden="true">×</span></button>`;}).join('');
+  $('activeFilters').innerHTML = chips.map(([key, value]) => {const label=key==='offer'?'Com edição física':key==='format'?formatLabel({format:value}):value;return `<button type="button" class="active-chip" data-clear-filter="${key}" aria-label="Remover filtro ${esc(label)}">${esc(label)} <span aria-hidden="true">×</span></button>`;}).join('');
   $('filterCount').textContent = chips.length ? `(${chips.length})` : '';
   syncSearchClear();
 }
@@ -151,7 +154,7 @@ syncSearchClear();
 function selectCatalog(options={}){return CinefitaCatalog.select(films,options);}
 function renderCatalog(syncUrl=true){
   if(!$('categorySections'))return;
-  const query=$('searchInput').value.trim(),format=$('formatFilter').value,sort=$('sortOrder').value;const extra=Object.fromEntries(['decade','director','country'].map(key=>[key,$(key+'Filter').value]));
+  const query=$('searchInput').value.trim(),format=$('formatFilter').value,sort=$('sortOrder').value;const extra=Object.fromEntries(['decade','director','country','offer'].map(key=>[key,$(key+'Filter').value]));
   if(syncUrl){const params=new URLSearchParams();if(query)params.set('q',query);if(category)params.set('genre',category);if(format)params.set('format',format);if(sort!=='category')params.set('sort',sort);for(const [key,value] of Object.entries(extra))if(value)params.set(key,value);try{history.replaceState(null,'',location.pathname+(params.size?'?'+params.toString():''));}catch{}}
   const result=selectCatalog({query,genre:category,format,sort,...extra});
   $('searchResults').textContent=`${result.length} de ${films.length} títulos${format?' · '+formatLabel({format}):''}${category?' · '+category:''}`;
@@ -166,7 +169,7 @@ function restoreCatalog(){
   category=catalogGenres.includes(params.get('genre'))?params.get('genre'):'';
   $('formatFilter').value=[...$('formatFilter').options].some(o=>o.value===params.get('format'))?params.get('format'):'';
   const sort=params.get('sort');$('sortOrder').value=[...$('sortOrder').options].some(o=>o.value===sort)?sort:'category';
-  ['decade','director','country'].forEach(key=>{const control=$(key+'Filter');control.value=[...control.options].some(o=>o.value===params.get(key))?params.get(key):'';});
+  ['decade','director','country','offer'].forEach(key=>{const control=$(key+'Filter');control.value=[...control.options].some(o=>o.value===params.get(key))?params.get(key):'';});
   renderCatalog(false);
 }
 if($('categorySections')){
@@ -176,8 +179,8 @@ if($('categorySections')){
   $('searchInput').addEventListener('compositionend',()=>renderCatalog());
   $('catalogFilters').open=false;
   document.querySelector('.search').addEventListener('submit',e=>{e.preventDefault();renderCatalog();});
-  ['formatFilter','sortOrder','decadeFilter','directorFilter','countryFilter'].forEach(id=>$(id).addEventListener('change',()=>renderCatalog()));
-  $('clearFilters').addEventListener('click',()=>{category='';$('searchInput').value='';$('formatFilter').value='';['decade','director','country'].forEach(key=>$(key+'Filter').value='');$('sortOrder').value='category';renderCatalog();$('searchInput').focus();});
+  ['formatFilter','sortOrder','decadeFilter','directorFilter','countryFilter','offerFilter'].forEach(id=>$(id).addEventListener('change',()=>renderCatalog()));
+  $('clearFilters').addEventListener('click',()=>{category='';$('searchInput').value='';$('formatFilter').value='';['decade','director','country','offer'].forEach(key=>$(key+'Filter').value='');$('sortOrder').value='category';renderCatalog();$('searchInput').focus();});
   window.addEventListener('popstate',restoreCatalog);
 }
 if($('posterCount'))$('posterCount').textContent=`${films.filter(f=>f.poster).length} / ${films.length}`;
@@ -193,7 +196,7 @@ document.addEventListener('click',e=>{
   const product=e.target.closest('[data-product-toggle]');
   if(product){toggleProductView(product.closest('[data-product-preview]'));return;}
   const chip=e.target.closest('[data-clear-filter]');
-  if(chip){const key=chip.dataset.clearFilter;if(key==='query')$('searchInput').value='';if(key==='genre')category='';if(key==='format')$('formatFilter').value='';if(['decade','director','country'].includes(key))$(key+'Filter').value='';renderCatalog();$('catalogFilters').querySelector('summary').focus();return;}
+  if(chip){const key=chip.dataset.clearFilter;if(key==='query')$('searchInput').value='';if(key==='genre')category='';if(key==='format')$('formatFilter').value='';if(['decade','director','country','offer'].includes(key))$(key+'Filter').value='';renderCatalog();$('catalogFilters').querySelector('summary').focus();return;}
   const poster=e.target.closest('[data-poster]');
   if(poster){openPoster(poster);return;}
   const buy=e.target.closest('[data-buy]');if(buy){addToCart(films.find(f=>f.image===buy.dataset.buy));return;}const remove=e.target.closest('[data-remove]');if(remove){const scope=remove.closest('#cartPageItems')||$('cartItems');cart.splice(Number(remove.dataset.remove),1);save();(scope.querySelector('button:not(:disabled),a[href]')||(scope.id==='cartPageItems'?$('mainContent'):$('closeCart'))).focus();toast('Item removido');return;}const qty=e.target.closest('[data-delta]');if(qty){const i=Number(qty.dataset.index);cart[i].qty=Math.min(99,Math.max(1,cart[i].qty+Number(qty.dataset.delta)));const scope=qty.closest('#cartPageItems')||$('cartItems');const delta=qty.dataset.delta;save();const target=scope.querySelector(`[data-index="${i}"][data-delta="${delta}"]:not(:disabled)`)||scope.querySelector(`[data-index="${i}"]:not(:disabled)`);target?.focus();return;}const filter=e.target.closest('.filter');if(filter){category=filter.dataset.cat||'';document.querySelectorAll('.filter').forEach(b=>{const active=b===filter;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});renderCatalog();}});
@@ -226,14 +229,62 @@ if ($('tapePhoto')) $('tapePhoto').onchange = e => {
 };
 window.addEventListener('pagehide',()=>{if(photoURL)URL.revokeObjectURL(photoURL);});
 function shipping(){return document.querySelector('[name="delivery"]:checked')?.value==='shipping'?19.9:0;}
-function renderOrder(){if(!$('orderItems'))return;$('checkoutEmpty').hidden=cart.length>0;$('checkoutContent').hidden=!cart.length;$('orderItems').innerHTML=cart.map(it=>`<div class="order-line"><span>${it.qty} × ${esc(it.displayTitle||it.title)}<small>${esc(it.service||it.format||'')}</small></span><strong>${money(it.price*it.qty)}</strong></div>`).join('');$('orderSubtotal').textContent=money(subtotal());$('orderShipping').textContent=shipping()?money(shipping()):'Grátis';$('orderTotal').textContent=money(subtotal()+shipping());}
+function orderCents(){return Math.round(subtotal()*100)+Math.round(shipping()*100);}
+function installmentText(amounts) {
+  const groups = new Map();
+  amounts.forEach(cents => groups.set(cents, (groups.get(cents) || 0) + 1));
+  return [...groups].map(([cents,count]) => `${count}× de ${money(cents/100)}`).join(' + ');
+}
+function selectedPayment() {
+  const method = document.querySelector('[name="payment"]:checked')?.value;
+  const count = method === 'credit' ? Number($('installments').value) : 1;
+  return CinefitaCheckout.quote(orderCents(), method, count);
+}
+function renderPayment() {
+  if (!$('paymentOptions')) return;
+  const method = document.querySelector('[name="payment"]:checked')?.value;
+  const credit = method === 'credit';
+  $('creditFields').hidden = !credit;
+  $('creditFields').disabled = !credit;
+  // Preserve os nós das opções enquanto o seletor nativo está aberto.
+  if ($('installments').dataset.totalCents !== String(orderCents())) {
+    const previous = $('installments').value || '1';
+    $('installments').innerHTML = cart.length ? Array.from({length:Math.min(12,orderCents())},(_,i) => {
+      const quote = CinefitaCheckout.quote(orderCents(),'credit',i+1);
+      const min = Math.min(...quote.installments), max = Math.max(...quote.installments);
+      const label = min === max ? installmentText(quote.installments)+' · sem juros' : `${i+1}× sem juros · ${money(min/100)} a ${money(max/100)}`;
+      return `<option value="${i+1}">${label}</option>`;
+    }).join('') : '';
+    $('installments').value = [...$('installments').options].some(option=>option.value===previous) ? previous : '1';
+    $('installments').dataset.totalCents = String(orderCents());
+  }
+  const hints = {
+    pix:'Ao concluir, o pagamento por PIX será aprovado na simulação. Não há chave, QR Code ou transferência real.',
+    debit:'Ao concluir, o débito à vista será aprovado na simulação. Não é necessário informar dados de cartão.',
+    credit:'Escolha de 1 a 12 parcelas sem juros. Ao concluir, o crédito será aprovado na simulação, sem dados de cartão.'
+  };
+  $('paymentHint').textContent = hints[method] || 'Escolha uma forma de pagamento para continuar.';
+  if (cart.length && Object.hasOwn(CinefitaCheckout.methods,method)) {
+    const quote = selectedPayment();
+    $('installments').removeAttribute('aria-invalid');
+    $('orderPayment').textContent = quote.label;
+    $('orderPaymentTerms').textContent = credit ? installmentText(quote.installments)+' · sem juros' : 'À vista';
+    $('installmentNotice').textContent = credit ? `Total de ${money(quote.totalCents/100)} em ${quote.installments.length} ${quote.installments.length===1?'parcela':'parcelas'}. Os centavos são distribuídos entre as parcelas para preservar o total.` : '';
+  } else {
+    $('orderPayment').textContent = 'Não selecionado';
+    $('orderPaymentTerms').textContent = '';
+  }
+}
+function renderOrder(){if(!$('orderItems'))return;$('checkoutEmpty').hidden=cart.length>0;$('checkoutContent').hidden=!cart.length;$('orderItems').innerHTML=cart.map(it=>`<div class="order-line"><span>${it.qty} × ${esc(it.displayTitle||it.title)}<small>${esc(it.service||it.format||'')}</small></span><strong>${money(it.price*it.qty)}</strong></div>`).join('');$('orderSubtotal').textContent=money(subtotal());$('orderShipping').textContent=shipping()?money(shipping()):'Grátis';$('orderTotal').textContent=money(orderCents()/100);renderPayment();}
+document.querySelectorAll('[name="payment"]').forEach(input=>input.addEventListener('change',()=>{renderPayment();$('paymentError').hidden=true;}));
+if ($('installments')) $('installments').addEventListener('change',renderPayment);
 document.querySelectorAll('[name="delivery"]').forEach(input=>input.onchange=()=>{const active=shipping()>0;$('addressFields').hidden=!active;$('addressFields').disabled=!active;$('addressFields').querySelectorAll('input').forEach(i=>i.required=active&&i.name!=='extra');renderOrder();});
 const purchaseForm = $('purchaseForm');
 const fieldHints = {name:'Informe seu nome com pelo menos 3 caracteres.',email:'Informe um e-mail válido, como nome@exemplo.com.',zip:'Informe o CEP com 8 números, como 00000-000.',street:'Informe o nome da rua.',number:'Informe o número do endereço.',district:'Informe o bairro.',city:'Informe a cidade.',state:'Informe a UF com 2 letras, como SP.'};
 function validateField(input) {
   const error = document.getElementById(`${input.id}Error`);
   if (!error) return true;
-  const invalid = input.required && !input.value.trim() || !input.validity.valid;
+  const invalid = input.required && !input.value.trim() || !input.validity.valid || (input.name === 'name' && input.value.trim().length < 3);
   input.setAttribute('aria-invalid', String(invalid));
   error.textContent = invalid ? fieldHints[input.name] || 'Confira este campo.' : '';
   error.hidden = !invalid;
@@ -260,14 +311,20 @@ if (purchaseForm) {
     e.preventDefault();
     if (!cart.length || $('completePurchase').disabled) return;
     const invalid = fields.filter(input => !input.disabled && !input.closest('fieldset[disabled]') && !validateField(input));
-    $('validationSummary').hidden = !invalid.length;
-    if (invalid.length) {
-      $('validationSummary').textContent = `Confira ${invalid.length===1?'o campo indicado':'os '+invalid.length+' campos indicados'} para continuar.`;
-      invalid[0].focus();
+    let payment;
+    try { payment = selectedPayment(); } catch {}
+    $('paymentError').hidden = !!payment;
+    $('installments').setAttribute('aria-invalid',String(!payment && document.querySelector('[name="payment"]:checked')?.value==='credit'));
+    $('validationSummary').hidden = !invalid.length && !!payment;
+    if (invalid.length || !payment) {
+      $('validationSummary').textContent = 'Confira os campos indicados para continuar.';
+      (invalid[0] || (document.querySelector('[name="payment"]:checked')?.value==='credit' ? $('installments') : document.querySelector('[name="payment"]'))).focus();
       return;
     }
     $('completePurchase').disabled = true;
-    const total = money(subtotal()+shipping());
+    const total = money(payment.totalCents/100);
+    const terms = payment.method === 'credit' ? `em ${payment.installments.length} ${payment.installments.length===1?'parcela':'parcelas'}: ${installmentText(payment.installments)} sem juros` : 'à vista';
+    $('successPayment').textContent = `${payment.label} · ${terms}. Pagamento aprovado na simulação.`;
     cart = [];
     save();
     $('checkoutEmpty').hidden = true;

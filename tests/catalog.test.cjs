@@ -50,3 +50,5 @@ test('retorno da ficha só aceita páginas locais reconhecidas',()=>{
     const ctx=vm.createContext({URL,URLSearchParams,location:{origin:'https://cinefita.test',href:'https://cinefita.test/filme.html',pathname:'/filme.html',search:'?from='+encodeURIComponent(from)}});vm.runInContext(code,ctx);assert.equal(vm.runInContext('catalogReturn()',ctx),expected);
   }
 });
+
+test("ofertas físicas combinam com busca e filtros",()=>{assert.equal(catalog.select(films,{offer:"available"}).length,41);assert.deepEqual(catalog.select(films,{offer:"available",query:"Frankenstein"}).map(f=>f.image),["frankenstein"]);assert.equal(catalog.select(films,{offer:"available",country:"Brasil"}).length,0);});

@@ -27,7 +27,7 @@ function setupHero() {
   const controller = context.createCinefitaHero(container, () => moving, () => choices++);
   return {context, controller, images, slides, status, container, timers, previous, next,
     pause() {moving = false; controller.finish();},
-    finish() {for (const [id, timer] of timers) if (timer.ms === 1400) {timers.delete(id); timer.callback();}},
+    finish() {for (const [id, timer] of timers) if (timer.ms === 900) {timers.delete(id); timer.callback();}},
     get choices() {return choices;},
   };
 }
@@ -170,4 +170,27 @@ test('suporte desconhecido não cria embalagem e formatos conhecidos reutilizam 
     assert.ok(preview.includes(`assets/products/${kind}-open.webp`));
     assert.ok(fs.existsSync(path.join(__dirname, `../assets/products/${kind}-open.webp`)));
   }
+});
+
+test('trocas rápidas preservam as camadas visíveis até a fusão terminar', async () => {
+  const ui = setupHero();
+  await ui.controller.select(1);
+  await ui.controller.select(2);
+  assert.equal(ui.slides[0].hidden, false);
+  assert.equal(ui.slides[1].hidden, false);
+  assert.equal(ui.slides[2].hidden, false);
+  assert.equal(ui.slides.filter(s => !s.inert).length, 1);
+  assert.equal(ui.slides[2].inert, false);
+  assert.equal([...ui.timers.values()].filter(t => t.ms === 900).length, 1);
+  ui.finish();
+  assert.deepEqual(ui.slides.map(s => s.hidden), [true, true, false]);
+});
+test('repetir o destaque atual não encerra uma fusão em andamento', async () => {
+  const ui = setupHero();
+  await ui.controller.select(1);
+  await ui.controller.select(1);
+  assert.equal(ui.slides[0].hidden, false);
+  assert.equal(ui.slides[1].classList.contains('is-entering'), true);
+  ui.finish();
+  assert.deepEqual(ui.slides.map(s => s.hidden), [true, false, true]);
 });

@@ -7,6 +7,10 @@ function cinefitaRevealDirection(rect, viewportWidth) {
 function createCinefitaHero(container, canMove, onChoice = () => {}) {
   const slides = [...container.querySelectorAll('[data-hero-film]')];
   const status = container.querySelector('[data-hero-status]');
+  function announce(message, failed = false) {
+    status.textContent = message;
+    status.classList.toggle('is-error', failed);
+  }
   let current = 0, requested = 0, version = 0, timer = 0;
   function finish() {
     clearTimeout(timer); timer = 0;
@@ -19,26 +23,33 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
     });
   }
   function commit(index) {
-    finish();
-    const outgoing = slides[current];
+    clearTimeout(timer); timer = 0;
+    const incoming = slides[index];
+    // Establish the hidden slide's starting opacity before making it active.
+    // Already visible slides retain their interpolated opacity on rapid choices.
+    incoming.hidden = false;
+    void incoming.offsetWidth;
     current = index;
-    finish();
-    const incoming = slides[current];
     if (canMove()) {
-      outgoing.hidden = false;
-      outgoing.classList.add('is-leaving');
-      incoming.classList.add('is-entering');
-      timer = setTimeout(finish, 1400);
-    }
-    status.textContent = `${incoming.dataset.heroTitle}. Destaque ${current + 1} de ${slides.length}.`;
+      slides.forEach((slide, position) => {
+        const active = position === current;
+        slide.classList.toggle('is-active', active);
+        slide.classList.toggle('is-entering', active);
+        slide.classList.toggle('is-leaving', !active && !slide.hidden);
+        slide.inert = !active;
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+      timer = setTimeout(finish, 900);
+    } else finish();
+    announce(`${incoming.dataset.heroTitle}. Destaque ${current + 1} de ${slides.length}.`);
   }
   async function select(index) {
     onChoice();
     requested = (index + slides.length) % slides.length;
     const ticket = ++version, target = requested;
     container.setAttribute('aria-busy', 'false');
-    if (target === current) { finish(); status.textContent = ''; return; }
-    status.textContent = `Carregando ${slides[target].dataset.heroTitle}…`;
+    if (target === current) { announce(''); return; }
+    announce(`Carregando ${slides[target].dataset.heroTitle}…`);
     container.setAttribute('aria-busy', 'true');
     try {
       await Promise.all([...slides[target].querySelectorAll('img')].map(async img => {
@@ -62,7 +73,7 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
       if (ticket !== version) return;
       requested = current;
       container.setAttribute('aria-busy', 'false');
-      status.textContent = `Não foi possível carregar ${slides[target].dataset.heroTitle}. Tente novamente.`;
+      announce(`Não foi possível carregar ${slides[target].dataset.heroTitle}. Tente novamente.`, true);
     }
   }
   if (slides.length !== 3) return null;
@@ -71,6 +82,58 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
   container.querySelector('[data-hero-prev]').addEventListener('click', () => select(requested - 1));
   container.querySelector('[data-hero-next]').addEventListener('click', () => select(requested + 1));
   return {finish, select};
+}
+
+/* Cursor tilt uses the poster's layout box, never its transformed bounds. */
+function createCinefitaPosterTilt(container, canMove) {
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const posters = [...container.querySelectorAll('.hero-cover')];
+  let frame = 0, pending = null;
+  function reset() {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    pending = null;
+    posters.forEach(poster => {
+      poster.style.removeProperty('--poster-axis-x');
+      poster.style.removeProperty('--poster-axis-y');
+      poster.style.removeProperty('--poster-angle');
+    });
+  }
+  function enabled(poster) {
+    return finePointer.matches && canMove() &&
+      poster.closest('.hero-slide')?.classList.contains('is-active');
+  }
+  function paint() {
+    frame = 0;
+    if (!pending || !enabled(pending.poster)) { reset(); return; }
+    const {poster, clientX, clientY} = pending;
+    const stage = poster.closest('.hero-artwork');
+    const box = stage.getBoundingClientRect();
+    const width = poster.offsetWidth, height = poster.offsetHeight;
+    if (!width || !height) { reset(); return; }
+    const x = Math.max(-1, Math.min(1, (clientX - box.left - poster.offsetLeft) / width * 2 - 1));
+    const y = Math.max(-1, Math.min(1, (clientY - box.top - poster.offsetTop) / height * 2 - 1));
+    const distance = Math.hypot(x, y);
+    poster.style.setProperty('--poster-axis-x', (-y).toFixed(4));
+    poster.style.setProperty('--poster-axis-y', x.toFixed(4));
+    poster.style.setProperty('--poster-angle', (Math.min(1, distance) * 10).toFixed(3) + 'deg');
+  }
+  posters.forEach(poster => {
+    function follow(event) {
+      if (event.pointerType !== 'mouse' || !enabled(poster)) { reset(); return; }
+      pending = {poster, clientX: event.clientX, clientY: event.clientY};
+      if (!frame) frame = requestAnimationFrame(paint);
+    }
+    poster.addEventListener('pointerenter', follow);
+    poster.addEventListener('pointermove', follow);
+    poster.addEventListener('pointerleave', reset);
+    poster.addEventListener('pointercancel', reset);
+  });
+  finePointer.addEventListener('change', reset);
+  container.addEventListener('focusin', reset);
+  window.addEventListener('resize', reset);
+  window.addEventListener('scroll', reset, {passive: true});
+  return {reset};
 }
 
 /* Shared progressive motion; catalog data, forms and storage stay independent. */
@@ -91,7 +154,11 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
   const registered = new WeakSet();
   const revealTargets = '.editorial-section .section-head, .category-head, .collection-preview-copy, .collection-triptych, .grid .poster-wrap, .poster-card .poster-art, .film-art > .poster-frame, .film-art .product-stage, .gallery-invite > div, .gallery-teaser';
   const showcase = root.querySelector('[data-hero-showcase]');
-  const heroController = showcase ? createCinefitaHero(showcase, canMove, () => root.classList.remove('home-enter')) : null;
+  const posterTilt = showcase ? createCinefitaPosterTilt(showcase, () => heroVisible && canMove()) : null;
+  const heroController = showcase ? createCinefitaHero(showcase, canMove, () => {
+    root.classList.remove('home-enter');
+    posterTilt?.reset();
+  }) : null;
   let resizeFrame = 0;
 
   function canMove() { return !paused && !reduced.matches && !document.hidden; }
@@ -136,6 +203,7 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
     root.classList.toggle('hero-motion-running', !!hero && heroVisible && canMove());
     toggle?.setAttribute('aria-pressed', String(paused));
     if (toggle) toggle.textContent = paused ? 'Retomar animações' : 'Pausar animações';
+    if (!heroVisible || !canMove()) posterTilt?.reset();
     if (!canMove()) showAll();
     if (!canParallax()) {
       cancelAnimationFrame(frame);
@@ -182,7 +250,7 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
       });
       heroObserver.observe(hero);
     }
-    if (canMove()) {
+    if (canMove() && !root.classList.contains('home-contemporary')) {
       revealObserver = new IntersectionObserver(entries => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
@@ -229,6 +297,6 @@ function createCinefitaHero(container, canMove, onChoice = () => {}) {
     }
   }
   root.querySelectorAll('.hero-copy, .hero-card.is-active, main h1').forEach(setDirection);
-  if (canMove()) root.classList.add(hero ? 'home-enter' : 'site-enter');
+  if (canMove() && !root.classList.contains('home-contemporary')) root.classList.add(hero ? 'home-enter' : 'site-enter');
   syncMotion();
 })();

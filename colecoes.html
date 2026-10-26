@@ -8,24 +8,46 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20261010-motion-hero">
-<link rel="stylesheet" href="site-theme.css?v=20261010-motion-hero">
+<link rel="stylesheet" href="site-theme.css?v=20261026-modern-store">
+<link rel="icon" href="assets/brand/cinefita-logo-transparente.png" type="image/png">
 </head>
 <body class="site-contemporary">
 <a class="skip-link" href="#mainContent">Pular para o conteúdo</a>
-<header><div class="container nav"><div class="header-top"><a class="brand" href="index.html">
-      <img class="brand-mark" src="assets/filmstrip.png" alt="Cinefita">
-      <span class="brand-copy"><strong>CINEFITA</strong><span>ACERVO DE CINEMA</span></span>
-    </a><div class="nav-right">
+<header><div class="container nav"><div class="header-top"><a class="brand" href="index.html" aria-label="Cinefita — início"><img class="brand-logo" src="assets/brand/cinefita-logo-transparente.png" data-asset-id="cinefita-footer-logo-v3" width="2172" height="724" alt="Cinefita"><span class="brand-tagline">Aqui o classico vira <em class="tagline-accent">novo</em></span></a><div class="nav-right">
       <form class="search" action="catalogo.html" novalidate><label for="searchInput" class="sr-only">Buscar filmes</label><input id="searchInput" name="q" placeholder="Buscar no acervo" type="search"><button class="search-clear" id="clearSearch" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><button class="search-submit" type="submit" aria-label="Pesquisar no catálogo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form>
       <button class="cart" id="cartButton" aria-label="Carrinho"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span class="cart-badge" id="cartBadge">0</span></button>
     </div>
-  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><div class="cinema-atmosphere" aria-hidden="true"><span class="cinema-glow cinema-glow-red"></span><span class="cinema-glow cinema-glow-blue"></span><span class="cinema-beam"></span><span class="cinema-orbit"></span><span class="cinema-grain"></span></div><div class="container motion-controls"><button class="disc-toggle" type="button" aria-pressed="false">Pausar animações</button></div><div class="container editorial-page"><div id="curatedPage"></div></div></main><footer>
-  <div class="container footer-grid">
-    <div><h4>CINEFITA</h4><p>Arquivo vivo para objetos que merecem continuar em circulação.</p><p class="ratings-note">Notas do IMDb consultadas em 20/09/2026. Podem mudar com novos votos.</p></div>
-    <div><h4>NAVEGAÇÃO</h4><p class="footer-navigation"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="colecao.html">Minha coleção</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar sua fita</a></p></div>
-    <div><h4>ATENDIMENTO</h4><p>Uma coleção para guardar.<br>Projeto demonstrativo • sem vendas reais.</p></div>
-  </div>
-</footer><div class="cart-overlay" id="cartOverlay"></div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false">Menu</button></div><nav id="primaryNav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="catalogo.html">Catálogo</a><a href="colecoes.html">Coleções</a><a href="posters.html">Pôsteres</a><a href="revitalizar.html">Revitalizar</a><a href="colecao.html">Minha coleção</a></nav></div></header><main id="mainContent" tabindex="-1"><div class="cinema-atmosphere" aria-hidden="true"><span class="cinema-glow cinema-glow-red"></span><span class="cinema-glow cinema-glow-blue"></span><span class="cinema-beam"></span><span class="cinema-orbit"></span><span class="cinema-grain"></span></div><div class="container motion-controls"><button class="disc-toggle" type="button" aria-pressed="false">Pausar animações</button></div><div class="container editorial-page"><div id="curatedPage"></div></div></main><footer class="site-footer" data-design-id="cinefita-alt-mod-footer-20261019">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html" aria-label="Cinefita — início"><img src="assets/brand/cinefita-logo-transparente.png" data-asset-id="cinefita-footer-logo-v3" width="2172" height="724" alt="Cinefita"></a>
+          <p class="footer-signature">Aqui o clássico<br>vira <em>novo.</em></p>
+          <p class="footer-description">Cinema físico, memória viva.</p>
+        </div>
+        <nav aria-labelledby="footerExplore">
+          <h2 class="footer-heading" id="footerExplore">Explorar</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="colecoes.html">Coleções</a></li>
+            <li><a href="posters.html">Pôsteres</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footerCollection">
+          <h2 class="footer-heading" id="footerCollection">Sua coleção</h2>
+          <ul class="footer-links">
+            <li><a href="colecao.html">Minha coleção</a></li>
+            <li><a href="revitalizar.html">Revitalizar sua fita</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-meta"><p class="footer-year">CINEFITA · 2026</p><p>Projeto demonstrativo · sem vendas reais.</p></div>
+        <p class="ratings-note">Notas do IMDb consultadas em 20/09/2026. Podem mudar com novos votos.</p>
+      </div>
+    </div>
+  </footer><div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
   <div class="cart-head"><div><p class="eyebrow">SUA COLEÇÃO</p><h3 id="drawerTitle">Carrinho</h3></div><button class="cart-close" id="closeCart" aria-label="Fechar carrinho"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
   <div class="cart-items" id="cartItems"></div>
@@ -38,4 +60,4 @@
 </aside>
 <div class="toast" id="toast" role="status"></div>
 
-<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js?v=20261010-motion-hero"></script><script src="collection-ui.js?v=20261009-designly"></script><script src="site-motion.js?v=20261010-motion-hero"></script></body></html>
+<dialog id="organizeDialog" class="organize-dialog" aria-labelledby="organizeTitle" aria-describedby="organizeHint"><div class="dialog-head"><p class="eyebrow">MINHA COLEÇÃO</p><button id="closeOrganize" class="cart-close" type="button" aria-label="Fechar organização">×</button></div><h2 id="organizeTitle"></h2><p id="organizeHint">Marque como preferir. As opções são independentes e ficam neste navegador.</p><div id="organizeMarks" class="personal-marks"></div><p class="storage-notice" data-storage-notice role="status" hidden></p><a class="film-link" href="colecao.html">Ver minha coleção →</a></dialog><script src="data.js"></script><script src="film-details.js"></script><script src="catalog-expansion.js"></script><script src="editorial-data.js"></script><script src="collections-data.js"></script><script src="poster-artwork.js"></script><script src="catalog-core.js"></script><script src="personal-collection.js"></script><script src="app.js?v=20261026-modern-store"></script><script src="collection-ui.js?v=20261009-designly"></script><script src="site-motion.js?v=20261026-modern-store"></script></body></html>
