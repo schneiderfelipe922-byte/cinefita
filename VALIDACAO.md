@@ -146,3 +146,62 @@ O usuário autorizou a expansão para todas as páginas e pediu desaceleração 
 - Capturas desktop das nove páginas e comparação do catálogo em desktop/celular estão em `relatorios/tema-global-2026-10-09`. As quatro referências antes/depois do catálogo foram adicionadas ao Moodboard autorizado, sem geração paga; identificadores em `canvas-assets.json`.
 
 Backup preservado em `/Users/Admin/Desktop/cinefita-5-backup-2026-10-09`. Cartazes, dados, URLs e contratos de armazenamento permanecem intactos. Sem publicação, backend ou login.
+
+## Redesign editorial escuro — 11/10/2026
+
+Plano implementado nas nove páginas com Designly e AI Graphic Design. Preservados acervo, cartazes, fontes, preços, rotas e armazenamento. O usuário escolheu manter o logo vermelho de uma edição concomitante; esta escolha substituiu a preservação do símbolo âmbar no plano original. Seis estudos editáveis no Moodboard: https://superdesign.dev/teams/1d1bc809-60a7-44b1-9242-1880b7006cad/projects/ae2d0565-faa6-4095-aba0-658b6a7953e6.
+
+Validação:
+
+- `node --test tests/*.test.cjs`: 23 testes passaram. Testes dos movimentos internos removidos foram substituídos por verificações de ausência de animações/observadores; concorrência, falha, timeout e pausa dos destaques permanecem. Incluído filtro de oferta combinado com busca e filtros existentes.
+- `node tests/browser-check.cjs` com Chromium temporário: 54 verificações de layout passaram (nove páginas × cinco larguras 320/390/768/1024/1440, mais nove verificações equivalentes a zoom 200% em viewport CSS 720px com densidade 2). Sem overflow horizontal, IDs duplicados ou exceções JavaScript.
+- Fluxos passaram: filtro offer=available (41 de 52), busca, abertura/retorno da ficha com filtros, chips/limpar/no-results, organização por teclado/Escape, marcações independentes e recarga, Minha coleção, filme sem oferta, IDs inválidos, embalagem fixada, carrinho modal e retorno de foco, dados inválidos/recuperação/endereço/conclusão simulada, esvaziamento do carrinho, galeria, menu móvel, troca/pausa/redução de movimento, foto inválida/válida e armazenamento bloqueado. Sem JS, três destaques visíveis e controles de script ocultos.
+- Contraste computado dos textos renderizados nas nove páginas, 390px/1440px: nenhum achado abaixo dos limiares AA de texto normal/grande. Não inclui texto dentro de cartazes ou logos.
+- Os 12 tokens de cor do frontmatter DESIGN.md correspondem aos tokens canônicos em styles.css. `git diff --check` passou.
+- Auditoria estática do código atual: 92 alertas de botões sem ação detectável, todos da mesma regra. O auditor reconhece apenas handlers inline e não os proprietários addEventListener/onclick/delegação utilizados pelo projeto e exercitados no navegador. Não se declara aprovação dessa auditoria; relatório bruto e avaliação em relatorios/redesign-editorial-2026-10-11/current-audit.json e AUDITORIA.md. A execução sobre toda a raiz foi interrompida por incluir relatórios históricos extensos.
+
+Capturas desktop/celular das nove páginas, estudos e resultados JSON em `relatorios/redesign-editorial-2026-10-11`. Verificação em Chromium desktop com viewports emulados; não é teste em aparelhos físicos, zoom nativo de todos os navegadores ou certificação por leitor de tela. Sem build, framework novo, autenticação, publicação ou integração de pagamento.
+
+## Versão Figma — 12/10/2026
+
+Esta pasta usa a direção cinematográfica de versao-alt-mod no Figma, substituindo nesta cópia o redesign editorial posterior descrito no histórico anterior. 32 testes passaram; 45 verificações de layout e os fluxos descritos em relatorios/implementacao-figma-2026-10-12/LEIA-ME.md foram conferidos no navegador. A auditoria bruta e suas limitações de listeners nativos estão registradas no mesmo relatório.
+
+## Nova logo aplicada — 13/10/2026
+
+- Marca aprovada no cabeçalho e rodapé das nove páginas; favicon de película atualizado. Assinatura serifada em itálico, com “novo” em vermelho.
+- Inicial com animação da fita, giro da estrela de 1s e reprodução manual das duas vozes em “Ouvir logo”; entrada automática silenciosa.
+- Navegador: 45 combinações de página/tamanho, em 1440, 1000, 901, 390 e 320px; nenhuma rolagem horizontal ou falha de imagem da marca. Sem arquivos ausentes nem erros de JavaScript.
+- Áudio conferido: 9,685s, frase em 6575ms, estrela de 1000ms. Escape interrompe; preferência de reduzir movimento permite ouvir com a marca estática.
+- Os 32 testes existentes desta versão passaram. Evidências em relatorios/logo-cinefita-2026-10-13.
+
+## Nova marca e rodapé na versao-alt-mod — 19/10/2026
+
+Aplicado por pedido explícito do usuário em /Users/Admin/Desktop/cinefita-versao-alt-mod: rodapé editorial nas nove páginas, nova logo transparente no cabeçalho/rodapé/favicon e adaptação à paleta carvão #13161B, superfície #20262F, branco quente #F4F1EA e vermelho #E85B53, com Manrope. Tokens globais originais preservados. Rótulos pequenos e foco permanecem claros; o vermelho destaca o texto grande e sublinhados, mantendo contraste.
+
+A logo é estática; o áudio opcional funciona com a nova imagem, com início/parada e status acessível verificados com movimento reduzido e normal. O rodapé foi isolado em sua própria camada para não ser encoberto pelo plano decorativo fixo dentro do main.
+
+Verificação: 38 testes existentes passaram; 36 combinações de página e largura (320, 390, 768 e 1440 px), 36 capturas de cabeçalho e rodapé, contraste dos textos, alvos de 44px, IDs únicos, links reais, foco/ativação por teclado, recuperação do carrinho, redução de movimento, áudio com logo estática e navegação sem JavaScript passaram sem erros de página. Todas as 18 capturas de rodapé passaram pela verificação de fundo e pixels visíveis da logo; capturas das nove páginas foram inspecionadas em desktop e celular. DESIGN.md: lint oficial com zero erros e avisos. Auditoria estática estrita do escopo alterado: zero achados. git diff --check aprovado.
+
+Cópias anteriores, manifesto com hashes, capturas e evidências estão em /Users/Admin/Desktop/cinefita-5/relatorios/rodape-alt-mod-2026-10-19. Verificação local Chromium com larguras emuladas; não foi realizada publicação nem teste em aparelho físico.
+
+### Destaques fluidos e fundo animado — 26/10/2026
+
+40 testes passaram, incluindo duas regressões para cliques rápidos e repetição do destaque atual durante a fusão. Chromium verificou a prévia moderna em 320/390/768/1024/1440px e a inicial de produção em 320/390/768/1440px: sem rolagem horizontal nem IDs duplicados. Ambas tiveram opacidade intermediária medida durante a fusão e navegação rápida, movimento real do fundo, pausa efetiva (incluindo opacidade), troca instantânea com movimento reduzido e zero erros de JavaScript. Uma composição fica acessível; as demais são inert/aria-hidden. Evidência: .superdesign/previews/motion-checks.json. O teste usa as imagens já enviadas, com hashes conferidos, para não depender da velocidade da rede. git diff --check aprovado.
+
+Superdesign atualizado no mesmo rascunho, versão 5, com o logo original nos dois locais. Importação determinística sem nova geração paga. Os ajustes de movimento também foram aplicados ao código da inicial; o restante do layout moderno continua na prévia.
+
+### Critérios da atividade e aurora — 26/10/2026, versão alt mod
+
+Conferência nesta pasta, sem presumir resultados da cópia cinefita-5. Layout moderno aprovado integrado à inicial e ao cabeçalho/rodapé compartilhados. Aurora com faixas curvas e fases independentes. Quatro ofertas na inicial, sinopses nos produtos, filtro de edição física e checkout com PIX/débito/crédito/parcelas implementados.
+
+- 44 testes unitários passaram: acervo/ativos/filtros, persistência/abas/falhas, retornos, pagamentos em centavos e movimentos/concorrência/pausa/timeout.
+- tests/browser-check.cjs: 54 verificações de layout (nove páginas × 320/390/768/1024/1440px, mais reflow equivalente a 200%) e todos os fluxos passaram, sem erros de JS. Exercitou busca/filtro de oferta, retorno, chips, marcas/coleção, IDs inválidos, embalagem, carrinho, formulário, galeria, menu/Escape, pausa/redução, upload local, armazenamento bloqueado e fallback sem JS.
+- tests/checkout-browser.cjs: 20 verificações passaram. Ofertas completas, quantidades/persistência, erro de nome/e-mail/endereço, PIX/débito/crédito concluídos, 12 parcelas, frete, pagamento ausente/recuperação, select estável, foco e contraste dos novos textos. Capturas da compra em 390/1440px inspecionadas.
+- QA de movimento: nove larguras combinadas na produção/prévia, opacidade intermediária durante troca e cliques rápidos, movimento real da aurora, pausa e redução de movimento. Sem erros de JS. Máscaras são decorativas; não alteram dimensões do documento.
+- Capturas de inicial desktop/móvel e pagamento inspecionadas. Os cartazes e curadorias aparecem completos; o conteúdo da inicial não depende de rolar para ficar visível.
+- Auditor estático Premium sobre cópia de 29 arquivos de produção com hashes idênticos: 104 alertas da única regra affordance.actionless-button. São limitações do detector, que não segue os handlers DOM separados/delegados de app.js, collection-ui.js, site-motion.js e brand-sound.js. IDs/data-actions foram revisados e fluxos exercitados no navegador; não se afirma aprovação automática desse auditor. A varredura incluindo caches/artefatos antigos foi encerrada por lentidão. Não há erro de propriedade canônica apontado.
+- git diff --check e checagem de sintaxe JS aprovados. Código fonte público remoto conferido ainda em bf8c2ff; nenhuma publicação desta revisão foi feita.
+
+Evidências locais: relatorios/atividade-alt-mod-2026-10-26/. Chromium com viewports emulados não equivale a aparelho físico ou certificação por leitor de tela. Publicação/entrega e apresentação ainda pendentes, conforme CRITERIOS-ATIVIDADE.md.
+
+Registro local da implementação: `01dcad4` — Integra UI moderna com aurora e completa pagamentos simulados. O commit inclui os cinco recursos de marca efetivamente referenciados (PNG, áudio WAV, CSS e dois scripts), os nove HTML, regras compartilhadas e testes. A documentação é registrada em commit separado; nenhuma escrita remota foi realizada.

@@ -1,50 +1,45 @@
-# Cinefita
+# Cinefita — versão alt mod
 
-O tema contemporâneo atende todo o site: carvão, branco quente, vermelho e Manrope, com fundos animados e entradas de imagens em 1,4s. Cada item entra pelo lado em que está na tela; itens centrais entram verticalmente, dentro da área reservada. “Pausar animações” interrompe o movimento em cada página; redução de movimento é respeitada durante a sessão. Tema e controlador compartilhados: site-theme.css e site-motion.js. Comparação e validação em VALIDACAO.md.
-
-Site estático em português, com 52 filmes, quatro seleções editoriais e uma galeria de 47 cartazes. Logo, cartazes, dados e contratos preservados.
+Loja virtual demonstrativa de cinema físico, feita com HTML, CSS e JavaScript. Possui 52 obras, 41 ofertas ilustrativas, quatro coleções editoriais, galeria, coleção pessoal e simulação completa de compra. A interface cinematográfica usa a identidade Cinefita, carvão e vermelho, cartazes completos e fundo de aurora em movimento.
 
 ## Executar
 
-Não há dependências de build. Sirva esta pasta por HTTP:
+Na pasta do projeto, execute `python3 -m http.server 8000` e abra [localhost:8000](http://localhost:8000). Não há build, backend, login ou chaves de API. As imagens e fontes usadas pelo site estão em `assets/`. O arquivo pode ser servido por qualquer servidor HTTP estático.
 
-```sh
-python3 -m http.server 8000
-```
+## Usar a loja
 
-Abra `http://localhost:8000`. O carrinho usa `localStorage` e funciona entre as páginas na mesma origem.
+1. Explore a inicial ou o catálogo. Combine busca com gênero, oferta física, formato, década, direção, país e ordenação.
+2. Abra um filme com oferta e adicione ao carrinho. Altere a quantidade, remova itens ou continue para a compra.
+3. Use nome/e-mail fictícios. Escolha retirada gratuita ou endereço de entrega com frete ilustrativo de R$ 19,90.
+4. Escolha PIX, débito à vista ou crédito em 1 a 12 parcelas sem juros. Resumo e confirmação acompanham a seleção; as parcelas sempre somam o total exato.
+5. Conclua a simulação. O carrinho é limpo, e a confirmação recebe foco. Não há cobrança, transferência, dados bancários ou envio de pedido real.
 
-## Recursos
+Os onze filmes editoriais sem oferta não têm preço inventado nem botão de compra. A coleção pessoal oferece Tenho, Quero ter e Já assisti, de forma independente. Carrinho e marcações ficam no localStorage do navegador, sem sincronização entre dispositivos. Dados do formulário não são enviados nem persistidos. O som da marca é opcional e iniciado pelo botão “Ouvir logo”. Aurora, destaques e objetos respeitam pausa e movimento reduzido; a navegação dos destaques é manual.
 
-- Catálogo com busca, filtros, ordenação e seleções preservadas na URL.
-- Fichas com direção, duração, sinopse e fontes.
-- Galeria com artes alternativas independentes das capas dos produtos, ampliação e link da fonte.
-- Prévia ilustrativa da embalagem na arte principal da ficha, com hover temporário e botão “Ver aberto” / “Ver cartaz” para fixar o estado.
-- Três destaques manuais na inicial: Frankenstein, Alien e Hellraiser; iluminação própria, navegação circular somente por setas laterais sem caixa, hover de inclinação exclusivo do cartaz, transição de 1,4s e imagens geradas com fundo transparente. Frankenstein tem caveira com pregos voltada à direita; Alien, ovo luminoso e névoa; Hellraiser, cubo aberto com correntes diagonais em uma única imagem estática, sem rotação. Ciclos de caveira/ovo somente no destaque ativo, suspensos fora da abertura, em aba oculta, pausa ou redução de movimento. Objetos ampliados ficam parcialmente escondidos atrás dos cartazes completos. Cléo permanece no acervo e na galeria.
-- Layout responsivo, foco visível e respeito a `prefers-reduced-motion`.
+## Arquivos principais
 
-O checkout é uma demonstração. Não processa pagamentos, envia pedidos ou mantém estoque real. Preços, frete e embalagens são referências ilustrativas.
+| Arquivo | Responsabilidade |
+|---|---|
+| `index.html`, `catalogo.html`, `filme.html` | Inicial, catálogo e fichas de produtos. |
+| `colecoes.html`, `colecao.html`, `posters.html` | Curadoria, coleção pessoal e galeria. |
+| `revitalizar.html`, `carrinho.html`, `compra.html` | Serviço demonstrativo, carrinho e finalização. |
+| `styles.css`, `site-theme.css` | Tokens, componentes, responsividade, layout moderno e aurora. |
+| `app.js`, `collection-ui.js` | Renderização, eventos, validação, carrinho, filtros e diálogos. |
+| `checkout-core.js` | Métodos de pagamento e cálculo em centavos. |
+| `catalog-core.js`, `personal-collection.js` | Busca/filtros e persistência das marcações. |
+| `site-motion.js` | Fusão dos destaques, pausa, visibilidade, redução de movimento e inclinação do cartaz. |
+| `data.js` e complementos | Obras, sinopses, metadados e preços de referência. |
 
-## Estrutura
+## Verificação e entrega
 
-As nove páginas compartilham `styles.css` e `app.js`. `data.js`, `film-details.js` e `catalog-expansion.js` contêm o acervo; `poster-artwork.js` contém as artes alternativas da galeria. Imagens, fontes e manifestos de procedência ficam em `assets/`.
+Execute `node --test tests/*.test.cjs`: 44 testes unitários. Com Playwright/Chromium disponíveis e servidor ativo, execute `node tests/browser-check.cjs` e `node tests/checkout-browser.cjs`. Eles aceitam `CINEFITA_PLAYWRIGHT`, `CINEFITA_CHROMIUM`, `CINEFITA_URL` e `CINEFITA_REPORT_DIR`.
 
-Veja [DESIGN.md](DESIGN.md), [UX-CONTRACT.md](UX-CONTRACT.md) e [LEIA-ME.txt](LEIA-ME.txt). Os relatórios históricos e backups são locais e não integram o repositório.
+Veja [CRITERIOS-ATIVIDADE.md](CRITERIOS-ATIVIDADE.md), [VALIDACAO.md](VALIDACAO.md), [APRESENTACAO.md](APRESENTACAO.md), [DESIGN.md](DESIGN.md) e [UX-CONTRACT.md](UX-CONTRACT.md). Relatórios/capturas gerados são locais, em `relatorios/`, e não integram o código necessário para execução.
 
-[Arquivo de design no Figma](https://www.figma.com/design/HFyHSw8FTmsVoewbVR5ry1).
+Destino da entrega: [branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod). A publicação desta revisão ainda precisa ser autorizada; o remoto foi conferido em bf8c2ff, anterior às mudanças locais. A apresentação e o envio do link ao professor cabem ao aluno.
 
-## Créditos dos ativos
+## Design e créditos
 
-Cartazes são referências de obras de terceiros; seus direitos permanecem com os respectivos titulares. A procedência está em `assets/posters/sources.json`, `assets/posters/expansion-sources.json`, `assets/posters/editorial-sources.json` e `assets/posters/alternatives/sources.json`. A presença neste projeto não concede licença de reprodução comercial.
+A direção moderna foi aprovada no [Superdesign](https://superdesign.dev/teams/1d1bc809-60a7-44b1-9242-1880b7006cad/projects/1d51d169-d293-4577-aa15-0c123d62bd43). O histórico visual anterior está no [Figma da versão alternativa](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT/versao-alt-mod?node-id=43-2). A implementação atual está nesta pasta e é independente de `cinefita-5`.
 
-Embalagens abertas são ilustrações geradas, sem promessa de conteúdo de uma edição real. Fontes locais incluem suas licenças em `assets/fonts/`. As notas do IMDb são um recorte estático consultado em 20/09/2026, registrado em `imdb-ratings.json`.
-
-## Redesign editorial e Minha coleção
-
-Cartazes completos em grades 4/3/2/1, títulos sem truncamento, preço secundário e compra apenas na ficha. Filtros por gênero, suporte, década, direção e país podem ser combinados e permanecem na URL. Coleções: colecoes.html, com seleção por id. Minha coleção: colecao.html, com Tenho, Quero ter e Já assisti independentes.
-
-Login foi adiado por decisão do usuário. Marcações ficam em localStorage neste navegador; não há conta, backend ou sincronização entre dispositivos. Não é necessário configurar Supabase ou Resend. Os onze filmes novos não têm preço ou oferta física pesquisada.
-
-## Validação
-
-`node --test tests/*.test.cjs` verifica acervo, imagens, curadorias, filtros, preços ausentes, persistência, falhas, alterações entre abas, retorno seguro e os estados de pausa, parallax e redução de movimento do site. Inclui páginas internas e listas atualizadas pela busca. Não há etapa de build. Verificação de reflow e fluxos descrita em VALIDACAO.md.
+Cartazes são referências de obras de terceiros; seus direitos permanecem com os titulares. Procedência: `assets/posters/sources.json`, `expansion-sources.json`, `editorial-sources.json` e `alternatives/sources.json`. Embalagens abertas são ilustrações geradas e não prometem conteúdo de uma edição real. Fontes locais incluem suas licenças em `assets/fonts/`. Dados IMDb são um recorte editorial de 20/09/2026; não representam avaliações de compradores nem atualização em tempo real.

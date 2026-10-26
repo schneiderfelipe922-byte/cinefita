@@ -82,6 +82,12 @@ Em 09/10/2026 o usuário aprovou o experimento da inicial, pediu uma versão mai
 
 Público: pessoas que exploram clássicos e colecionam cinema físico. Locale pt-BR. O site continua estático e demonstrativo, sem conta, cobrança, publicação ou envio de pedido/foto. Minha coleção continua local ao navegador, sem sincronização entre dispositivos.
 
+## Identidade e rodapé — 19/10/2026
+
+Pedido explícito do usuário: aplicar o rodapé editorial já aprovado à versao-alt-mod, substituir a logo antiga pela nova e ajustar as cores à versão. Esta decisão substitui as indicações anteriores de preservar a marca antiga e sua animação no cabeçalho. Cabeçalho e rodapé das nove páginas passam a usar `assets/brand/cinefita-logo-transparente.png`, com símbolo de película e nome Cinefita, mantendo a proporção 3:1 e o arquivo aprovado sem recolorir. O favicon também referencia a nova imagem. A logo é estática; o áudio escolhido pelo usuário continua funcionando sem depender da animação antiga.
+
+Rodapé com marca e assinatura, grupos “Explorar” e “Sua coleção” e faixa inferior com aviso demonstrativo e nota IMDb apenas onde já existia. Estilos em `site-theme.css`, derivados dos tokens desta versão: carvão #13161B, superfície #20262F, branco quente #F4F1EA e vermelho #E85B53. Manrope acompanha a tipografia da versão. Vermelho destaca “novo” em tamanho grande e sublinhados; rótulos pequenos e foco usam branco quente para manter contraste. Três áreas no desktop, dois grupos abaixo da marca no celular e grupos empilhados em 320px. Todos os links são nativos, alvos de pelo menos 44px e disponíveis sem JavaScript. Nenhuma mudança na paleta global ou nos movimentos do acervo.
+
 ## Tokens e proprietários
 
 Modelo B: `styles.css :root` é a fonte dos tokens globais, espelhados no frontmatter acima. `site-theme.css`, carregado depois, possui composição, tipografia e movimento compartilhados; não mantém outra paleta. `body.site-contemporary` é aplicado em todas as rotas e seus overlays. `home-contemporary` identifica somente a inicial; não é um tema independente. `site-motion.js` é o controlador único e inicializa depois dos renderizadores existentes. Nenhum framework adicionado.
@@ -135,3 +141,27 @@ A troca de destaque usa somente opacidade, em 1400ms dentro do palco. Todos os c
 ## Revisão e histórico
 
 Designly orienta hierarquia, tipografia, composição e fidelidade da marca. AI Graphic Design mantém referências no Moodboard autorizado. Em 10/10, o usuário autorizou geração de imagens para substituir as decorações SVG por ovo, cubo aberto com correntes e caveira; foi usada a ferramenta integrada de geração, sem CLI/API. Prompts e arquivos em assets/hero/ARTES-GERADAS.md. Testes e evidências em VALIDACAO.md. A direção vinho/marfim/latão e Cormorant de 08/10 e o teste restrito à inicial foram substituídos pela autorização de expansão de 09/10. O backup e as capturas anteriores preservam a comparação. A expansão visual não autoriza publicação, backend ou login.
+
+## Implementação do Figma — 12/10/2026
+
+Esta pasta independente reproduz o arquivo versao-alt-mod: https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT/versao-alt-mod?node-id=43-2. As descrições dos componentes no Figma identificam bf8c2ff como origem. Os proprietários nativos HTML/CSS/JavaScript dessa revisão foram reutilizados para reproduzir a composição sem introduzir framework ou imagens das telas como interface. A direção editorial posterior da pasta original não se aplica a esta variante. Logo original, artes transparentes e cartazes locais correspondem aos assets do Figma. Movimento contínuo segue o contrato cinematográfico documentado no arquivo.
+
+Os arquivos substituídos foram preservados em relatorios/implementacao-figma-2026-10-12/arquivos-antes-da-implementacao.zip. Pasta de implementação: /Users/Admin/Desktop/cinefita-versao-alt-mod.
+
+## Identidade Cinefita aplicada — 13/10/2026
+
+Marca aprovada aplicada ao cabeçalho e rodapé das nove páginas, com o C de película, lettering serifado e assinatura “Aqui o classico vira novo” em itálico, destacando “novo” em vermelho. Favicon atualizado. A inicial usa a animação da fita, com estrela giratória de 1s e vozes sincronizadas disponíveis pelo botão “Ouvir logo”. Entrada automática silenciosa. Prévia e arquivos em `assets/brand/animacao.html`; reprodução respeita foco, pausa, aba oculta e redução de movimento. A aplicação está isolada do tema e dos dados desta versão.
+
+## Cartazes dos destaques — cursor (14/10/2026)
+
+Somente o cartaz ativo responde à posição do mouse com perspectiva de 900px, inclinação total limitada a 10 graus e suavização de 700ms. Medir offsets de layout em relação ao palco estável; atualizar no máximo uma vez por requestAnimationFrame. Retornar ao repouso ao sair, trocar destaque, rolar, redimensionar, ocultar a aba ou suspender movimento. Touch e ponteiro sem hover ficam estáticos; redução de movimento é acompanhada durante a sessão. Objetos, dados e controles não inclinam. A inicial não mostra mais o contador nem o botão de pausa, por decisão do usuário; o status continua apenas como anúncio acessível, com mensagem visível somente em falha. As setas permanecem. As outras páginas preservam seus controles e comportamento.
+
+## Refinamento de movimento — 26/10/2026
+
+Pedido aprovado: troca de destaques mais fluida e fundo animado na versão alt mod. A troca manual usa fusão de opacidade de 900ms, preservando o estado interpolado em cliques rápidos. O fundo da inicial usa luzes vermelha e azul e feixe de projeção suaves, com ciclos de 22–30s; sem órbitas marcadas. O botão Pausar animações e a preferência por movimento reduzido suspendem os ciclos e tornam a troca instantânea. Cartazes completos, foco e alvos de 44px permanecem.
+
+## Direção moderna integrada e aurora — 26/10/2026
+
+Fonte: layout aprovado no Superdesign e solicitação explícita de aurora em movimento. Cabeçalho compacto com logo original, navegação, busca/cart; mobile mantém busca visível e menu acessível. Hero equilibrado com título em duas linhas, cartaz completo de 400/330/280px de altura e decoração menor. Quatro ofertas com preço e sinopse antecedem quatro painéis de curadoria; preservam-se três obras brasileiras, quatro descobertas e galeria. Rodapé mantém marca e dois grupos de links. Cores/tipografia/tokens da alt mod continuam canônicos.
+
+O fundo da inicial usa faixas de gradiente com máscaras vetoriais curvas, vermelho/azul e verde suave como luz decorativa; transformações lentas de 19/25s simulam cortinas de aurora. A cor verde não é um token de ação ou estado. Aurora e fusão manual respeitam pausa e redução de movimento. Conteúdo da inicial aparece de imediato. Compra usa os componentes existentes de campo/radio e select nativo, com resumo legível em uma coluna no celular.
