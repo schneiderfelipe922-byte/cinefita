@@ -8,10 +8,6 @@ Loja virtual demonstrativa de cinema físico, feita com HTML, CSS e JavaScript. 
 
 A branch padrão do repositório e a origem do GitHub Pages são `versao-alt-mod`, usando os arquivos da raiz. O marcador `.nojekyll` mantém a publicação como site estático. A loja é demonstrativa: não processa pagamentos ou pedidos reais. Carrinho e coleção são locais ao navegador/origem; dados salvos no localhost não são transferidos para o domínio público.
 
-## Executar
-
-Na pasta do projeto, execute `python3 -m http.server 8000` e abra [localhost:8000](http://localhost:8000). Não há build, backend, login ou chaves de API. As imagens e fontes usadas pelo site estão em `assets/`. O arquivo pode ser servido por qualquer servidor HTTP estático.
-
 ## Usar a loja
 
 1. Explore a inicial ou o catálogo. Combine busca com gênero, oferta física, formato, década, direção, país e ordenação.
@@ -36,16 +32,6 @@ Os onze filmes editoriais sem oferta não têm preço inventado nem botão de co
 | `site-motion.js` | Fusão dos destaques, pausa, visibilidade, redução de movimento e inclinação do cartaz. |
 | `data.js` e complementos | Obras, sinopses, metadados e preços de referência. |
 
-## Verificação e entrega
+## Créditos
 
-Execute `node --test tests/*.test.cjs`: 44 testes unitários. Com Playwright/Chromium disponíveis e servidor ativo, execute `node tests/browser-check.cjs` e `node tests/checkout-browser.cjs`. Eles aceitam `CINEFITA_PLAYWRIGHT`, `CINEFITA_CHROMIUM`, `CINEFITA_URL` e `CINEFITA_REPORT_DIR`.
-
-Veja [CRITERIOS-ATIVIDADE.md](CRITERIOS-ATIVIDADE.md), [VALIDACAO.md](VALIDACAO.md), [APRESENTACAO.md](APRESENTACAO.md), [DESIGN.md](DESIGN.md) e [UX-CONTRACT.md](UX-CONTRACT.md). Relatórios/capturas gerados são locais, em `relatorios/`, e não integram o código necessário para execução.
-
-Destino da entrega: [branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod). Os commits 01dcad4 e 7d405fc foram publicados em 26/10/2026 com autorização do usuário. Os arquivos de execução, logo e áudio foram conferidos na árvore remota; o repositório público respondeu HTTP 200 sem autenticação. Esta atualização de documentação registra a publicação. A apresentação e o envio do link ao professor cabem ao aluno.
-
-## Design e créditos
-
-A direção moderna foi aprovada no [Superdesign](https://superdesign.dev/teams/1d1bc809-60a7-44b1-9242-1880b7006cad/projects/1d51d169-d293-4577-aa15-0c123d62bd43). O histórico visual anterior está no [Figma da versão alternativa](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT/versao-alt-mod?node-id=43-2). A implementação atual está nesta pasta e é independente de `cinefita-5`.
-
-Cartazes são referências de obras de terceiros; seus direitos permanecem com os titulares. Procedência: `assets/posters/sources.json`, `expansion-sources.json`, `editorial-sources.json` e `alternatives/sources.json`. Embalagens abertas são ilustrações geradas e não prometem conteúdo de uma edição real. Fontes locais incluem suas licenças em `assets/fonts/`. Dados IMDb são um recorte editorial de 20/09/2026; não representam avaliações de compradores nem atualização em tempo real.
+[Figma da versão alternativa](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT/versao-alt-mod?node-id=43-2)
