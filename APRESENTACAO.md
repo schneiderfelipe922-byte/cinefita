@@ -4,7 +4,7 @@ Tempo sugerido: 7–10 minutos. Use somente dados fictícios, como “Cliente de
 
 ## Preparar
 
-Abra a versão `versao-alt-mod` do repositório, execute `python3 -m http.server 8000` e acesse `http://localhost:8000`. Confira o carrinho antes de começar. Tenha abertos o site, o código e o histórico do GitHub. Leia e ensaie as explicações abaixo; o professor avaliará sua compreensão do projeto.
+Abra [a Cinefita hospedada](https://schneiderfelipe922-byte.github.io/cinefita/). Para apresentar offline/localmente, use a versão `versao-alt-mod` do repositório, execute `python3 -m http.server 8000` e acesse `http://localhost:8000`. Confira o carrinho antes de começar. Tenha abertos o site, o código e o histórico do GitHub. Leia e ensaie as explicações abaixo; o professor avaliará sua compreensão do projeto.
 
 ## Demonstração da loja
 

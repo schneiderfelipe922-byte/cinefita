@@ -2,6 +2,12 @@
 
 Loja virtual demonstrativa de cinema físico, feita com HTML, CSS e JavaScript. Possui 52 obras, 41 ofertas ilustrativas, quatro coleções editoriais, galeria, coleção pessoal e simulação completa de compra. A interface cinematográfica usa a identidade Cinefita, carvão e vermelho, cartazes completos e fundo de aurora em movimento.
 
+## Site e versão principal
+
+[Abrir a Cinefita online](https://schneiderfelipe922-byte.github.io/cinefita/)
+
+A branch padrão do repositório e a origem do GitHub Pages são `versao-alt-mod`, usando os arquivos da raiz. O marcador `.nojekyll` mantém a publicação como site estático. A loja é demonstrativa: não processa pagamentos ou pedidos reais. Carrinho e coleção são locais ao navegador/origem; dados salvos no localhost não são transferidos para o domínio público.
+
 ## Executar
 
 Na pasta do projeto, execute `python3 -m http.server 8000` e abra [localhost:8000](http://localhost:8000). Não há build, backend, login ou chaves de API. As imagens e fontes usadas pelo site estão em `assets/`. O arquivo pode ser servido por qualquer servidor HTTP estático.

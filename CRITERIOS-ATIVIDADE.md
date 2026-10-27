@@ -36,6 +36,10 @@ As partes técnicas dos critérios 1–10 têm evidência local e a publicação
 3. Com Playwright/Chromium disponíveis, execute `node tests/browser-check.cjs` e `node tests/checkout-browser.cjs`.
 4. Confira os resultados e limitações em VALIDACAO.md. Capturas/JSON locais: relatorios/atividade-alt-mod-2026-10-26/ e .superdesign/previews/.
 
+## Site hospedado e versão principal
+
+Link para navegar na loja: [Cinefita online](https://schneiderfelipe922-byte.github.io/cinefita/). A branch padrão do repositório e a fonte do GitHub Pages são `versao-alt-mod`, na raiz. A entrega de código continua sendo o repositório indicado abaixo.
+
 ## Publicação confirmada; entrega e apresentação pendentes
 
 Destino confirmado: [código da branch versao-alt-mod](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod) e [histórico](https://github.com/schneiderfelipe922-byte/cinefita/commits/versao-alt-mod). Publicação autorizada e confirmada em 26/10/2026: o SHA remoto 7d405fc0f5d59dfe4982dba5ecc587d0e4dc1359 correspondeu à revisão validada. A árvore remota contém as nove páginas e seus recursos, incluindo logo e áudio; o repositório respondeu HTTP 200 sem login. O commit posterior de documentação registra essa confirmação sem modificar o código de execução.
