@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "central",
+    "title": "Central do Brasil",
+    "year": 1998,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Central_Station_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/12/Central-do-brasil-poster04.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/12/Central-do-brasil-poster04.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/central.jpg",
+        "width": 268,
+        "height": 372,
+        "bytes": 22155
+      },
+      "large": {
+        "src": "assets/posters/expansion/central.jpg",
+        "width": 268,
+        "height": 372,
+        "bytes": 22155
+      }
+    }
+  },
+  {
+    "id": "cidade",
+    "title": "Cidade de Deus",
+    "year": 2002,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/City_of_God_%282002_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/10/CidadedeDeus.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/10/CidadedeDeus.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/cidade.jpg",
+        "width": 260,
+        "height": 383,
+        "bytes": 24033
+      },
+      "large": {
+        "src": "assets/posters/expansion/cidade.jpg",
+        "width": 260,
+        "height": 383,
+        "bytes": 24033
+      }
+    }
+  },
+  {
+    "id": "auto",
+    "title": "O Auto da Compadecida",
+    "year": 2000,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/A_Dog%27s_Will",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d1/O_Auto_da_Compadecida.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d1/O_Auto_da_Compadecida.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/auto.jpg",
+        "width": 220,
+        "height": 313,
+        "bytes": 164431
+      },
+      "large": {
+        "src": "assets/posters/expansion/auto.jpg",
+        "width": 220,
+        "height": 313,
+        "bytes": 164431
+      }
+    }
+  },
+  {
+    "id": "horas",
+    "title": "Que Horas Ela Volta?",
+    "year": 2015,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Second_Mother_(2015_film)",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/The_Second_Mother_%282015_film%29_POSTER.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/The_Second_Mother_%282015_film%29_POSTER.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/horas.jpg",
+        "width": 220,
+        "height": 323,
+        "bytes": 92634
+      },
+      "large": {
+        "src": "assets/posters/expansion/horas.jpg",
+        "width": 220,
+        "height": 323,
+        "bytes": 92634
+      }
+    }
+  },
+  {
+    "id": "bacurau",
+    "title": "Bacurau",
+    "year": 2019,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Bacurau",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/92/Bacurau_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/92/Bacurau_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/bacurau.jpg",
+        "width": 250,
+        "height": 369,
+        "bytes": 175365
+      },
+      "large": {
+        "src": "assets/posters/expansion/bacurau.jpg",
+        "width": 250,
+        "height": 369,
+        "bytes": 175365
+      }
+    }
+  },
+  {
+    "id": "aquarius",
+    "title": "Aquarius",
+    "year": 2016,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Aquarius_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/b/b5/Aquarius_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/b/b5/Aquarius_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/aquarius.jpg",
+        "width": 262,
+        "height": 360,
+        "bytes": 193348
+      },
+      "large": {
+        "src": "assets/posters/expansion/aquarius.jpg",
+        "width": 262,
+        "height": 360,
+        "bytes": 193348
+      }
+    }
+  },
+  {
+    "id": "hoje",
+    "title": "Hoje Eu Quero Voltar Sozinho",
+    "year": 2014,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Way_He_Looks",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/98/The_Way_He_Looks_Official_Brazilian_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/98/The_Way_He_Looks_Official_Brazilian_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/hoje.jpg",
+        "width": 236,
+        "height": 346,
+        "bytes": 19618
+      },
+      "large": {
+        "src": "assets/posters/expansion/hoje.jpg",
+        "width": 236,
+        "height": 346,
+        "bytes": 19618
+      }
+    }
+  },
+  {
+    "id": "ainda",
+    "title": "Ainda Estou Aqui",
+    "year": 2024,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/I%27m_Still_Here_%282024_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/0/0a/I%27m_Still_Here_%282024_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/0/0a/I%27m_Still_Here_%282024_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/ainda.jpg",
+        "width": 258,
+        "height": 387,
+        "bytes": 84318
+      },
+      "large": {
+        "src": "assets/posters/expansion/ainda.jpg",
+        "width": 258,
+        "height": 387,
+        "bytes": 84318
+      }
+    }
+  },
+  {
+    "id": "future",
+    "title": "De Volta para o Futuro",
+    "year": 1985,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Back_to_the_Future",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/future.jpg",
+        "width": 251,
+        "height": 397,
+        "bytes": 104721
+      },
+      "large": {
+        "src": "assets/posters/expansion/future.jpg",
+        "width": 251,
+        "height": 397,
+        "bytes": 104721
+      }
+    }
+  },
+  {
+    "id": "jurassic",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Jurassic_Park_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/jurassic.jpg",
+        "width": 220,
+        "height": 328,
+        "bytes": 68739
+      },
+      "large": {
+        "src": "assets/posters/expansion/jurassic.jpg",
+        "width": 220,
+        "height": 328,
+        "bytes": 68739
+      }
+    }
+  },
+  {
+    "id": "raiders",
+    "title": "Os Caçadores da Arca Perdida",
+    "year": 1981,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Raiders_of_the_Lost_Ark.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Raiders_of_the_Lost_Ark.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/raiders.jpg",
+        "width": 257,
+        "height": 388,
+        "bytes": 48890
+      },
+      "large": {
+        "src": "assets/posters/expansion/raiders.jpg",
+        "width": 257,
+        "height": 388,
+        "bytes": 48890
+      }
+    }
+  },
+  {
+    "id": "starwars",
+    "title": "Star Wars: Uma Nova Esperança",
+    "year": 1977,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Star_Wars_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/starwars.jpg",
+        "width": 252,
+        "height": 385,
+        "bytes": 50243
+      },
+      "large": {
+        "src": "assets/posters/expansion/starwars.jpg",
+        "width": 252,
+        "height": 385,
+        "bytes": 50243
+      }
+    }
+  },
+  {
+    "id": "et",
+    "title": "E.T.",
+    "year": 1982,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/E.T._the_Extra-Terrestrial",
+    "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/6/66/E_t_the_extra_terrestrial_ver3.jpg/250px-E_t_the_extra_terrestrial_ver3.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/66/E_t_the_extra_terrestrial_ver3.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/et.jpg",
+        "width": 250,
+        "height": 389,
+        "bytes": 23910
+      },
+      "large": {
+        "src": "assets/posters/expansion/et.jpg",
+        "width": 250,
+        "height": 389,
+        "bytes": 23910
+      }
+    }
+  },
+  {
+    "id": "matrix",
+    "title": "Matrix",
+    "year": 1999,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Matrix",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/matrix.png",
+        "width": 260,
+        "height": 376,
+        "bytes": 252291
+      },
+      "large": {
+        "src": "assets/posters/expansion/matrix.png",
+        "width": 260,
+        "height": 376,
+        "bytes": 252291
+      }
+    }
+  },
+  {
+    "id": "fellowship",
+    "title": "O Senhor dos Anéis: A Sociedade do Anel",
+    "year": 2001,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings%3A_The_Fellowship_of_the_Ring",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/fellowship.jpg",
+        "width": 218,
+        "height": 326,
+        "bytes": 90931
+      },
+      "large": {
+        "src": "assets/posters/expansion/fellowship.jpg",
+        "width": 218,
+        "height": 326,
+        "bytes": 90931
+      }
+    }
+  },
+  {
+    "id": "fury",
+    "title": "Mad Max: Estrada da Fúria",
+    "year": 2015,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Mad_Max%3A_Fury_Road",
+    "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/6/6e/Mad_Max_Fury_Road.jpg/250px-Mad_Max_Fury_Road.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/6e/Mad_Max_Fury_Road.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/fury.jpg",
+        "width": 250,
+        "height": 358,
+        "bytes": 33788
+      },
+      "large": {
+        "src": "assets/posters/expansion/fury.jpg",
+        "width": 250,
+        "height": 358,
+        "bytes": 33788
+      }
+    }
+  },
+  {
+    "id": "chihiro",
+    "title": "A Viagem de Chihiro",
+    "year": 2001,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Spirited_Away",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/chihiro.png",
+        "width": 265,
+        "height": 376,
+        "bytes": 202016
+      },
+      "large": {
+        "src": "assets/posters/expansion/chihiro.png",
+        "width": 265,
+        "height": 376,
+        "bytes": 202016
+      }
+    }
+  },
+  {
+    "id": "totoro",
+    "title": "Meu Amigo Totoro",
+    "year": 1988,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/My_Neighbor_Totoro",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/totoro.jpg",
+        "width": 268,
+        "height": 371,
+        "bytes": 129730
+      },
+      "large": {
+        "src": "assets/posters/expansion/totoro.jpg",
+        "width": 268,
+        "height": 371,
+        "bytes": 129730
+      }
+    }
+  },
+  {
+    "id": "akira",
+    "title": "Akira",
+    "year": 1988,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Akira_%281988_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/5d/AKIRA_%281988_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/5d/AKIRA_%281988_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/akira.jpg",
+        "width": 266,
+        "height": 376,
+        "bytes": 130237
+      },
+      "large": {
+        "src": "assets/posters/expansion/akira.jpg",
+        "width": 266,
+        "height": 376,
+        "bytes": 130237
+      }
+    }
+  },
+  {
+    "id": "giant",
+    "title": "O Gigante de Ferro",
+    "year": 1999,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Iron_Giant",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d3/The_Iron_Giant_poster.JPG?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d3/The_Iron_Giant_poster.JPG?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/giant.jpg",
+        "width": 269,
+        "height": 370,
+        "bytes": 22868
+      },
+      "large": {
+        "src": "assets/posters/expansion/giant.jpg",
+        "width": 269,
+        "height": 370,
+        "bytes": 22868
+      }
+    }
+  },
+  {
+    "id": "walle",
+    "title": "WALL-E",
+    "year": 2008,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/WALL-E",
+    "sourceUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/4/4c/WALL-E_poster.jpg/250px-WALL-E_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/WALL-E_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/walle.jpg",
+        "width": 250,
+        "height": 370,
+        "bytes": 30918
+      },
+      "large": {
+        "src": "assets/posters/expansion/walle.jpg",
+        "width": 250,
+        "height": 370,
+        "bytes": 30918
+      }
+    }
+  },
+  {
+    "id": "toy",
+    "title": "Toy Story",
+    "year": 1995,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Toy_Story",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/toy.jpg",
+        "width": 250,
+        "height": 373,
+        "bytes": 115106
+      },
+      "large": {
+        "src": "assets/posters/expansion/toy.jpg",
+        "width": 250,
+        "height": 373,
+        "bytes": 115106
+      }
+    }
+  },
+  {
+    "id": "spiderverse",
+    "title": "Homem-Aranha no Aranhaverso",
+    "year": 2018,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Spider-Man%3A_Into_the_Spider-Verse",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/spiderverse.png",
+        "width": 260,
+        "height": 385,
+        "bytes": 171942
+      },
+      "large": {
+        "src": "assets/posters/expansion/spiderverse.png",
+        "width": 260,
+        "height": 385,
+        "bytes": 171942
+      }
+    }
+  },
+  {
+    "id": "menino",
+    "title": "O Menino e o Mundo",
+    "year": 2013,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Boy_and_the_World",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/7e/Boy_and_the_World_film_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/7/7e/Boy_and_the_World_film_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/menino.png",
+        "width": 258,
+        "height": 386,
+        "bytes": 186909
+      },
+      "large": {
+        "src": "assets/posters/expansion/menino.png",
+        "width": 258,
+        "height": 386,
+        "bytes": 186909
+      }
+    }
+  },
+  {
+    "id": "parasite",
+    "title": "Parasita",
+    "year": 2019,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Parasite_%282019_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/parasite.png",
+        "width": 265,
+        "height": 378,
+        "bytes": 168283
+      },
+      "large": {
+        "src": "assets/posters/expansion/parasite.png",
+        "width": 265,
+        "height": 378,
+        "bytes": 168283
+      }
+    }
+  },
+  {
+    "id": "mood",
+    "title": "Amor à Flor da Pele",
+    "year": 2000,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/In_the_Mood_for_Love",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/45/In_the_Mood_for_Love_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/45/In_the_Mood_for_Love_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/mood.jpg",
+        "width": 265,
+        "height": 376,
+        "bytes": 108748
+      },
+      "large": {
+        "src": "assets/posters/expansion/mood.jpg",
+        "width": 265,
+        "height": 376,
+        "bytes": 108748
+      }
+    }
+  },
+  {
+    "id": "paradiso",
+    "title": "Cinema Paradiso",
+    "year": 1988,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Cinema_Paradiso",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/CinemaParadiso.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/CinemaParadiso.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/paradiso.jpg",
+        "width": 268,
+        "height": 372,
+        "bytes": 93752
+      },
+      "large": {
+        "src": "assets/posters/expansion/paradiso.jpg",
+        "width": 268,
+        "height": 372,
+        "bytes": 93752
+      }
+    }
+  },
+  {
+    "id": "amelie",
+    "title": "O Fabuloso Destino de Amélie Poulain",
+    "year": 2001,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Am%C3%A9lie",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/53/Amelie_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/53/Amelie_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/amelie.jpg",
+        "width": 250,
+        "height": 361,
+        "bytes": 115210
+      },
+      "large": {
+        "src": "assets/posters/expansion/amelie.jpg",
+        "width": 250,
+        "height": 361,
+        "bytes": 115210
+      }
+    }
+  },
+  {
+    "id": "separation",
+    "title": "A Separação",
+    "year": 2011,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/A_Separation",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/41/A_Separation_%282011_film_poster%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/41/A_Separation_%282011_film_poster%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/separation.png",
+        "width": 262,
+        "height": 380,
+        "bytes": 168995
+      },
+      "large": {
+        "src": "assets/posters/expansion/separation.png",
+        "width": 262,
+        "height": 380,
+        "bytes": 168995
+      }
+    }
+  },
+  {
+    "id": "pan",
+    "title": "O Labirinto do Fauno",
+    "year": 2006,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Pan%27s_Labyrinth",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/pan.jpg",
+        "width": 264,
+        "height": 377,
+        "bytes": 107978
+      },
+      "large": {
+        "src": "assets/posters/expansion/pan.jpg",
+        "width": 264,
+        "height": 377,
+        "bytes": 107978
+      }
+    }
+  },
+  {
+    "id": "portrait",
+    "title": "Retrato de uma Jovem em Chamas",
+    "year": 2019,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Portrait_of_a_Lady_on_Fire",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/cb/Portrait_of_a_Lady_on_Fire.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/cb/Portrait_of_a_Lady_on_Fire.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/portrait.jpg",
+        "width": 250,
+        "height": 333,
+        "bytes": 32319
+      },
+      "large": {
+        "src": "assets/posters/expansion/portrait.jpg",
+        "width": 250,
+        "height": 333,
+        "bytes": 32319
+      }
+    }
+  },
+  {
+    "id": "perfectdays",
+    "title": "Dias Perfeitos",
+    "year": 2023,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Perfect_Days",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/c9/Perfect_Days_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/c9/Perfect_Days_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/perfectdays.jpg",
+        "width": 264,
+        "height": 377,
+        "bytes": 84182
+      },
+      "large": {
+        "src": "assets/posters/expansion/perfectdays.jpg",
+        "width": 264,
+        "height": 377,
+        "bytes": 84182
+      }
+    }
+  },
+  {
+    "id": "godfather",
+    "title": "O Poderoso Chefão",
+    "year": 1972,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Godfather",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/godfather.jpg",
+        "width": 220,
+        "height": 330,
+        "bytes": 33203
+      },
+      "large": {
+        "src": "assets/posters/expansion/godfather.jpg",
+        "width": 220,
+        "height": 330,
+        "bytes": 33203
+      }
+    }
+  },
+  {
+    "id": "shawshank",
+    "title": "Um Sonho de Liberdade",
+    "year": 1994,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Shawshank_Redemption",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/shawshank.jpg",
+        "width": 248,
+        "height": 372,
+        "bytes": 21940
+      },
+      "large": {
+        "src": "assets/posters/expansion/shawshank.jpg",
+        "width": 248,
+        "height": 372,
+        "bytes": 21940
+      }
+    }
+  },
+  {
+    "id": "sunrise",
+    "title": "Antes do Amanhecer",
+    "year": 1995,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Before_Sunrise",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/da/Before_Sunrise_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/da/Before_Sunrise_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/sunrise.jpg",
+        "width": 248,
+        "height": 369,
+        "bytes": 19239
+      },
+      "large": {
+        "src": "assets/posters/expansion/sunrise.jpg",
+        "width": 248,
+        "height": 369,
+        "bytes": 19239
+      }
+    }
+  },
+  {
+    "id": "truman",
+    "title": "O Show de Truman",
+    "year": 1998,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Truman_Show",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/cd/Trumanshow.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/c/cd/Trumanshow.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/truman.jpg",
+        "width": 220,
+        "height": 327,
+        "bytes": 120948
+      },
+      "large": {
+        "src": "assets/posters/expansion/truman.jpg",
+        "width": 220,
+        "height": 327,
+        "bytes": 120948
+      }
+    }
+  },
+  {
+    "id": "singin",
+    "title": "Cantando na Chuva",
+    "year": 1952,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Singin%27_in_the_Rain",
+    "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Singin%27_in_the_Rain_%281952_poster%29.jpg/500px-Singin%27_in_the_Rain_%281952_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "originalSourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Singin%27_in_the_Rain_%281952_poster%29.jpg/500px-Singin%27_in_the_Rain_%281952_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/singin.jpg",
+        "width": 500,
+        "height": 758,
+        "bytes": 123806
+      },
+      "large": {
+        "src": "assets/posters/expansion/singin.jpg",
+        "width": 500,
+        "height": 758,
+        "bytes": 123806
+      }
+    }
+  },
+  {
+    "id": "hot",
+    "title": "Quanto Mais Quente Melhor",
+    "year": 1959,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Some_Like_It_Hot",
+    "sourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Some_Like_It_Hot_%281959_poster%29.png/500px-Some_Like_It_Hot_%281959_poster%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "originalSourceUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Some_Like_It_Hot_%281959_poster%29.png/500px-Some_Like_It_Hot_%281959_poster%29.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/hot.png",
+        "width": 500,
+        "height": 784,
+        "bytes": 653566
+      },
+      "large": {
+        "src": "assets/posters/expansion/hot.png",
+        "width": 500,
+        "height": 784,
+        "bytes": 653566
+      }
+    }
+  },
+  {
+    "id": "budapest",
+    "title": "O Grande Hotel Budapeste",
+    "year": 2014,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Grand_Budapest_Hotel",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Grand_Budapest_Hotel.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Grand_Budapest_Hotel.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/budapest.png",
+        "width": 220,
+        "height": 344,
+        "bytes": 144700
+      },
+      "large": {
+        "src": "assets/posters/expansion/budapest.png",
+        "width": 220,
+        "height": 344,
+        "bytes": 144700
+      }
+    }
+  },
+  {
+    "id": "littlewomen",
+    "title": "Adoráveis Mulheres",
+    "year": 2019,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Little_Women_%282019_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/9d/Little_Women_%282019_film%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/9d/Little_Women_%282019_film%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/littlewomen.jpg",
+        "width": 250,
+        "height": 371,
+        "bytes": 158718
+      },
+      "large": {
+        "src": "assets/posters/expansion/littlewomen.jpg",
+        "width": 250,
+        "height": 371,
+        "bytes": 158718
+      }
+    }
+  },
+  {
+    "id": "shining",
+    "title": "O Iluminado",
+    "year": 1980,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Shining_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Shining_%281980%29_U.K._release_poster_-_The_tide_of_terror_that_swept_America_IS_HERE.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Shining_%281980%29_U.K._release_poster_-_The_tide_of_terror_that_swept_America_IS_HERE.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/shining.jpg",
+        "width": 263,
+        "height": 379,
+        "bytes": 82660
+      },
+      "large": {
+        "src": "assets/posters/expansion/shining.jpg",
+        "width": 263,
+        "height": 379,
+        "bytes": 82660
+      }
+    }
+  },
+  {
+    "id": "rosemary",
+    "title": "O Bebê de Rosemary",
+    "year": 1968,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Rosemary%27s_Baby_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/e/ef/Rosemarys_baby_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/e/ef/Rosemarys_baby_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/rosemary.jpg",
+        "width": 254,
+        "height": 392,
+        "bytes": 39068
+      },
+      "large": {
+        "src": "assets/posters/expansion/rosemary.jpg",
+        "width": 254,
+        "height": 392,
+        "bytes": 39068
+      }
+    }
+  },
+  {
+    "id": "scream",
+    "title": "Pânico",
+    "year": 1996,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Scream_%281996_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/Scream_%281996_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/Scream_%281996_film%29_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/scream.jpg",
+        "width": 260,
+        "height": 382,
+        "bytes": 59223
+      },
+      "large": {
+        "src": "assets/posters/expansion/scream.jpg",
+        "width": 260,
+        "height": 382,
+        "bytes": 59223
+      }
+    }
+  },
+  {
+    "id": "getout",
+    "title": "Corra!",
+    "year": 2017,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Get_Out",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/a3/Get_Out_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/a3/Get_Out_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/getout.png",
+        "width": 258,
+        "height": 387,
+        "bytes": 195328
+      },
+      "large": {
+        "src": "assets/posters/expansion/getout.png",
+        "width": 258,
+        "height": 387,
+        "bytes": 195328
+      }
+    }
+  },
+  {
+    "id": "others",
+    "title": "Os Outros",
+    "year": 2001,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Others_%282001_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/TheOthers.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/TheOthers.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/others.jpg",
+        "width": 220,
+        "height": 326,
+        "bytes": 69774
+      },
+      "large": {
+        "src": "assets/posters/expansion/others.jpg",
+        "width": 220,
+        "height": 326,
+        "bytes": 69774
+      }
+    }
+  },
+  {
+    "id": "witch",
+    "title": "A Bruxa",
+    "year": 2015,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Witch_%282015_film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/b/bf/The_Witch_poster.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/witch.png",
+        "width": 259,
+        "height": 384,
+        "bytes": 148483
+      },
+      "large": {
+        "src": "assets/posters/expansion/witch.png",
+        "width": 259,
+        "height": 384,
+        "bytes": 148483
+      }
+    }
+  },
+  {
+    "id": "hereditary",
+    "title": "Hereditário",
+    "year": 2018,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Hereditary_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/hereditary.png",
+        "width": 260,
+        "height": 373,
+        "bytes": 107322
+      },
+      "large": {
+        "src": "assets/posters/expansion/hereditary.png",
+        "width": 260,
+        "height": 373,
+        "bytes": 107322
+      }
+    }
+  },
+  {
+    "id": "lambs",
+    "title": "O Silêncio dos Inocentes",
+    "year": 1991,
+    "provider": "Wikipedia / Wikimedia — cartaz de divulgação",
+    "referenceUrl": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_%28film%29",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "originalSourceUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
+    "consultedAt": "2026-11-02",
+    "rightsNote": "Cartaz de divulgação; direitos dos respectivos titulares. A presença na fonte não implica licença livre.",
+    "versions": {
+      "small": {
+        "src": "assets/posters/expansion/lambs.jpg",
+        "width": 220,
+        "height": 326,
+        "bytes": 116468
+      },
+      "large": {
+        "src": "assets/posters/expansion/lambs.jpg",
+        "width": 220,
+        "height": 326,
+        "bytes": 116468
+      }
+    }
+  }
+]

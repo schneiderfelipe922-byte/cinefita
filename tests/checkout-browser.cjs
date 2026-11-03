@@ -15,7 +15,7 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
     const context=await browser.newContext();
     const page=await context.newPage();
     page.on('pageerror',e=>errors.push(e.message));
-    async function go(route){await page.goto(origin+route);await page.evaluate(()=>document.fonts.ready);}
+    async function go(route){await page.goto(origin+route);await page.waitForSelector('html[data-ready="true"]');await page.evaluate(()=>document.fonts.ready);}
     async function add(){await go('filme.html?id=frankenstein');await page.locator('[data-buy]').click();await page.keyboard.press('Escape');}
     async function customer(){await page.locator('[name="name"]').fill('Cliente fictício');await page.locator('[name="email"]').fill('aluno@example.com');}
     async function layout(label){assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),label);checks.push(label);}
@@ -33,7 +33,7 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
     const unit=await page.evaluate(()=>Math.round(films.find(f=>f.image==='frankenstein').price*100));
     await page.locator('#cartPageItems [data-delta="1"]').click();
     assert.equal(await page.locator('#pageSubtotal').textContent(),brl(unit*2));
-    await page.reload();assert.equal(await page.locator('#pageSubtotal').textContent(),brl(unit*2));
+    await page.reload();await page.waitForSelector('html[data-ready="true"]');assert.equal(await page.locator('#pageSubtotal').textContent(),brl(unit*2));
     await page.locator('#cartPageItems [data-delta="-1"]').click();
     assert.equal(await page.locator('#pageSubtotal').textContent(),brl(unit));
     checks.push('Carrinho: quantidade, subtotal e persistência entre páginas/recarga');
@@ -55,7 +55,7 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
       if(method==='credit'){
         assert.equal(await page.locator('#installments option').count(),12);
         await page.locator('#installments').selectOption('3');
-        await page.locator('[name="delivery"][value="shipping"]').check();
+        await page.locator('[data-seller-delivery="cinefita"][value="shipping"]').check();
         assert.equal(await page.locator('#installments').inputValue(),'3');
         assert.equal(await page.locator('#orderTotal').textContent(),brl(unit+1990));
         const quote=await page.evaluate(()=>selectedPayment());
@@ -63,7 +63,7 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
         assert.match(await page.locator('#orderPaymentTerms').textContent(),/sem juros/);
         await page.locator('#completePurchase').click();
         assert.equal(await page.locator('[name="zip"]').getAttribute('aria-invalid'),'true');
-        await page.locator('[name="delivery"][value="pickup"]').check();
+        await page.locator('[data-seller-delivery="cinefita"][value="pickup"]').check();
         assert.equal(await page.locator('#orderTotal').textContent(),brl(unit));
         assert.equal(await page.locator('#installments').inputValue(),'3');
       }
@@ -80,7 +80,7 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
       if(method==='credit')assert.match(await page.locator('#successPayment').textContent(),/12 parcelas/);
       assert.equal(await page.locator('#orderSuccess').evaluate(el=>el===document.activeElement),true);
       assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('cinefitaCart'))),[]);
-      await page.reload();assert.ok(await page.locator('#checkoutEmpty').isVisible());
+      await page.reload();await page.waitForSelector('html[data-ready="true"]');assert.ok(await page.locator('#checkoutEmpty').isVisible());
       checks.push(`Compra concluída e carrinho limpo: ${method}`);
     }
 
@@ -99,9 +99,9 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
       await layout(`Checkout preenchido / crédito em 3× @ ${width}`);
       if([390,1440].includes(width)){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(output,`checkout-${width}.png`),fullPage:true});}
       if(width===1440)await page.locator('#paymentOptions').screenshot({path:path.join(output,'pagamentos.png')});
-      await page.locator('[name="delivery"][value="shipping"]').check();
+      await page.locator('[data-seller-delivery="cinefita"][value="shipping"]').check();
       await layout(`Checkout com endereço / crédito @ ${width}`);
-      await page.locator('[name="delivery"][value="pickup"]').check();
+      await page.locator('[data-seller-delivery="cinefita"][value="pickup"]').check();
     }
     await page.setViewportSize({width:390,height:844});
     const option=await page.locator('#installments option[value="3"]').elementHandle();

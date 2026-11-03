@@ -1,3 +1,5 @@
+> Atualização vigente — 02/11/2026: a decisão anterior de adiar login permanece para autenticação real. A expansão autorizada acrescenta uma entrada **demonstrativa** em `empresa.html`, sem senha ou CNPJ, com anúncios locais em IndexedDB. O catálogo editorial agora tem 100 obras e 12 coleções. As referências a 52 obras/quatro coleções abaixo documentam a base anterior. Detalhes atuais e roteiro em README.md.
+
 # Cinefita — contrato de experiência
 
 ## Tema contemporâneo compartilhado — 09/10/2026
@@ -101,3 +103,23 @@ A direção aprovada no Superdesign foi integrada aos nove cabeçalhos/rodapés 
 | Aurora | site-theme.css + site-motion.js syncMotion | Duas faixas luminosas curvas, ciclos independentes de 19/25s, decorativas; pausa, aba oculta e movimento reduzido suspendem; nenhum efeito intercepta ponteiro. |
 
 Seletor de parcelas permanece nativo e conserva os nós das opções durante a interação. A soma das parcelas sempre coincide com subtotal mais frete. Nenhuma opção solicita dados bancários ou faz requisição de pagamento.
+
+## Marketplace — contrato vigente de compra (29/10/2026)
+
+Esta seção substitui as regras históricas de compra por título, oferta única e frete global. O restante dos contratos de acervo, curadoria, coleção, galeria, movimentos e acessibilidade permanece vigente.
+
+| Capacidade | Proprietário | Contrato |
+|---|---|---|
+| Obra e oferta | marketplace-core.js createCatalog | 52 obras preservadas; 41 ofertas oficiais com preços anteriores; ofertas adicionais fictícias somente para filmes já compráveis; nenhuma oferta em obra editorial |
+| Filtros comerciais | marketplace.matching/select + app.js selectCatalog | Formato, vendedor e conservação precisam coincidir na mesma oferta; filtros combináveis na URL; preço inicial/ordenação consideram ofertas elegíveis |
+| Escolha de oferta | app.js offerMarkup + filmOffer | Radios nativos; offerId na URL; oferta desconhecida usa opção oficial válida do mesmo filme; embalagem ilustrativa acompanha formato escolhido |
+| Ajuda de formatos | app.js formatHelp | details nativo no catálogo e ficha; leitura sem depender de hover; compatibilidade e região explicadas |
+| Carrinho | marketplace.item/restore + app.js | Chave por offerId; vendedor/preço reconstruídos de registros canônicos; quantidade 1–99; grupos por vendedor |
+| Migração | marketplace.restore | cinefitaCart.v2 é canônico; legado migra só por obra oficial inequívoca; serviço precisa de nome e suporte conhecidos; rejeições têm aviso persistido até Entendi |
+| Armazenamento | app.js save/renderCartNotices | Salvar falha → item em memória e aviso permanente de duração nesta página; v2 evita remigrar carrinho antigo; chave antiga recebe espelho para compatibilidade |
+| Entrega | marketplace.groups/totals | R$ 19,90 uma vez por vendedor com produtos enviados; retirada grátis só na Loja Oficial; parceiros não aceitam retirada; serviços são presenciais e não acrescentam frete |
+| Pagamento | checkout-core.js + app.js | PIX/débito à vista e crédito 1–12; parcelas em centavos somam itens e todos os fretes; alteração de entrega conserva parcelas quando válidas |
+| Confirmação | app.js purchaseForm/successGroups | Captura grupos/totais antes de limpar; informa vendedor, itens, entrega, pagamento e total; foco na confirmação e nenhuma cobrança real |
+| Acessibilidade | componentes existentes + CSS compartilhado | label/radio/select/details nativos; foco visível; erros inline associados; drawer modal com Escape e retorno; estados vazios acionáveis |
+
+O protótipo do Figma usa estados pré-preenchidos para demonstrar o percurso. O site implementa digitação, validação, quantidades, seleção e cálculo real desses estados locais. Nenhum dos dois representa transação financeira ou estoque real.

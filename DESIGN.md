@@ -165,3 +165,26 @@ Pedido aprovado: troca de destaques mais fluida e fundo animado na versão alt m
 Fonte: layout aprovado no Superdesign e solicitação explícita de aurora em movimento. Cabeçalho compacto com logo original, navegação, busca/cart; mobile mantém busca visível e menu acessível. Hero equilibrado com título em duas linhas, cartaz completo de 400/330/280px de altura e decoração menor. Quatro ofertas com preço e sinopse antecedem quatro painéis de curadoria; preservam-se três obras brasileiras, quatro descobertas e galeria. Rodapé mantém marca e dois grupos de links. Cores/tipografia/tokens da alt mod continuam canônicos.
 
 O fundo da inicial usa faixas de gradiente com máscaras vetoriais curvas, vermelho/azul e verde suave como luz decorativa; transformações lentas de 19/25s simulam cortinas de aurora. A cor verde não é um token de ação ou estado. Aurora e fusão manual respeitam pausa e redução de movimento. Conteúdo da inicial aparece de imediato. Compra usa os componentes existentes de campo/radio e select nativo, com resumo legível em uma coluna no celular.
+
+## Marketplace e UX acadêmico — 29/10/2026
+
+Pedido aprovado: implementar o marketplace no Figma da alt mod e nesta pasta. Mercado Livre é referência exclusivamente de funcionamento. Preservam-se a marca, o layout cinematográfico, a aurora, Manrope e os tokens existentes. O público prioritário passa a ser quem inicia uma coleção. Briefing, persona hipotética, jornada e decisões em `UX-ATIVIDADE.md`.
+
+Cards exibem preço inicial e quantidade de ofertas; a obra e seu cartaz permanecem editoriais. A oferta comercial reúne vendedor, formato, conservação, preço e entrega. Parceiros fictícios e dados demonstrativos são explicitados. IMDb avalia o filme; nunca funciona como reputação de vendedor. Ajuda expansível de formatos é disponível por teclado e toque. Superfícies comerciais sólidas e os mesmos tokens existentes apoiam comparação, carrinho e checkout.
+
+Proprietários: `marketplace-core.js` contém ofertas, vendedores, conservação, migração segura e totais por vendedor; `app.js` possui renderizadores, formulário e interação. `styles.css :root` continua canônico; as novas regras em `site-theme.css` consomem seus tokens. Sem alteração de paleta, fontes ou movimento.
+
+| Regra / evidência | Resultado | Decisão |
+|---|---|---|
+| Paleta e Manrope da alt mod / styles.css | Preservadas | Nenhuma adoção da direção âmbar da outra pasta |
+| Cards e ficha antes tinham preço único | Evolução aprovada | Preço e condição pertencem à oferta; preço inicial do card deriva das ofertas elegíveis |
+| Carrinho antes agrupava por título | Evolução aprovada | Identidade da oferta impede misturar vendedores |
+| Frete único antes do marketplace | Evolução aprovada | R$ 19,90 por vendedor com envio; retirada somente oficial |
+| Marca e conteúdo existentes | Preservados | Sem substituição dos assets e arquivos pessoais não versionados |
+
+No Figma, as páginas 07–10 reúnem UX, wireframes e fluxos novos. As páginas anteriores permanecem como histórico e estudos. Componentes de cabeçalho/rodapé, imagens discretas, variáveis e identidade existentes foram reutilizados; as telas são camadas editáveis, não capturas achatadas da interface.
+
+
+## Expansão editorial e Empresa — 02/11/2026
+
+A área Empresa, revista, serviços, vendedores, sobre e ajuda reutilizam cabeçalho, rodapé, tipografia, carvão/vermelho e componentes da versão alternativa. `expansion.css` limita os novos estilos às superfícies adicionadas. O painel distingue rascunho/publicado/pausado e apresenta a publicação local antes da ação. A revisão antecede a gravação; falhas mantêm o formulário. As 48 novas obras usam cartazes de divulgação obtidos em páginas de referência, com procedência em assets/posters/expansion/sources.json. As imagens mantêm a proporção integral e não representam uma edição comercial disponível. A composição vetorial neutra permanece para obras locais sem cartaz. As páginas de serviços preservam os preços dos pacotes legados e exibem “Sob avaliação” nos novos serviços.

@@ -22,7 +22,7 @@ const CinefitaCatalog = (() => {
       rating: (a, b) => (b.imdb?.rating ?? -1) - (a.imdb?.rating ?? -1) || compareTitle(a, b),
       newest: (a, b) => b.year - a.year || compareTitle(a, b),
       oldest: (a, b) => a.year - b.year || compareTitle(a, b),
-      added: (a, b) => Number(Boolean(b.added)) - Number(Boolean(a.added)) || compareTitle(a, b),
+      added: (a, b) => Number(Boolean(b.added)) - Number(Boolean(a.added)) || (b.batch||0)-(a.batch||0) || compareTitle(a, b),
       'price-low': priceCompare(1), 'price-high': priceCompare(-1)
     };
     return orders[sort] ? result.sort(orders[sort]) : result;

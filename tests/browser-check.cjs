@@ -13,7 +13,7 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   const page = await context.newPage();
   const errors = [], checks = [];
   page.on('pageerror',error=>errors.push(error.message));
-  async function go(route){await page.goto(origin+route);await page.evaluate(()=>document.fonts.ready);}
+  async function go(route){await page.goto(origin+route);await page.waitForSelector('html[data-ready="true"]');await page.evaluate(()=>document.fonts.ready);}
   async function loadImages(){await page.evaluate(async()=>{document.querySelectorAll('img').forEach(img=>img.loading='eager');await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));});}
   async function layout(label){const result=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,duplicates:[...document.querySelectorAll('[id]')].map(el=>el.id).filter((id,i,ids)=>ids.indexOf(id)!==i)}));assert.ok(result.scroll<=result.width+1,`${label}: overflow ${result.scroll}/${result.width}`);assert.deepEqual(result.duplicates,[],label);checks.push(label);}
   for(const width of [320,390,768,1024,1440]){
@@ -38,7 +38,7 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   await page.locator('[data-mark="wanted"]').click();
   await page.locator('[data-mark="watched"]').click();
   assert.equal(await page.locator('[data-mark="wanted"]').getAttribute('aria-pressed'),'true');
-  await page.reload();
+  await page.reload();await page.waitForSelector('html[data-ready="true"]');
   assert.equal(await page.locator('[data-mark="watched"]').getAttribute('aria-pressed'),'true');
   await page.locator('.back-link').click();
   assert.ok(page.url().includes('q=Frankenstein'));assert.equal(await page.locator('#searchInput').inputValue(),'Frankenstein');
@@ -58,7 +58,7 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   await page.locator('#cartButton').click();await page.locator('#checkoutButton').click();
   await page.locator('#completePurchase').click();assert.equal(await page.locator('[name="name"]').getAttribute('aria-invalid'),'true');
   await page.locator('[name="name"]').fill('Pessoa de teste');await page.locator('[name="email"]').fill('teste@example.com');
-  await page.locator('[name="delivery"][value="shipping"]').check();await page.locator('#completePurchase').click();assert.ok(await page.locator('#addressFields').isVisible());
+  await page.locator('[data-seller-delivery="cinefita"][value="shipping"]').check();await page.locator('#completePurchase').click();assert.ok(await page.locator('#addressFields').isVisible());
   for(const [field,value] of Object.entries({zip:'01001-000',street:'Rua de teste',number:'123',district:'Centro',city:'São Paulo',state:'SP'}))await page.locator(`[name="${field}"]`).fill(value);
   await page.locator('#completePurchase').click();assert.ok(await page.locator('#orderSuccess').isVisible());assert.match(await page.locator('#orderSuccess').textContent(),/Nenhuma cobrança/);assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('cinefitaCart')).length),0);
   await go('carrinho.html');assert.ok(await page.locator('#pageCheckout').isHidden());

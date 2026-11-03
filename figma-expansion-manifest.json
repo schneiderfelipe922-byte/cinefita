@@ -1,0 +1,1506 @@
+{
+  "updatedAt": "2026-11-03",
+  "fileKey": "N34bU1flCiA7QCoKcwAxRT",
+  "desktop": {
+    "pageId": "137:788",
+    "screens": 174,
+    "filmFrames": 100,
+    "articleFrames": 8,
+    "collectionFrames": 12,
+    "nodeCounts": {
+      "FRAME": 3939,
+      "INSTANCE": 1729,
+      "TEXT": 8890,
+      "RECTANGLE": 899,
+      "COMPONENT": 2
+    },
+    "fonts": [
+      "Manrope",
+      "Roboto Mono"
+    ],
+    "unexpectedFonts": [],
+    "catalogImages": [
+      {
+        "id": "I146:15139;146:14277",
+        "name": "Cinefita / Marca / Logo transparente",
+        "type": "INSTANCE",
+        "width": 180,
+        "height": 60
+      },
+      {
+        "id": "I141:9182;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9189;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9196;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9203;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9211;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9218;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9225;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9232;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9240;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9247;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9254;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9261;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9269;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9276;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9283;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9290;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9298;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9305;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9312;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9319;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9327;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9334;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9341;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9348;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9356;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9363;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9370;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9377;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9385;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9392;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9399;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9406;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9414;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9421;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9428;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9435;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9443;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9450;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9457;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9464;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9472;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9479;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9486;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9493;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9501;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9508;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9515;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9522;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9530;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9537;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9544;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9551;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9559;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9566;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9573;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9580;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9588;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9595;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9602;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9609;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9617;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9624;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9631;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9638;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9646;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9653;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9660;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9667;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9675;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9682;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9689;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9696;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9704;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9711;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9718;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9725;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9733;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9740;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9747;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9754;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9762;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9769;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9776;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9783;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9791;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9798;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9805;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9812;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9820;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9827;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9834;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9841;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9849;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9856;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9863;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9870;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9878;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9885;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9892;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9899;141:8981",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 318,
+        "height": 477
+      },
+      {
+        "id": "I141:9906;55:1328",
+        "name": "Marca / Cinefita",
+        "type": "INSTANCE",
+        "width": 300,
+        "height": 100
+      }
+    ],
+    "overflow": [],
+    "flows": [
+      {
+        "nodeId": "141:8987",
+        "name": "Cinefita · conteúdo e marketplace"
+      },
+      {
+        "nodeId": "140:2947",
+        "name": "Empresa · entrada, anúncio e compra"
+      }
+    ]
+  },
+  "mobile": {
+    "pageId": "137:789",
+    "screens": 174,
+    "filmFrames": 100,
+    "articleFrames": 8,
+    "collectionFrames": 12,
+    "nodeCounts": {
+      "FRAME": 4209,
+      "INSTANCE": 1706,
+      "TEXT": 7550,
+      "RECTANGLE": 876,
+      "COMPONENT": 2
+    },
+    "fonts": [
+      "Manrope",
+      "Roboto Mono"
+    ],
+    "unexpectedFonts": [],
+    "catalogImages": [
+      {
+        "id": "I146:30853;146:30236",
+        "name": "Cinefita / Marca / Logo transparente",
+        "type": "INSTANCE",
+        "width": 180,
+        "height": 60
+      },
+      {
+        "id": "I141:2153;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2160;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2168;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2175;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2183;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2190;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2198;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2205;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2213;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2220;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2228;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2235;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2243;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2250;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2258;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2265;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2273;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2280;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2288;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2295;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2303;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2310;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2318;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2325;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2333;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2340;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2348;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2355;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2363;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2370;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2378;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2385;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2393;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2400;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2408;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2415;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2423;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2430;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2438;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2445;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2453;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2460;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2468;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2475;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2483;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2490;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2498;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2505;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2513;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2520;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2528;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2535;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2543;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2550;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2558;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2565;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2573;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2580;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2588;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2595;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2603;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2610;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2618;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2625;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2633;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2640;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2648;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2655;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2663;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2670;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2678;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2685;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2693;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2700;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2708;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2715;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2723;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2730;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2738;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2745;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2753;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2760;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2768;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2775;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2783;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2790;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2798;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2805;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2813;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2820;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2828;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2835;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2843;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2850;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2858;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2865;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2873;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2880;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2888;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2895;141:1980",
+        "name": "Cartaz",
+        "type": "RECTANGLE",
+        "width": 163,
+        "height": 250.5
+      },
+      {
+        "id": "I141:2902;55:1595",
+        "name": "Marca / Cinefita",
+        "type": "INSTANCE",
+        "width": 260,
+        "height": 86.66666412353516
+      }
+    ],
+    "overflow": [],
+    "flows": [
+      {
+        "nodeId": "141:1986",
+        "name": "Cinefita · conteúdo e marketplace"
+      },
+      {
+        "nodeId": "140:5119",
+        "name": "Empresa · entrada, anúncio e compra"
+      }
+    ]
+  },
+  "entrypoints": {
+    "desktop": "141:8987",
+    "mobile": "141:1986",
+    "enterpriseDesktop": "140:2947",
+    "enterpriseMobile": "140:5119",
+    "catalog": "141:9116",
+    "magazine": "141:11827",
+    "services": "141:11946",
+    "assets": "137:792"
+  }
+}

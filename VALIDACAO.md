@@ -209,3 +209,62 @@ Registro local da implementação: `01dcad4` — Integra UI moderna com aurora e
 ### Publicação autorizada — 26/10/2026
 
 Após autorização explícita do usuário, git push publicou 01dcad4 e 7d405fc em origin/versao-alt-mod. A API do GitHub confirmou o SHA remoto 7d405fc0f5d59dfe4982dba5ecc587d0e4dc1359 e a árvore 2ec5432e9620662a6a8ebfadfa7b331049d19416. Conferidos 268 arquivos versionados, incluindo 24 arquivos essenciais de páginas, código, documentos, testes, logo e áudio; não houve truncamento na árvore consultada. Repositório público confirmado por consulta HTTP sem autenticação (200). A atualização posterior é somente documental; os testes de execução registrados acima continuam referentes ao mesmo código. Permanecem a entrega do link ao professor e a apresentação pelo aluno.
+
+## Marketplace UX/UI — iniciado em 29/10 e validado em 30/10/2026
+
+Implementação local da versão alt mod, sem publicação. Briefing, persona hipotética, jornada, arquitetura e justificativas estão em UX-ATIVIDADE.md e no Figma da alt mod. As páginas 07–10 foram acrescentadas preservando os estudos e fluxos anteriores.
+
+### Verificações executadas
+
+- `node --test tests/*.test.cjs`: **52 testes passaram**, incluindo oito novos casos de marketplace (preservação do acervo/preços, filtros pela mesma oferta, identidade dos itens, migração segura, quantidades, serviço presencial, frete e parcelas).
+- `node tests/marketplace-browser.cjs`: **61 verificações passaram**, sem erros JavaScript. Inclui nove páginas em 320, 390, 768, 1024 e 1440px; checkout preenchido, dois vendedores, seleção da oferta, link direto para DVD, filtros/retorno, quantidades, pagamentos, confirmação, teclado, migração com aviso persistente e armazenamento bloqueado.
+- `node tests/browser-check.cjs`: **54 verificações de layout e os fluxos existentes passaram**, incluindo reflow equivalente a 200%, coleção, galeria, menu, movimento reduzido e compra. Seletor de entrega atualizado para a Loja Oficial.
+- `node tests/checkout-browser.cjs`: **20 verificações passaram**, sem erros JavaScript: validação/foco, PIX/débito/crédito, parcelas, frete, confirmação, limpeza, opções estáveis do select, contraste e remoção do último item.
+- Validador oficial `@google/design.md lint DESIGN.md`: **zero erros e zero avisos**. Nenhuma dependência foi acrescentada ao projeto para executar a ferramenta.
+- Verificação visual de capturas do site e de composições do Figma. Os dez wireframes têm estrutura editável de baixa fidelidade, com cinco telas por dispositivo.
+- Auditoria de navegação do Figma: **28 estados em desktop e 28 em celular**, todos alcançáveis a partir da Home, sem destinos de navegação externos às páginas dos novos fluxos. Os pontos iniciais estão configurados. Campos são estados pré-preenchidos; as quantidades demonstradas no protótipo não substituem a interação implementada no site.
+- O arquivo Figma foi aberto sem login no navegador integrado, confirmando visualização pelo link. Nenhuma permissão de compartilhamento foi alterada.
+
+Evidências em `relatorios/marketplace-2026-10-29/`: resultado.json, figma-audit.json, capturas de catálogo/produto/checkout nas larguras 390 e 1440 e auditoria-estatica.json. Resultados das regressões permanecem também nas pastas próprias de cada teste.
+
+### Limite do auditor estático
+
+`audit_project.py --mode strict` retorna código 1 e **103 marcações de `affordance.actionless-button`**. O analisador só reconhece handlers inline (`onclick`, `@click`) e botões submit; não acompanha `addEventListener`, delegação por atributos `data-*` ou handlers atribuídos em app.js, collection-ui.js e site-motion.js. Essa limitação foi confirmada no código do analisador e mantida explícita no relatório. Os controles foram verificados pelos testes de navegador; não foram adicionados handlers inline nem declarações falsas para fazer o auditor retornar sucesso. Uma auditoria comparativa sobre a árvore histórica completa foi interrompida após exceder o prazo; o relatório entregue corresponde ao código desta implementação.
+
+### Limites da entrega
+
+Chromium com larguras emuladas não substitui testes em aparelhos físicos ou certificação WCAG. Não houve pesquisa com participantes, integração financeira, operação real de vendedores, backend ou implantação. A identidade visual pertence à Cinefita; a referência ao Mercado Livre é funcional. Frete, conservação de ofertas adicionais e parceiros são demonstrativos. Os 11 filmes editoriais permanecem sem oferta física.
+
+
+## Expansão e área Empresa demonstrativa — 02/11/2026
+
+Implementação somente em `versao-alt-mod`; sem commit, push ou publicação. Alterações locais anteriores preservadas.
+
+- `node --test tests/*.test.cjs`: 56 testes passaram. Os testes legados preservam a base de 52 obras/41 ofertas; `enterprise.test.cjs` verifica separadamente as 100 obras, 48 inclusões sem preço e 12 coleções, além de validação de anúncios e deduplicação.
+- `tests/enterprise-browser.cjs`: publicação/rascunho/edição/pausa, fotos persistidas, ficha nova não verificada, estoque zero, atualização de preço no carrinho, isolamento dos registros originais, falha de gravação com formulário preservado, listas/notas/datas, importação válida e inválida, histórico de serviços e limpeza empresarial preservando dados pessoais. Verificação adicional de IndexedDB bloqueado com catálogo editorial utilizável.
+- 52 verificações de layout das novas/antigas páginas (13 rotas × 320/390/768/1440px), mais formulário empresarial nas quatro larguras; sem overflow ou IDs duplicados. Teclado verificado no formulário; execução com movimento reduzido.
+- `tests/marketplace-browser.cjs`: 61 verificações passaram, incluindo fretes e migração do carrinho.
+- `tests/checkout-browser.cjs`: 20 verificações passaram, incluindo PIX, débito, crédito, parcelas, validações, foco e conclusão. Sem erros JavaScript nas jornadas testadas.
+- Capturas do painel em `relatorios/expansao-2026-11-01/`; checkout em sua subpasta `checkout`. As imagens desktop e celular foram inspecionadas.
+
+As 48 referências bibliográficas foram consultadas; fontes suplementares de duração estão em assets/editorial/SOURCES.md. A arte vetorial neutra é original e identificada como editorial, sem imitar cartaz ou produto disponível. Duração e países descrevem a obra, não uma edição comercial específica.
+
+Limites: testes em Chromium e viewports emulados; não equivalem a certificação de acessibilidade nem a testes em aparelhos físicos. Não há autenticação, isolamento entre usuários do mesmo perfil, estoque compartilhado, envio de pedidos, pagamentos ou upload remoto. A publicação empresarial só fica disponível no navegador/origem usados. As compras simuladas não reduzem estoque. Fotos e anúncios não integram a exportação da coleção pessoal.
+
+- Verificação final `tests/enterprise-checkout.cjs`: alteração do preço durante checkout impede a primeira conclusão, atualiza o total com frete, permite concluir após revisão, registra o histórico e preserva o estoque. Sem erros JavaScript.
+
+
+## Cartazes da expansão — 03/11/2026
+
+As 48 obras novas receberam cartazes locais em assets/posters/expansion. Manifesto sources.json registra página de referência, URL da imagem, dimensões, tamanho e data da consulta. Os arquivos foram conferidos por decodificação e por uma folha de contato visual; não houve alteração nos títulos, preços ou ofertas. A arte neutra permanece para obras cadastradas pela empresa sem cartaz.
+
+Verificação Chromium: 48/48 imagens carregadas; catálogo, coleção Brasil contemporâneo, ficha de Central do Brasil e galeria verificados em 390 e 1440 px. Sem imagens com fonte quebrada, overflow horizontal ou erros JavaScript. As prévias de modal sem src foram excluídas da checagem de imagens, pois só recebem uma fonte ao abrir. Capturas e validation.json em relatorios/cartazes-expansao-2026-11-02. Quatro testes de integridade da expansão passaram e git diff --check sem erros. Corrigida também a chamada antiga de 52 filmes no catálogo.
+
+
+## Sincronização da expansão no Figma — 03/11/2026
+
+Arquivo N34bU1flCiA7QCoKcwAxRT atualizado com páginas 11 (desktop), 12 (celular) e 13 (100 cartazes). Cada versão contém 174 telas/estados, incluindo 100 fichas de filmes, 12 seleções e oito guias completos. Entrada Empresa e Home têm pontos de início; navegação, cards, revisão/publicação, erros e confirmações foram conectados. A captura temporária de referência foi removida após a construção das camadas editáveis.
+
+Validação estrutural: fontes Manrope e Roboto Mono, sem famílias inesperadas; nenhum overflow nas linhas de cards, cabeçalhos e fichas. Os 100 cartazes locais foram enviados com sucesso e aparecem nas fichas e coleções; os nós de imagem são recursos de conteúdo, sem screenshots de interface no produto final. Cabeçalho desktop, menu celular e catálogo com filtros recolhidos foram revisados visualmente. Manifesto local: figma-expansion-manifest.json.
+
+O Figma usa estados demonstrativos pré-preenchidos. Não executa autenticação, IndexedDB, exportação de arquivo ou publicação real; essas interações são representadas como telas do fluxo. Algumas ofertas existentes têm um atalho para abrir a ficha no servidor local. Os fluxos de compra anteriores permanecem nas páginas 09 e 10. Não houve push ou publicação do site.

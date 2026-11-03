@@ -1,65 +1,55 @@
-# Roteiro de apresentação — Cinefita
+# Apresentação — Cinefita marketplace
 
-Tempo sugerido: 7–10 minutos. Use somente dados fictícios, como “Cliente de teste” e `aluno@example.com`.
+Roteiro sugerido de 10–12 minutos. Use dados fictícios. A atualização está local; o site publicado ainda é a versão anterior.
 
 ## Preparar
 
-Abra [a Cinefita hospedada](https://schneiderfelipe922-byte.github.io/cinefita/). Para apresentar offline/localmente, use a versão `versao-alt-mod` do repositório, execute `python3 -m http.server 8000` e acesse `http://localhost:8000`. Confira o carrinho antes de começar. Tenha abertos o site, o código e o histórico do GitHub. Leia e ensaie as explicações abaixo; o professor avaliará sua compreensão do projeto.
+Sirva a pasta alt mod com `python3 -m http.server 8000`, abra o site e o [Figma](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT). A entrega atual está nas páginas 07 · UX, 08 · Wireframes, 09 · Marketplace Desktop e 10 · Marketplace Celular. As outras páginas são estudos e fluxos preservados. Inicie o protótipo na Home do fluxo desejado por Apresentar.
 
-## Demonstração da loja
+## Apresentar o processo
 
-1. **Nome e proposta.** Apresente a Cinefita como uma loja demonstrativa de cinema físico e curadoria de filmes. Explique a referência à película no C, os cartazes completos e as cores.
-2. **Inicial.** Mostre os destaques, coleções e “Seu próximo clássico”, onde cada produto tem imagem, nome, descrição e preço.
-3. **Categorias.** Entre no catálogo, use gênero e “Com edição física”, pesquise Frankenstein e abra a ficha. Explique a diferença entre os produtos disponíveis e as obras editoriais sem oferta.
-4. **Produto.** Mostre a sinopse, ficha técnica, preço, embalagem ilustrativa e botão de adicionar ao carrinho.
-5. **Carrinho.** Adicione Frankenstein e vá ao carrinho completo. Aumente a quantidade para 2: R$ 84,90 × 2 = R$ 169,80. Volte a 1 e demonstre a remoção; adicione novamente para continuar.
-6. **Checkout.** Mostre a validação ao tentar concluir com campos vazios e depois preencha nome/e-mail fictícios.
-7. **Frete e total.** Escolha entrega em domicílio: R$ 84,90 + R$ 19,90 = R$ 104,80. Preencha um endereço fictício ou retorne à retirada gratuita.
-8. **Pagamentos.** Selecione PIX, débito e crédito, explicando que todos são simulados. No crédito, escolha 3 e depois 12 parcelas; o resumo acompanha a seleção. Se houver centavos indivisíveis, algumas parcelas diferem em um centavo e a soma permanece exata.
-9. **Conclusão.** Finalize a simulação e mostre valor, método/parcelas, mensagem de aprovação simulada e carrinho vazio. Não há cobrança nem envio do pedido.
-10. **Celular.** Reduza a janela para mostrar o menu móvel, as grades e o formulário em uma coluna.
+1. **Briefing:** cinema físico, colecionadores iniciantes e comparação de edições de diferentes vendedores. Cinefita é operadora e loja oficial; parceiros são fictícios.
+2. **Persona:** apresente Camila Rodrigues, 27 anos, assistente administrativa de Curitiba. Conte como as visitas às locadoras e as sessões em família despertaram sua vontade de começar uma coleção. Explique que possui um aparelho de DVD, está aprendendo sobre edições e precisa respeitar um orçamento reduzido. Identifique a ficha como proto-persona fictícia, ainda não validada por pesquisa; a frase-síntese é uma criação para a apresentação, não um depoimento.
+3. **Jornada:** mostre descoberta, busca, comparação, seleção, revisão, finalização e confirmação, incluindo dúvidas e recuperação.
+4. **Arquitetura:** explique que busca é estado do catálogo; filme é informação editorial; ofertas são edições por vendedor; carrinho e checkout agrupam as compras por vendedor.
+5. **Wireframes:** mostre as cinco telas nos dois dispositivos. Foram produzidos na evolução atual, sem afirmar que vieram antes do site existente.
+6. **Identidade:** relacione os cartazes completos e a marca de película ao reconhecimento das capas e à memória do cinema físico. Apresente a ambientação em carvão e vermelho como uma interpretação cinematográfica contemporânea da alt mod, sem afirmar que essas são preferências comprovadas de Camila. Mercado Livre foi referência de funcionamento, sem copiar identidade ou layout.
+7. **Alta fidelidade:** mostre componentes e estados coerentes entre telas.
+8. **Protótipo:** percorra Home → Busca/Categoria → Produto → Carrinho → Checkout → Confirmação. Compare outra oferta e demonstre o carrinho com dois vendedores. Os campos são exemplos pré-preenchidos.
 
-## Explicação dos principais arquivos
+## Demonstrar o código local
 
-| Arquivo | O que explicar |
-|---|---|
-| `index.html` | Estrutura: cabeçalho, navegação, conteúdo principal, seções e rodapé. |
-| `compra.html` | Formulário, labels, fieldsets, radios de pagamento e select de parcelamento. |
-| `styles.css` | Tokens de cor/tipografia, estilos compartilhados e media queries. |
-| `site-theme.css` | Composição editorial aplicada às páginas e estilos do checkout. |
-| `data.js` e complementos | Dados das obras e ofertas usados nas fichas/cards. |
-| `catalog-core.js` | Filtros e busca local; como o catálogo seleciona os resultados. |
-| `app.js` | Eventos, renderização dos cards, carrinho, validação, resumo e conclusão. |
-| `checkout-core.js` | Cálculo das parcelas em centavos e validação das opções de pagamento. |
-| `tests/checkout.test.cjs` | Como se verifica que a soma das parcelas coincide com o total. |
+1. No catálogo, combine vendedor e conservação, consulte a ajuda de formatos e abra Frankenstein. Voltar mantém busca/filtros.
+2. Na ficha, separe IMDb (nota do filme) de informações comerciais. Compare a oferta oficial VHS de R$ 84,90, a oferta VHS do Sebo Aurora de R$ 79,90 e o DVD do Acervo de Bairro de R$ 89,90. Conservação, parceiros e valores adicionais são exemplos, sem exemplar real.
+3. **Escolha da Camila:** seu aparelho é de DVD. Para assistir em casa, selecione o DVD de Frankenstein do Acervo de Bairro, R$ 89,90, conservação “Novo (exemplo)”. Com entrega de R$ 19,90, o total é R$ 109,80. Explique que ela confere compatibilidade, conservação, vendedor e custo completo; não escolhe apenas pelo menor preço. O orçamento não foi quantificado: se o total não couber, pode marcar “Quero ter” e adiar a compra.
+4. **Exemplo técnico independente da escolha da persona:** para demonstrar frete de duas origens, use um carrinho separado do exemplo de DVD e adicione Frankenstein oficial (R$ 84,90) e Psicose do Sebo Aurora (R$ 74,90), ambos em VHS. Esses itens não representam edições para Camila assistir no aparelho de DVD. Carrinho: subtotal R$ 159,80. Duas entregas: R$ 39,80; total R$ 199,60. Com retirada oficial: total R$ 179,70.
+5. Aumente/reduza quantidade, recarregue e remova um item. Duas ofertas do mesmo filme nunca devem se fundir.
+6. No checkout, tente concluir vazio para mostrar erros e foco. Preencha dados fictícios, entrega e endereço.
+7. Demonstre PIX, débito e crédito. Em R$ 199,60, três parcelas ficam R$ 66,54 + R$ 66,53 + R$ 66,53.
+8. Conclua: confirmação mostra vendedores, itens, frete, total e pagamento, recebe foco e limpa o carrinho. Não houve cobrança ou envio real.
+9. Mostre celular, menu, ajuda e retorno do carrinho vazio ao catálogo.
 
-## Uma funcionalidade JavaScript para explicar em detalhe
+## Justificar decisões pela persona
 
-O carrinho é uma lista de itens em memória. `addToCart` identifica um produto já existente para aumentar sua quantidade; `updateCart` atualiza a interface. `save` usa `JSON.stringify` para armazenar a lista em `localStorage`, permitindo navegar e recarregar na mesma origem sem perder o carrinho.
+As falas a seguir são sugestões de justificativa para o apresentador. São hipóteses de design, não depoimentos de Camila nem conclusões de pesquisa.
 
-O subtotal multiplica preço em centavos pela quantidade antes de somar. No checkout, `orderCents` inclui o frete. `CinefitaCheckout.quote` divide esse total pelo número de parcelas, usa a parte inteira e distribui o resto de um centavo entre as primeiras parcelas. Por exemplo, R$ 104,80 em 3 vezes fica R$ 34,94 + R$ 34,93 + R$ 34,93. Essa soma continua sendo R$ 104,80.
+- “As capas em destaque e os cartazes completos podem ajudar Camila a reconhecer filmes ligados às suas lembranças das locadoras.”
+- “A marca de película e a ambientação em carvão e vermelho expressam a proposta de cinema físico com apresentação contemporânea; não presumimos que sejam cores preferidas da persona.”
+- “As curadorias oferecem um ponto de partida para uma coleção que está começando.”
+- “A ajuda sobre formatos e as informações de conservação apoiam a escolha de uma edição que Camila consiga assistir no aparelho de DVD.”
+- “Vendedor identificado e nota IMDb separada das informações comerciais ajudam a distinguir o filme da oferta.”
+- “O resumo inclui os fretes por vendedor para que ela conheça o custo completo antes de decidir se pode comprar.”
+- “As marcações Tenho, Quero ter e Já assisti distinguem posse, desejo e histórico; permitem planejar uma coleção que cresce aos poucos.”
 
-`renderPayment` lê o radio selecionado e atualiza ajuda, parcelas e resumo. O seletor continua sendo um `<select>` nativo: o navegador cuida da interação e do teclado. Ao enviar o formulário, o JavaScript valida os dados, guarda total e forma escolhida para a confirmação, limpa o carrinho e mostra o sucesso. Não há integração com banco ou serviço de pagamento.
+A história e a relação com o design estão detalhadas nas seções 2 e 7 de [UX-ATIVIDADE.md](UX-ATIVIDADE.md). Nesta revisão, o texto acadêmico foi atualizado; site, wireframes e Figma não foram alterados.
 
-## Git e GitHub
+## Explicar a implementação
 
-Abra [o código da versão](https://github.com/schneiderfelipe922-byte/cinefita/tree/versao-alt-mod) e [o histórico de commits](https://github.com/schneiderfelipe922-byte/cinefita/commits/versao-alt-mod). Explique que Git registra versões locais e GitHub disponibiliza o repositório para o professor. Mostre commits com descrições das alterações e abra o README com as instruções de execução.
+- `marketplace-core.js`: separa obra e oferta, identifica vendedores, valida itens restaurados, agrupa compras e calcula frete por vendedor.
+- `catalog-core.js`: regras editoriais de busca e filtragem, combinadas às regras comerciais.
+- `app.js`: renderização, seleção da oferta, navegação, carrinho, formulário e confirmação.
+- `checkout-core.js`: pagamento e parcelas em centavos, sem erro de soma.
+- `styles.css` e `site-theme.css`: tokens e composição da identidade alt mod.
+- `cinefitaCart.v2`: persistência canônica; o carrinho anterior só migra quando a correspondência é segura.
 
-No terminal, `git log --oneline -10` mostra o histórico recente e `git status` mostra alterações locais ainda não registradas.
-
-## Perguntas para ensaiar
-
-- Qual a função de HTML, CSS e JavaScript neste projeto?
-- Por que usar radio para pagamento e select para parcelas?
-- Como a quantidade modifica o total? Como a soma das parcelas evita erro de arredondamento?
-- Onde o carrinho fica salvo e por que não acompanha outro navegador/dispositivo?
-- O que acontece se o cliente deixar o formulário vazio ou remover o último item?
-- Qual a diferença entre obra editorial sem oferta e produto com preço?
-- Como o layout se adapta ao celular?
-- Qual a diferença entre Git, GitHub e um serviço de hospedagem do site?
-
-O roteiro cobre a preparação. A realização da apresentação e a explicação pelo aluno só podem ser confirmadas em aula.
-
-## Layout e aurora da versão alt mod
-
-Mostre o cabeçalho compacto, as quatro ofertas da inicial, as curadorias e a aurora. Explique que o fundo usa gradientes, máscaras vetoriais curvas e transformações CSS lentas em duas camadas. A troca dos cartazes usa transição de opacidade de 900ms e carrega as imagens antes de trocar. Pausa e movimento reduzido mantêm a navegação funcional. Os proprietários são site-theme.css e site-motion.js; a proposta visual aprovada foi integrada ao site, não usada como uma imagem de fundo.
+O `CRITERIOS-ATIVIDADE.md` anterior trata da atividade de programação. O material desta atividade de UX/UI está em `UX-ATIVIDADE.md` e nas páginas 07–10 do Figma.
