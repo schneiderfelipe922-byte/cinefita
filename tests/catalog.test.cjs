@@ -52,3 +52,34 @@ test('retorno da ficha só aceita páginas locais reconhecidas',()=>{
 });
 
 test("ofertas físicas combinam com busca e filtros",()=>{assert.equal(catalog.select(films,{offer:"available"}).length,41);assert.deepEqual(catalog.select(films,{offer:"available",query:"Frankenstein"}).map(f=>f.image),["frankenstein"]);assert.equal(catalog.select(films,{offer:"available",country:"Brasil"}).length,0);});
+
+test('site oferece apenas filmes até 2005 e mantém os preços existentes',async()=>{
+  const work=(year)=>({image:'demo-'+year,year,price:null});
+  const offer=(year)=>({id:'offer-'+year,filmId:'demo-'+year,status:'published',priceCents:2500});
+  const demo={profile:{name:'Empresa demo'},works:[work(2005),work(2006)],offers:[offer(2005),offer(2006)],editions:[]};
+  const document={documentElement:{dataset:{}},createElement:()=>({}),body:{append:script=>script.onload()}};
+  const site=vm.createContext({document,CinefitaEnterprise:{empty:()=>({}),read:async()=>demo}});
+  for(const file of ['data.js','film-details.js','catalog-expansion.js','editorial-data.js','collections-data.js','poster-artwork.js','expansion-data.js','catalog-core.js','marketplace-core.js']){
+    vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),site);
+  }
+  const original=vm.runInContext('new Map(films.map(f=>[f.image,f.price]))',site);
+  await vm.runInContext(fs.readFileSync(path.join(root,'expansion-bootstrap.js'),'utf8'),site);
+  assert.equal(document.documentElement.dataset.ready,'true');
+  const active=vm.runInContext('films',site);
+  const market=vm.runInContext('CinefitaMarketplace.createCatalog(films)',site);
+  assert.equal(active.length,81);
+  assert.ok(active.every(f=>f.year<=2005));
+  for(const f of active.filter(f=>original.has(f.image))){
+    assert.equal(f.price,original.get(f.image)??59.90);
+    assert.equal(market.item('cinefita-'+f.image).price,f.price);
+  }
+  for(const collection of vm.runInContext('curatedCollections',site)){
+    assert.ok(collection.films.length);
+    assert.ok(collection.films.every(id=>active.some(f=>f.image===id)));
+  }
+  assert.equal(market.get('offer-2005').priceCents,2500);
+  for(const id of ['cinefita-mist','bairro-mist-bluray','offer-2006']){
+    assert.equal(market.get(id),undefined);
+    assert.equal(market.restore([{offerId:id}]).rejected,1);
+  }
+});

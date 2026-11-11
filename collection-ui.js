@@ -25,7 +25,7 @@ function renderPersonal(){
   $('collectionCounts').innerHTML=Object.entries(markLabels).map(([key,label])=>`<span><strong>${marked.filter(f=>personalStore.get(f.image)[key]).length}</strong> ${label}</span>`).join('');
   document.querySelectorAll('[data-personal-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.personalFilter===personalFilter)));
   $('collectionResult').textContent=`${result.length} ${result.length===1?'filme':'filmes'} nesta seleção`;
-  $('personalGrid').innerHTML=result.length?result.map(card).join(''):`<div class="empty-state"><h2>${marked.length?'Nenhum filme nesta seleção.':'Sua coleção começa com um filme.'}</h2><p>${marked.length?'Escolha outra marcação ou limpe a busca.':'Explore o acervo e use Organizar para marcar Tenho, Quero ter ou Já assisti.'}</p><a class="cta" href="catalogo.html">Explorar catálogo ↗</a></div>`;
+  $('personalGrid').innerHTML=result.length?result.map(f=>card(f)).join(''):`<div class="empty-state"><h2>${marked.length?'Nenhum filme nesta seleção.':'Sua coleção começa com um filme.'}</h2><p>${marked.length?'Escolha outra marcação ou limpe a busca.':'Explore o acervo e use Organizar para marcar Tenho, Quero ter ou Já assisti.'}</p><a class="cta" href="catalogo.html">Explorar catálogo ↗</a></div>`;
 }
 function commitPersonal(){const params=new URLSearchParams();if(personalFilter!=='all')params.set('filter',personalFilter);if($('searchInput').value.trim())params.set('q',$('searchInput').value.trim());if($('collectionSort').value!=='az')params.set('sort',$('collectionSort').value);history.replaceState(null,'',location.pathname+(params.size?'?'+params:''));renderPersonal();}
 if($('personalGrid')){

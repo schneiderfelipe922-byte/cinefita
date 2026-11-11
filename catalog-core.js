@@ -3,6 +3,13 @@ const CinefitaCatalog = (() => {
   const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
   const title = film => film.displayTitle || film.title;
   const hasOffer = film => typeof film.price === 'number' && Number.isFinite(film.price) && film.price > 0;
+  const maxYear = 2005;
+  const acceptsYear = year => Number.isInteger(year) && year <= maxYear;
+  function prepareEditorial(films) {
+    return films.filter(film => acceptsYear(film.year)).map(film =>
+      hasOffer(film) ? film : {...film, format:'DVD', price:59.90}
+    );
+  }
   const compareTitle = (a, b) => title(a).localeCompare(title(b), 'pt-BR', { sensitivity: 'base', numeric: true });
   function select(catalog, { query = '', genre = '', format = '', decade = '', director = '', country = '', offer = '', sort = 'category' } = {}) {
     const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
@@ -27,6 +34,6 @@ const CinefitaCatalog = (() => {
     };
     return orders[sort] ? result.sort(orders[sort]) : result;
   }
-  return { normalize, title, hasOffer, compareTitle, select };
+  return { normalize, title, hasOffer, maxYear, acceptsYear, prepareEditorial, compareTitle, select };
 })();
 if (typeof module !== 'undefined') module.exports = CinefitaCatalog;

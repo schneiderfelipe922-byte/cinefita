@@ -28,7 +28,7 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   await cdp.send('Emulation.clearDeviceMetricsOverride');
   await page.setViewportSize({width:1440,height:1000});
   await go('catalogo.html?offer=available&sort=az');
-  assert.match(await page.locator('#searchResults').textContent(),/41 de 52/);
+  assert.match(await page.locator('#searchResults').textContent(),/80 de 80/);
   await page.locator('#searchInput').fill('Frankenstein');
   assert.equal(await page.locator('#categorySections .card').count(),1);
   const from=await page.locator('#categorySections .poster-wrap').getAttribute('href');
@@ -47,8 +47,8 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   await page.locator('#clearSearch').click();
   await page.locator('[data-organize]').first().click();assert.ok(await page.locator('#organizeDialog').evaluate(el=>el.open));await page.keyboard.press('Escape');assert.ok(await page.evaluate(()=>!!document.activeElement.dataset.organize));
   await go('colecao.html?filter=wanted');assert.equal(await page.locator('#personalGrid .card').count(),1);
-  await go('filme.html?id=alien');assert.equal(await page.locator('.physical-edition [data-buy]').count(),0);assert.match(await page.locator('.edition-unavailable').textContent(),/não tem preço/);
-  await go('filme.html?id=invalido');assert.match(await page.locator('h1').textContent(),/não encontrado/);
+  await go('filme.html?id=alien');assert.equal(await page.locator('.physical-edition [data-buy]').isEnabled(),true);assert.match(await page.locator('.offer-price').textContent(),/59,90/);
+  for(const id of ['invalido','mist','walle']){await go('filme.html?id='+id);assert.match(await page.locator('h1').textContent(),/não encontrado/);}
   await go('colecoes.html?id=invalido');assert.match(await page.locator('main').textContent(),/não encontrada/i);
   await go('filme.html?id=frankenstein');
   await page.locator('[data-product-toggle]').click();assert.equal(await page.locator('[data-product-toggle]').getAttribute('aria-pressed'),'true');

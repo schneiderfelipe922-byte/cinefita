@@ -1,12 +1,12 @@
 # Cinefita — marketplace · versão alt mod
 
-Marketplace demonstrativo de cinema físico, feito com HTML, CSS e JavaScript. Reúne a Loja Oficial Cinefita e dois parceiros fictícios, reunindo 100 obras editoriais, 41 ofertas oficiais com seus preços preservados e ofertas adicionais para comparação. Possui 12 coleções editoriais, revista com oito artigos, galeria, serviços, coleção pessoal e simulação de compra com entregas por vendedor. A área Empresa permite criar anúncios apenas neste navegador. A interface cinematográfica usa a identidade Cinefita, carvão e vermelho, cartazes completos e fundo de aurora em movimento.
+Marketplace demonstrativo de cinema físico, feito com HTML, CSS e JavaScript. Reúne a Loja Oficial Cinefita e dois parceiros fictícios, reunindo 80 obras editoriais lançadas até 2005, todas com preço demonstrativo, e ofertas adicionais para comparação. Possui 12 coleções editoriais, revista com oito artigos, galeria, serviços, coleção pessoal e simulação de compra com entregas por vendedor. A área Empresa permite criar anúncios apenas neste navegador. A interface cinematográfica usa a identidade Cinefita, carvão e vermelho, cartazes completos e fundo de aurora em movimento.
 
-## Figma atualizado — 03/11/2026
+## Protótipo Figma — 03/11/2026
 
 [Desktop atualizado](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT?node-id=141-8987) · [Celular atualizado](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT?node-id=141-1986) · [Empresa desktop](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT?node-id=140-2947) · [Empresa celular](https://www.figma.com/design/N34bU1flCiA7QCoKcwAxRT?node-id=140-5119)
 
-Páginas 11 e 12 contêm a atualização: 174 telas e estados em cada versão, incluindo 100 fichas, 12 coleções, oito guias completos, serviços, vendedores, ajuda, ferramentas pessoais e o fluxo Empresa. A página 13 reúne os 100 cartazes. Use Apresentar na Home ou na entrada Empresa para iniciar um dos dois fluxos de cada página. São camadas editáveis e componentes; os exemplos do protótipo são pré-preenchidos. A digitação, o armazenamento local, a exportação e a publicação demonstrativa continuam sendo capacidades do site. Os registros de validação e os pontos de entrada estão em figma-expansion-manifest.json. As páginas 07–10 abaixo descrevem a entrega anterior preservada.
+Páginas 11 e 12 registram a versão anterior ao recorte de 2005: 174 telas e estados em cada versão, incluindo 100 fichas, 12 coleções, oito guias completos, serviços, vendedores, ajuda, ferramentas pessoais e o fluxo Empresa. A página 13 reúne os 100 cartazes. Use Apresentar na Home ou na entrada Empresa para iniciar um dos dois fluxos de cada página. São camadas editáveis e componentes; os exemplos do protótipo são pré-preenchidos. A digitação, o armazenamento local, a exportação e a publicação demonstrativa continuam sendo capacidades do site. Os registros de validação e os pontos de entrada estão em figma-expansion-manifest.json. As páginas 07–10 abaixo descrevem a entrega anterior preservada.
 
 ## Entrega de UX/UI e marketplace
 
@@ -16,7 +16,7 @@ Páginas 11 e 12 contêm a atualização: 174 telas e estados em cada versão, i
 
 As páginas 07–10 contêm a entrega atual. Use Apresentar na Home de cada fluxo para iniciar o protótipo. O arquivo foi aberto sem login em 29/10/2026, confirmando visualização pelo link. Estados do protótipo são pré-preenchidos; o site permite interação e cálculo locais.
 
-**A implementação atual está na branch `versao-alt-mod`.** O GitHub Pages publica os arquivos da raiz dessa branch. A atualização inclui marketplace, área Empresa demonstrativa, revista, serviços e o catálogo de 100 obras com cartazes.
+**A implementação atual está na branch `versao-alt-mod`.** O GitHub Pages publica os arquivos da raiz dessa branch. A atualização inclui marketplace, área Empresa demonstrativa, revista, serviços e o catálogo de 80 obras com cartazes.
 
 ## Executar e verificar
 
@@ -69,7 +69,7 @@ O teste empresarial usa as mesmas variáveis `CINEFITA_PLAYWRIGHT`, `CINEFITA_CH
 4. Escolha PIX, débito à vista ou crédito em 1 a 12 parcelas sem juros. Resumo e confirmação acompanham a seleção; as parcelas sempre somam o total exato.
 5. Conclua a simulação. O carrinho é limpo, e a confirmação recebe foco. Não há cobrança, transferência, dados bancários ou envio de pedido real.
 
-Os 59 filmes editoriais sem oferta inicial não têm preço inventado nem botão de compra. A coleção pessoal oferece Tenho, Quero ter e Já assisti, de forma independente. Carrinho e marcações ficam no localStorage do navegador, sem sincronização entre dispositivos. Dados do formulário não são enviados nem persistidos. O som da marca é opcional e iniciado pelo botão “Ouvir logo”. Aurora, destaques e objetos respeitam pausa e movimento reduzido; a navegação dos destaques é manual.
+As 40 obras elegíveis que já tinham preço mantêm seus valores. As outras 40 recebem uma oferta ilustrativa de DVD a R$ 59,90. A área Empresa aceita obras lançadas até 2005. A coleção pessoal oferece Tenho, Quero ter e Já assisti, de forma independente. Carrinho e marcações ficam no localStorage do navegador, sem sincronização entre dispositivos. Dados do formulário não são enviados nem persistidos. O som da marca é opcional e iniciado pelo botão “Ouvir logo”. Aurora, destaques e objetos respeitam pausa e movimento reduzido; a navegação dos destaques é manual.
 
 ## Arquivos principais
 

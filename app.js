@@ -84,10 +84,11 @@ function posterImage(f, {className='', sizes='(max-width: 359px) 280px, (max-wid
   return `<img class="${esc(className)}" src="${esc(large?.src || IMAGES[f.image])}"${srcset} alt="${decorative?'':esc((f.artwork?.versions?.large?.src==='assets/editorial/placeholder.svg'?'Imagem editorial neutra para ':'Cartaz de referência de ')+displayTitle(f))}" width="${large?.width || 150}" height="${large?.height || 225}" loading="${eager?'eager':'lazy'}" decoding="async"${eager?' fetchpriority="high"':''}>`;
 }
 
-function card(f) {
-  const title=displayTitle(f),offers=marketplace.matching(f.image,activeOfferFilters());
-  const available=offers.filter(o=>o.stock!==0);const cheapest=available.length?Math.min(...available.map(o=>o.priceCents)):null;
-  return `<article class="card" data-genre="${esc(f.category)}"><a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a><div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}</div><p class="card-description">${esc(f.synopsis)}</p>${cheapest!==null?`<p class="card-price">A partir de ${money(cheapest/100)}</p><p class="offer-count">${offers.length} ${offers.length===1?'oferta demonstrativa':'ofertas demonstrativas'}</p><a class="film-link edition-link" href="${esc(filmUrl(f))}">Comparar ofertas <span aria-hidden="true">↗</span></a>`:`<p class="card-price"><small>${offers.length?'Ofertas indisponíveis':f.unverified?'Cadastro demonstrativo · sem oferta':'Acervo editorial · sem oferta física'}</small></p>`}<button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div></article>`;
+function card(f, filters=activeOfferFilters()) {
+  const title=displayTitle(f),offers=marketplace.matching(f.image,filters);
+  const available=offers.filter(o=>o.stock!==0);const priced=available.length?available:offers;
+  const cheapest=priced.length?Math.min(...priced.map(o=>o.priceCents)):null;
+  return `<article class="card" data-genre="${esc(f.category)}"><a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a><div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}</div><p class="card-description">${esc(f.synopsis)}</p>${cheapest!==null?`<p class="card-price">A partir de ${money(cheapest/100)}</p><p class="offer-count">${available.length?`${offers.length} ${offers.length===1?'oferta demonstrativa':'ofertas demonstrativas'}`:'Ofertas indisponíveis'}</p><a class="film-link edition-link" href="${esc(filmUrl(f))}">Comparar ofertas <span aria-hidden="true">↗</span></a>`:`<p class="card-price"><small>${f.unverified?'Cadastro demonstrativo · sem oferta':'Acervo editorial · sem oferta física'}</small></p>`}<button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div></article>`;
 }
 
 function activeOfferFilters(){
@@ -154,11 +155,11 @@ function renderFilmDetail() {
     </article>
     <section class="physical-edition" aria-labelledby="editionTitle"><div class="section-head"><div><p class="eyebrow">COMPARE EDIÇÕES E VENDEDORES</p><h2 id="editionTitle">Ofertas deste filme</h2></div></div>
     ${offerMarkup(f)}${formatHelp()}</section>
-    <section class="film-related" aria-labelledby="relatedTitle"><div class="section-head"><div><p class="eyebrow">OUTRAS DESCOBERTAS</p><h2 id="relatedTitle">Continue pelo acervo</h2></div><a class="film-link" href="catalogo.html">Ver catálogo <span aria-hidden="true">↗</span></a></div><div class="grid">${related.map(card).join('')}</div></section>`;
+    <section class="film-related" aria-labelledby="relatedTitle"><div class="section-head"><div><p class="eyebrow">OUTRAS DESCOBERTAS</p><h2 id="relatedTitle">Continue pelo acervo</h2></div><a class="film-link" href="catalogo.html">Ver catálogo <span aria-hidden="true">↗</span></a></div><div class="grid">${related.map(f=>card(f)).join('')}</div></section>`;
 }
 if ($('physicalGrid')) $('physicalGrid').innerHTML = ['frankenstein','casablanca','hellraiser','terminator'].map(id=>card(films.find(f=>f.image===id))).join('');
 if ($('brazilGrid')) $('brazilGrid').innerHTML = ['midnight','blackgod','limite'].map(id=>card(films.find(f=>f.image===id))).join('');
-if ($('discoveriesGrid')) $('discoveriesGrid').innerHTML = films.filter(f=>['halloween','alien','limite','cleo'].includes(f.image)).map(card).join('');
+if ($('discoveriesGrid')) $('discoveriesGrid').innerHTML = films.filter(f=>['halloween','alien','limite','cleo'].includes(f.image)).map(f=>card(f)).join('');
 if ($('posterGrid')) $('posterGrid').innerHTML = films.filter(f => f.poster).map(f => `<article class="poster-card" data-genre="${esc(f.category)}"><button class="poster-art poster-frame" type="button" data-poster="${f.image}" aria-label="Ver cartaz de ${esc(displayTitle(f))}">${posterImage(f,{sizes:'(max-width: 680px) 150px, (max-width: 1000px) 240px, 270px',decorative:true,gallery:true})}</button><div class="poster-caption"><h3><a href="${esc(filmUrl(f))}">${esc(displayTitle(f))}</a></h3><p>${f.year} · ${esc(f.category)}</p><div class="poster-footer"><a class="film-link" href="${esc(filmUrl(f))}" aria-label="Ficha de ${esc(displayTitle(f))}">Ficha <span aria-hidden="true">↗</span></a></div></div></article>`).join('');
 renderFilmDetail();
 if($('catalogFormatHelp'))$('catalogFormatHelp').innerHTML=formatHelp();
@@ -185,7 +186,7 @@ function renderCatalog(syncUrl=true){
   $('searchResults').textContent=`${result.length} de ${films.length} títulos${format?' · '+formatLabel({format}):''}${category?' · '+category:''}`;
   $('sortHint').textContent=sort==='category'?'Explore o acervo separado por gênero.':'Ordenação aplicada a todos os resultados; o gênero aparece em cada título.';
   document.querySelectorAll('.filter').forEach(b=>{const active=(b.dataset.cat||'')===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
-  $('categorySections').innerHTML=!result.length?'<div class="empty-state"><h2>Nenhum título encontrado.</h2><p>Tente outro termo ou use “Limpar filtros” para voltar ao acervo completo.</p></div>':sort!=='category'?`<div class="grid sorted-results">${result.map(card).join('')}</div>`:catalogGenres.map(cat=>{const list=result.filter(f=>f.category===cat);return list.length?`<section class="category-section" data-genre="${esc(cat)}"><div class="category-head"><h2>${esc(cat)}</h2><span>${list.length} ${list.length===1?'TÍTULO':'TÍTULOS'}</span></div><div class="grid">${list.map(card).join('')}</div></section>`:'';}).join('');
+  $('categorySections').innerHTML=!result.length?'<div class="empty-state"><h2>Nenhum título encontrado.</h2><p>Tente outro termo ou use “Limpar filtros” para voltar ao acervo completo.</p></div>':sort!=='category'?`<div class="grid sorted-results">${result.map(f=>card(f)).join('')}</div>`:catalogGenres.map(cat=>{const list=result.filter(f=>f.category===cat);return list.length?`<section class="category-section" data-genre="${esc(cat)}"><div class="category-head"><h2>${esc(cat)}</h2><span>${list.length} ${list.length===1?'TÍTULO':'TÍTULOS'}</span></div><div class="grid">${list.map(f=>card(f)).join('')}</div></section>`:'';}).join('');
   updateFilterChips();
 }
 function restoreCatalog(){
