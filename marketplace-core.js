@@ -8,6 +8,12 @@ const CinefitaMarketplace = (() => {
   ];
   const conditions = Object.freeze({'not-informed':'Conservação não informada','used-good':'Usado · bom estado (exemplo)','used-fair':'Usado · marcas de uso (exemplo)','new':'Novo (exemplo)'});
   const services = Object.freeze({'Limpeza e diagnóstico':3990,'Restauração':8990,'Restauração completa':14990});
+  function displayOffer(offers) {
+    const available=offers.filter(offer=>offer.stock!==0);
+    const candidates=available.length?available:offers;
+    return candidates.find(offer=>offer.sellerId==='cinefita')||
+      candidates.reduce((lowest,offer)=>!lowest||offer.priceCents<lowest.priceCents?offer:lowest,undefined);
+  }
   function createCatalog(films) {
     const demo=globalThis.CinefitaDemo;
     if(demo&&!sellers.some(s=>s.id==='demo-company'))sellers.push({id:'demo-company',name:demo.profile.name,official:false,pickup:false,shippingCents:1990,reputation:'Empresa demonstrativa · publicação apenas neste navegador'});
@@ -58,9 +64,9 @@ const CinefitaMarketplace = (() => {
       const restricted=!!(sellerId||condition||offer==='available');
       const result=candidates.filter(f=>matching(f.image,options).some(o=>offer!=='available'||o.stock!==0)||(!restricted&&!matching(f.image).length&&(!format||f.format===format)));
       if(sort==='price-low'||sort==='price-high')result.sort((a,b)=>{
-        const prices=f=>matching(f.image,options).map(o=>o.priceCents);
-        const ap=prices(a),bp=prices(b);if(!ap.length||!bp.length)return Number(!ap.length)-Number(!bp.length);
-        return (sort==='price-low'?1:-1)*(Math.min(...ap)-Math.min(...bp))||(a.displayTitle||a.title).localeCompare(b.displayTitle||b.title,'pt-BR');
+        const price=f=>displayOffer(matching(f.image,options))?.priceCents;
+        const ap=price(a),bp=price(b);if(ap===undefined||bp===undefined)return Number(ap===undefined)-Number(bp===undefined);
+        return (sort==='price-low'?1:-1)*(ap-bp)||(a.displayTitle||a.title).localeCompare(b.displayTitle||b.title,'pt-BR');
       });
       return result;
     }
@@ -73,6 +79,6 @@ const CinefitaMarketplace = (() => {
     return grouped;
   }
   function totals(items,delivery={}){const gs=groups(items,delivery);const subtotalCents=gs.reduce((s,g)=>s+g.subtotalCents,0),shippingCents=gs.reduce((s,g)=>s+g.shippingCents,0);return {groups:gs,subtotalCents,shippingCents,totalCents:subtotalCents+shippingCents};}
-  return {storageKey,sellers,conditions,createCatalog,groups,totals};
+  return {storageKey,sellers,conditions,createCatalog,displayOffer,groups,totals};
 })();
 if(typeof module!=='undefined')module.exports=CinefitaMarketplace;

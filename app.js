@@ -86,9 +86,9 @@ function posterImage(f, {className='', sizes='(max-width: 359px) 280px, (max-wid
 
 function card(f, filters=activeOfferFilters()) {
   const title=displayTitle(f),offers=marketplace.matching(f.image,filters);
-  const available=offers.filter(o=>o.stock!==0);const priced=available.length?available:offers;
-  const cheapest=priced.length?Math.min(...priced.map(o=>o.priceCents)):null;
-  return `<article class="card" data-genre="${esc(f.category)}"><a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a><div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}</div><p class="card-description">${esc(f.synopsis)}</p>${cheapest!==null?`<p class="card-price">A partir de ${money(cheapest/100)}</p><p class="offer-count">${available.length?`${offers.length} ${offers.length===1?'oferta demonstrativa':'ofertas demonstrativas'}`:'Ofertas indisponíveis'}</p><a class="film-link edition-link" href="${esc(filmUrl(f))}">Comparar ofertas <span aria-hidden="true">↗</span></a>`:`<p class="card-price"><small>${f.unverified?'Cadastro demonstrativo · sem oferta':'Acervo editorial · sem oferta física'}</small></p>`}<button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div></article>`;
+  const available=offers.filter(o=>o.stock!==0);
+  const priced=CinefitaMarketplace.displayOffer(offers);
+  return `<article class="card" data-genre="${esc(f.category)}"><a class="poster-wrap poster-frame art-only" href="${esc(filmUrl(f))}" aria-label="Ver ficha de ${esc(title)}">${posterImage(f,{decorative:true})}</a><div class="card-body"><h3><a href="${esc(filmUrl(f))}">${esc(title)}</a></h3><div class="meta">${f.year} · ${esc(f.category)}</div><p class="card-description">${esc(f.synopsis)}</p>${priced?`<p class="card-price">${money(priced.priceCents/100)} <small>· ${priced.sellerId==='cinefita'?'Loja Oficial':esc(marketplace.seller(priced.sellerId).name)}</small></p><p class="offer-count">${available.length?`${offers.length} ${offers.length===1?'oferta demonstrativa':'ofertas demonstrativas'}`:'Ofertas indisponíveis'}</p><a class="film-link edition-link" href="${esc(filmUrl(f))}">Comparar ofertas <span aria-hidden="true">↗</span></a>`:`<p class="card-price"><small>${f.unverified?'Cadastro demonstrativo · sem oferta':'Acervo editorial · sem oferta física'}</small></p>`}<button class="organize-button" type="button" data-organize="${esc(f.image)}" aria-label="Organizar ${esc(title)}">Organizar <span aria-hidden="true">＋</span></button></div></article>`;
 }
 
 function activeOfferFilters(){
@@ -100,7 +100,7 @@ function offerMarkup(f){
   const offers=marketplace.matching(f.image);
   if(!offers.length)return '<p class="edition-unavailable">Ainda não pesquisamos uma edição física deste filme. Por isso, ele não tem preço, embalagem ou compra no catálogo. Você pode organizá-lo na sua coleção.</p>';
   const requested=new URLSearchParams(location.search).get('offerId');
-  const chosen=offers.find(o=>o.id===requested&&o.stock!==0)?.id||offers.find(o=>o.stock!==0)?.id||offers[0].id;
+  const chosen=offers.find(o=>o.id===requested&&o.stock!==0)?.id||CinefitaMarketplace.displayOffer(offers).id;
   return `<p class="marketplace-disclaimer">Ofertas e vendedores demonstrativos. Parceiros fictícios, sem estoque ou avaliações comerciais reais.</p><fieldset class="offers-fieldset"><legend>Escolha uma oferta</legend><div class="offers-grid">${offers.map(o=>{const seller=marketplace.seller(o.sellerId);return `<label class="offer-card"><span class="offer-select"><input type="radio" name="filmOffer" value="${esc(o.id)}" ${o.id===chosen?'checked':''} ${o.stock===0?'disabled':''}><strong>${esc(seller.name)}</strong></span><span class="seller-description">${seller.official?'Loja da operadora':'Parceiro fictício'} · ${esc(seller.reputation)}</span><span>${esc(formatLabel(o))} · ${esc(CinefitaMarketplace.conditions[o.condition])}</span><strong class="offer-price">${money(o.priceCents/100)}</strong><span class="offer-delivery">Entrega ${money(seller.shippingCents/100)} por vendedor${seller.pickup?' ou retirada gratuita':''}</span><a class="film-link" href="vendedores.html?id=${esc(seller.id)}">Ver vendedor →</a><span>${o.stock===0?'Indisponível':o.stock!=null?`${o.stock} unidade(s) na demonstração`:''}</span><span>${esc(o.description||'Condições ilustrativas do exercício; não descrevem um exemplar real.')}</span>${editionMarkup(o)}</label>`;}).join('')}</div></fieldset><div class="offer-action"><p id="selectedOfferSummary" role="status">Oferta selecionada: ${esc(marketplace.seller(marketplace.get(chosen).sellerId).name)} · ${money(marketplace.get(chosen).priceCents/100)}</p><button class="buy" type="button" data-buy="${esc(f.image)}" ${offers.every(o=>o.stock===0)?'disabled':''}>Adicionar ao carrinho</button></div>`;
 }
 document.addEventListener('change',event=>{
@@ -127,7 +127,7 @@ function renderFilmDetail() {
     .sort((a,b)=>Number(b.category===f.category)-Number(a.category===f.category)||Math.abs(a.year-f.year)-Math.abs(b.year-f.year)).slice(0,2);
   const artSource = f.artwork?.referenceUrl;
   const requestedOffer=marketplace.get(new URLSearchParams(location.search).get('offerId'));
-  const previewFormat=requestedOffer?.filmId===f.image?requestedOffer.format:f.format;
+  const previewFormat=requestedOffer?.filmId===f.image&&requestedOffer.stock!==0?requestedOffer.format:(CinefitaMarketplace.displayOffer(marketplace.matching(f.image))?.format||f.format);
   $('filmDetail').innerHTML = `
     <nav class="breadcrumbs" aria-label="Localização"><a href="index.html">Início</a><span aria-hidden="true">/</span><a href="${esc(back.startsWith('catalogo.html')?back:'catalogo.html')}">Catálogo</a><span aria-hidden="true">/</span><span aria-current="page">${esc(title)}</span></nav>
     <a class="back-link" href="${esc(back)}"><span aria-hidden="true">←</span> ${label}</a>

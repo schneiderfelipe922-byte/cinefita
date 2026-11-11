@@ -69,7 +69,7 @@ O teste empresarial usa as mesmas variáveis `CINEFITA_PLAYWRIGHT`, `CINEFITA_CH
 4. Escolha PIX, débito à vista ou crédito em 1 a 12 parcelas sem juros. Resumo e confirmação acompanham a seleção; as parcelas sempre somam o total exato.
 5. Conclua a simulação. O carrinho é limpo, e a confirmação recebe foco. Não há cobrança, transferência, dados bancários ou envio de pedido real.
 
-As 40 obras elegíveis que já tinham preço mantêm seus valores. As outras 40 recebem uma oferta ilustrativa de DVD a R$ 59,90. A área Empresa aceita obras lançadas até 2005. A coleção pessoal oferece Tenho, Quero ter e Já assisti, de forma independente. Carrinho e marcações ficam no localStorage do navegador, sem sincronização entre dispositivos. Dados do formulário não são enviados nem persistidos. O som da marca é opcional e iniciado pelo botão “Ouvir logo”. Aurora, destaques e objetos respeitam pausa e movimento reduzido; a navegação dos destaques é manual.
+Na Loja Oficial, o preço demonstrativo começa em R$ 49,90 para o ano de referência de 2005 e sobe R$ 1,00 a cada ano anterior. O catálogo destaca esse preço nos cards da Loja Oficial. Os parceiros mantêm seus próprios preços. A área Empresa aceita obras de qualquer ano e permite ao anunciante definir o valor. Seus títulos mais recentes aparecem somente onde a demonstração foi publicada. A coleção pessoal oferece Tenho, Quero ter e Já assisti, de forma independente. Carrinho e marcações ficam no localStorage do navegador, sem sincronização entre dispositivos. Dados do formulário não são enviados nem persistidos. O som da marca é opcional e iniciado pelo botão “Ouvir logo”. Aurora, destaques e objetos respeitam pausa e movimento reduzido; a navegação dos destaques é manual.
 
 ## Arquivos principais
 

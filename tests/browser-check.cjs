@@ -47,7 +47,7 @@ const routes = ['index.html','catalogo.html','colecoes.html','colecao.html','fil
   await page.locator('#clearSearch').click();
   await page.locator('[data-organize]').first().click();assert.ok(await page.locator('#organizeDialog').evaluate(el=>el.open));await page.keyboard.press('Escape');assert.ok(await page.evaluate(()=>!!document.activeElement.dataset.organize));
   await go('colecao.html?filter=wanted');assert.equal(await page.locator('#personalGrid .card').count(),1);
-  await go('filme.html?id=alien');assert.equal(await page.locator('.physical-edition [data-buy]').isEnabled(),true);assert.match(await page.locator('.offer-price').textContent(),/59,90/);
+  await go('filme.html?id=alien');assert.equal(await page.locator('.physical-edition [data-buy]').isEnabled(),true);assert.match(await page.locator('.offer-price').textContent(),/75,90/);
   for(const id of ['invalido','mist','walle']){await go('filme.html?id='+id);assert.match(await page.locator('h1').textContent(),/não encontrado/);}
   await go('colecoes.html?id=invalido');assert.match(await page.locator('main').textContent(),/não encontrada/i);
   await go('filme.html?id=frankenstein');
