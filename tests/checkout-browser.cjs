@@ -73,6 +73,17 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
     for(const method of ['pix','debit','credit']){
       if(method!=='pix'){await add();await go('compra.html');await customer();}
       await page.locator(`[name="payment"][value="${method}"]`).check();
+      if(method==='pix') {
+        assert.ok(await page.locator('#pixFields').isVisible());
+        assert.equal(await page.locator('#completePurchase').textContent(),'Já paguei');
+      } else {
+        await page.locator('#completePurchase').click();
+        assert.ok(await page.locator('#orderSuccess').isHidden());
+        await page.locator('[name="cardHolder"]').fill('CLIENTE TESTE');
+        await page.locator('[name="cardNumber"]').fill('4242 4242 4242 4242');
+        await page.locator('[name="cardExpiry"]').fill('12/30');
+        await page.locator('[name="cardCvv"]').fill('123');
+      }
       if(method==='credit')await page.locator('#installments').selectOption('12');
       await page.locator('#completePurchase').click();
       assert.ok(await page.locator('#orderSuccess').isVisible());

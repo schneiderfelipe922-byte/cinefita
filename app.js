@@ -279,6 +279,11 @@ function renderPayment() {
   if (!$('paymentOptions')) return;
   const method = document.querySelector('[name="payment"]:checked')?.value;
   const credit = method === 'credit';
+  const card = credit || method === 'debit';
+  $('cardFields').hidden = !card;
+  $('cardFields').disabled = !card;
+  $('pixFields').hidden = method !== 'pix';
+  $('completePurchase').textContent = method === 'pix' ? 'Já paguei' : 'Concluir compra demonstrativa';
   $('creditFields').hidden = !credit;
   $('creditFields').disabled = !credit;
   // Preserve os nós das opções enquanto o seletor nativo está aberto.
@@ -294,9 +299,9 @@ function renderPayment() {
     $('installments').dataset.totalCents = String(orderCents());
   }
   const hints = {
-    pix:'Ao concluir, o pagamento por PIX será aprovado na simulação. Não há chave, QR Code ou transferência real.',
-    debit:'Ao concluir, o débito à vista será aprovado na simulação. Não é necessário informar dados de cartão.',
-    credit:'Escolha de 1 a 12 parcelas sem juros. Ao concluir, o crédito será aprovado na simulação, sem dados de cartão.'
+    pix:'Use o QR Code fictício abaixo e clique em “Já paguei” para avançar na simulação.',
+    debit:'Preencha os dados fictícios do cartão para simular o débito à vista.',
+    credit:'Preencha os dados fictícios do cartão e escolha de 1 a 12 parcelas sem juros.'
   };
   $('paymentHint').textContent = hints[method] || 'Escolha uma forma de pagamento para continuar.';
   if (cart.length && Object.hasOwn(CinefitaCheckout.methods,method)) {
@@ -314,11 +319,11 @@ function renderOrder(refreshDeliveries=true){if(!$('orderItems'))return;if(refre
 document.querySelectorAll('[name="payment"]').forEach(input=>input.addEventListener('change',()=>{renderPayment();$('paymentError').hidden=true;}));
 if ($('installments')) $('installments').addEventListener('change',renderPayment);
 const purchaseForm = $('purchaseForm');
-const fieldHints = {name:'Informe seu nome com pelo menos 3 caracteres.',email:'Informe um e-mail válido, como nome@exemplo.com.',zip:'Informe o CEP com 8 números, como 00000-000.',street:'Informe o nome da rua.',number:'Informe o número do endereço.',district:'Informe o bairro.',city:'Informe a cidade.',state:'Informe a UF com 2 letras, como SP.'};
+const fieldHints = {cardHolder:'Informe o nome fictício no cartão.',cardNumber:'Informe de 13 a 19 dígitos fictícios.',cardExpiry:'Informe a validade no formato MM/AA, como 12/30.',cardCvv:'Informe 3 ou 4 dígitos fictícios.',name:'Informe seu nome com pelo menos 3 caracteres.',email:'Informe um e-mail válido, como nome@exemplo.com.',zip:'Informe o CEP com 8 números, como 00000-000.',street:'Informe o nome da rua.',number:'Informe o número do endereço.',district:'Informe o bairro.',city:'Informe a cidade.',state:'Informe a UF com 2 letras, como SP.'};
 function validateField(input) {
   const error = document.getElementById(`${input.id}Error`);
   if (!error) return true;
-  const invalid = input.required && !input.value.trim() || !input.validity.valid || (input.name === 'name' && input.value.trim().length < 3);
+  const invalid = input.required && !input.value.trim() || !input.validity.valid || (input.name === 'name' && input.value.trim().length < 3) || (input.name === 'cardNumber' && !/^[0-9]{13,19}$/.test(input.value.replace(/ /g,'')));
   input.setAttribute('aria-invalid', String(invalid));
   error.textContent = invalid ? fieldHints[input.name] || 'Confira este campo.' : '';
   error.hidden = !invalid;

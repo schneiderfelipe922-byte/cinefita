@@ -25,9 +25,16 @@
         <label class="delivery-option"><input type="radio" name="payment" value="credit"> Cartão de crédito <strong>Até 12× sem juros</strong></label>
       </div>
       <p id="paymentHint" class="micro" role="status" aria-live="polite"></p>
+      <section id="pixFields" aria-labelledby="pixTitle"><h3 id="pixTitle">PIX demonstrativo</h3><img src="assets/pix-demo.svg" width="200" height="200" alt="QR Code fictício para demonstração, sem chave PIX ou cobrança" style="display:block;max-width:100%;height:auto;margin:16px 0"><p class="micro">QR Code fictício, sem transferência real. Clique em “Já paguei” abaixo para concluir a simulação.</p></section>
+      <fieldset id="cardFields" hidden disabled><legend>Dados do cartão</legend><p class="micro">Use somente dados fictícios. Estes dados não são salvos nem enviados.</p><div class="form-grid">
+        <label>Nome no cartão<input name="cardHolder" required autocomplete="off" placeholder="CLIENTE TESTE" maxlength="80"></label>
+        <label>Número do cartão<input name="cardNumber" required autocomplete="off" inputmode="numeric" pattern="[0-9 ]{13,23}" minlength="13" maxlength="23" placeholder="4242 4242 4242 4242"></label>
+        <label>Validade (MM/AA)<input name="cardExpiry" required autocomplete="off" inputmode="numeric" pattern="(0[1-9]|1[0-2])/[0-9]{2}" maxlength="5" placeholder="12/30"></label>
+        <label>Código de segurança (CVV)<input name="cardCvv" type="password" required autocomplete="off" inputmode="numeric" pattern="[0-9]{3,4}" minlength="3" maxlength="4" placeholder="123"></label>
+      </div></fieldset>
       <fieldset id="creditFields" hidden disabled><legend>Parcelamento</legend><label class="installment-label" for="installments">Número de parcelas</label><select id="installments" name="installments" aria-describedby="installmentNotice paymentError"></select><p id="installmentNotice" class="micro" role="status" aria-live="polite"></p></fieldset>
       <p id="paymentError" class="field-error" role="alert" hidden>Escolha PIX, débito ou crédito com um parcelamento de 1 a 12 vezes.</p>
-      <p class="micro">Use dados fictícios nos campos de cliente. Nenhuma opção solicita dados bancários.</p>
+      <p class="micro">Use dados fictícios em todos os campos. Nenhuma cobrança será realizada.</p>
     </fieldset></div>
     <aside class="service-summary purchase-summary"><h2>Seu pedido</h2><div id="orderItems"></div><div class="summary-line"><span>Subtotal</span><strong id="orderSubtotal"></strong></div><div class="summary-line"><span>Entrega</span><strong id="orderShipping"></strong></div><div class="summary-line order-total"><span>Total</span><strong id="orderTotal"></strong></div><div class="summary-payment"><span>Pagamento simulado</span><strong id="orderPayment"></strong><p id="orderPaymentTerms" role="status" aria-live="polite"></p></div><a class="cart-link" href="carrinho.html">Editar carrinho</a></aside>
     <div class="purchase-action"><button class="cta full" type="submit" id="completePurchase">Concluir compra demonstrativa</button><p>Confira o total acima. Nenhuma cobrança será realizada.</p></div>
