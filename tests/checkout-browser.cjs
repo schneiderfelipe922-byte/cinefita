@@ -50,6 +50,9 @@ const brl = cents => (cents/100).toLocaleString('pt-BR',{style:'currency',curren
     for(const method of ['pix','debit','credit']){
       await page.locator(`[name="payment"][value="${method}"]`).check();
       assert.equal(await page.locator('#creditFields').isVisible(),method==='credit');
+      assert.equal(await page.locator('#cardFields').isVisible(),method!=='pix');
+      assert.equal(await page.locator('[name="cardNumber"]').isDisabled(),method==='pix');
+      assert.equal(await page.locator('#pixFields').isVisible(),method==='pix');
       assert.equal(await page.locator('#installments').isDisabled(),method!=='credit');
       assert.ok((await page.locator('#orderPayment').textContent()).trim());
       if(method==='credit'){
